@@ -1,0 +1,15 @@
+.nav {
+  .logo-icon {
+    position: relative;
+    top: 4px;
+  }
+  .logo-text {
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    span {
+      font-weight: 300;
+    }
+  }
+}

@@ -5,15 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "antd": "^4.2.0",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "next": "9.3.6",
+    "nextjs-fonts": "^0.22.0",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-select": "^3.1.0",
+    "react-simple-snackbar": "^1.1.10",
     "sass": "^1.26.5"
   }
 }
