@@ -99,7 +99,7 @@ export default function signup() {
       roleId: "member",
       churchId,
       levelId: "District",
-      frontend_url: `${window.location.host}/login`,
+      frontend_url: `http://${window.location.host}/login`,
     };
 
     console.log(data);

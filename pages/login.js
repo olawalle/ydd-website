@@ -16,6 +16,7 @@ export default function login() {
     username: "afmydd",
     password: "pa$$word",
   });
+  const [authId, setauthId] = useState("");
 
   const userLogin = (e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ export default function login() {
     };
     console.log(data);
     apiServices
-      .login(data)
+      .login(data, authId)
       .then((res) => {
         console.log(res);
       })
@@ -36,11 +37,14 @@ export default function login() {
       });
   };
 
-  // useEffect(() => {
-  //   let halfs = router.asPath.split("?");
-  //   let token = halfs[1] ? halfs[1].split("=")[1] : null;
-  //   console.log(token);
-  // }, []);
+  useEffect(() => {
+    console.log(router);
+    let query = router.query.authId
+      ? router.query.authId.replace(" ", "+")
+      : "";
+    let authId = query || "";
+    setauthId(authId);
+  }, []);
 
   return (
     <div className="auth-wrap">
