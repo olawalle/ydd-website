@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "prod": "npm run export && pm2 start server.js"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
