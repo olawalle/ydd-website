@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 import "./styles/bootstrap5152.css";
 import "./styles/styles.scss";
 import "./styles/colors.css";
+import "./styles/fonts.css";
 import SnackbarProvider from "react-simple-snackbar";
 import Head from "next/head";
 
@@ -14,8 +15,25 @@ export default function MyApp({ Component, pageProps }) {
       <SnackbarProvider>
         <Head>
           <script src="/js/test.js"></script>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap"
+            rel="stylesheet"
+            key="google-font-cabin"
+          />
         </Head>
         <Component {...pageProps} />
+        <style global jsx>{`
+          body {
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 400;
+          }
+          .f-left {
+            float: left;
+          }
+          .f-right {
+            float: right;
+          }
+        `}</style>
       </SnackbarProvider>
     </>
   );

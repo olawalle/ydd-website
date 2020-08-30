@@ -1,0 +1,59 @@
+.gallery {
+  height: 100vh;
+  .banner {
+    width: 100%;
+    height: 500px;
+    margin-top: 65px;
+    iframe {
+      width: 100%;
+      height: 500px;
+    }
+  }
+
+  .videos {
+    padding: 40px 0;
+    .video {
+      position: relative;
+      height: 165px;
+      overflow: hidden;
+      padding: 0;
+      border: 0;
+      background-color: red;
+      margin-bottom: 30px;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+      .ant-card-body {
+        padding: 0;
+      }
+      .desc {
+        position: absolute;
+        cursor: pointer;
+        top: 165px;
+        left: 0;
+        height: 100%;
+        transition: linear all 0.3s;
+        background: rgba(0, 1, 26, 0.75);
+        color: #fff;
+        text-align: center;
+        padding: 14px 40px;
+        .date {
+          background-color: #3bafda;
+          border-radius: 3px;
+          padding: 2px 10px;
+          font-size: 12px;
+        }
+        p {
+          font-size: 16px;
+          margin: 15px 0;
+        }
+      }
+      &:hover {
+        .desc {
+          top: 0;
+        }
+      }
+    }
+  }
+}

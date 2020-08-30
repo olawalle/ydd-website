@@ -104,6 +104,8 @@ video {
 .navigation-links span {
   padding: 0 20px;
   color: #000;
+  font-weight: 300;
+  font-size: 14;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -732,7 +734,7 @@ article img {
 
 /*--------------------------------------*/
 .platforms-grid li:nth-child(2n) a {
-  background-color: #292929;
+  background-color: #2f305e;
 }
 
 .platforms-grid li:nth-child(2n) svg {
@@ -741,7 +743,7 @@ article img {
 }
 
 .platforms-grid li:nth-child(2n) svg path {
-  fill: #363636;
+  fill: #0184b0;
 }
 
 .platforms-grid li a {
@@ -755,7 +757,7 @@ article img {
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #363636;
+  background-color: #0184b0;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -773,7 +775,7 @@ article img {
 }
 
 .platforms-grid li svg path {
-  fill: #292929;
+  fill: #0184b0;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -820,7 +822,7 @@ article img {
     height: 200px;
   }
   .platforms-grid li svg path {
-    fill: #292929;
+    fill: #2f305e;
   }
   .platforms-grid li:nth-child(2n) svg {
     top: -100px;
@@ -1790,9 +1792,8 @@ body.boxed .body {
 .site-header {
   top: 0;
   position: fixed;
-  height: auto;
-  min-height: 72px;
-  line-height: 72px;
+  height: 65px;
+  line-height: 65px;
   left: 0;
   z-index: 999;
   width: 100%;

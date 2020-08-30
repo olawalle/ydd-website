@@ -1,0 +1,89 @@
+.afcf {
+  .banner {
+    width: 100%;
+    background-image: url("/ydd-photos/afcfbanner.jpg");
+    background-position-y: -140px;
+    background-size: cover;
+    height: 500px;
+    padding-top: 230px;
+    text-align: center;
+    p {
+      line-height: 28px;
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-shadow: 5px 5px 5px rgb(14, 33, 33);
+      font-size: 40px;
+      font-weight: 600;
+    }
+  }
+  .afcf-content {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .top-btns {
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+  }
+  .heading {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-left: 0;
+    border-right: 0;
+    margin: 10px 0 40px 0;
+  }
+  h3 {
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .grid1 {
+    background-color: #323565;
+    color: #fff;
+    font-size: 26px;
+    line-height: 40px;
+    height: 170px;
+    padding: 30px 20px;
+  }
+  .grid2 {
+    background-image: url("/ydd-photos/img_community-600x400.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 170px;
+    padding: 30px 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    &.grid3 {
+      background-image: url("/ydd-photos/img_mission-600x400.jpg");
+    }
+    &.grid4 {
+      background-image: url("/ydd-photos/afcf.png");
+    }
+    .inner-slide {
+      background-color: rgba(255, 255, 255, 0.925);
+      color: #000;
+      position: absolute;
+      top: 70%;
+      left: 0;
+      transition: linear all 0.3s;
+      height: 100%;
+      width: 100%;
+      padding: 15px;
+      p {
+        font-size: 18px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+    &:hover {
+      .inner-slide {
+        top: 0;
+      }
+    }
+  }
+}
