@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 import "./styles/gallery.scss";
 import { Pagination, Row, Col, Card, Modal, Button } from "antd";
 
-import { videos } from "./mocks/videosList";
+import { videos } from "../mocks/videosList";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import { useEffect } from "react";

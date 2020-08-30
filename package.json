@@ -13,6 +13,7 @@
     "antd": "^4.2.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
     "next": "9.3.6",
     "next-fonts": "^1.4.0",
     "nextjs-fonts": "^0.22.0",
