@@ -1,4 +1,33 @@
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.transparent {
+    background-color: rgba(255, 255, 255, 0.801);
+    .logo-text,
+    .logo-icon {
+      color: #000;
+    }
+    .navigation-links {
+      span {
+        color: rgb(0, 0, 0);
+        a {
+          color: rgb(0, 0, 0);
+        }
+      }
+    }
+  }
+  .for-navi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+  }
   .logo-icon {
     position: relative;
     top: 4px;
@@ -8,6 +37,7 @@
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
+    color: #fff;
     span {
       font-weight: 300;
     }
@@ -23,6 +53,15 @@
     img {
       // object-fit: fill;
       width: 30px;
+    }
+  }
+  .navigation-links {
+    span {
+      color: #fff;
+      font-weight: 500;
+      a {
+        color: #fff;
+      }
     }
   }
 }

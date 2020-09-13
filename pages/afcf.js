@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import { Button, Row, Col, Modal } from "antd";
 import Footer from "./components/Footer";
 import { useState } from "react";
+import MainCarousel from "./components/MainCarousel";
 
 export default function afcf() {
   const [visible, setvisible] = useState(false);
@@ -42,77 +43,43 @@ export default function afcf() {
               Contact us
             </Button>
           </div>
-          <div className="heading">About us</div>
-          <h3>
-            <p>
-              Apostolic Faith Campus Fellowship (AFCF) is the Campus wing of The
-              Apostolic Faith Church, under the auspices of the Outreach
-              Department of the Youth Development Directorate (YDD). She is a
-              body made up of Christian students across various higher
-              institutions in West and Central Africa (WeCA).{" "}
-            </p>
-            <p>
-              AFCF was formerly known as Association of Visiting Secretaries
-              (AVS), modified to Campus AVS. She shares the burning vision of
-              the YDD "to raise and retain an army of outstanding young people
-              going to heaven and persuading others to come along”. Members of
-              the AFCF see to the fulfilment of this vision on their various
-              campuses and institutions of higher learning.{" "}
-            </p>
-            <p>
-              Members are encouraged to seek God and in turn, bring others to
-              Christ by the lives they live. Therefore, young soldiers can be
-              raised and efforts geared towards nurturing them through the
-              undiluted word of God and doctrinal practices as ordained by God
-              through His Church.
-            </p>
-            <p>
-              The main aim of every member is to get to Heaven at last and not
-              alone - but with as many students within our reach through various
-              means of evangelism, because we have been empowered to be
-              witnesses on our campuses.
-            </p>
-            <p>
-              AFCF as a body organises programmes that cut across various
-              spheres of a student's life; particularly the academic, physical,
-              spiritual and social spheres. Her programmes are organised
-              appealingly to every individual in the school community.
-            </p>
-          </h3>
 
-          <Row>
-            <Col className="gutter-row" span={6}>
-              <div className="grid1">APOSTOLIC FAITH CAMPUS FELLOWSHIP</div>
-            </Col>
-            <Col className="gutter-row" span={6}>
-              <div className="grid2">
-                <div className="inner-slide">
-                  <p>Our Vision</p>
-                  <span>
-                    To raise and retain an army of outstanding young people
-                    going to Heaven and persuading others to come along.
-                  </span>
-                </div>
-              </div>
-            </Col>
-            <Col className="gutter-row" span={6}>
-              <div className="grid2 grid3">
-                <div className="inner-slide">
-                  <p>Our Mission</p>
-                  <span>
-                    AFCF mission borders on the strong pillars through which it
-                    reaches out to students and they are...
-                    <Button onClick={() => setvisible(true)} size="small">
-                      Learn more
-                    </Button>
-                  </span>
-                </div>
-              </div>
-            </Col>
-            <Col className="gutter-row" span={6}>
-              <div className="grid2 grid4"></div>
-            </Col>
-          </Row>
+          <h1 className="page-heading">
+            <hr />
+            <span>Welcome to the AFCF Homepage</span>
+            <hr />
+          </h1>
+
+          <div className="row">
+            <div className="col-md-6 col-sm-12">
+              <p className="heading mt100">About us</p>
+              <p className="header-desc">
+                Apostolic Faith Campus Fellowship (AFCF) is the Campus wing of
+                The Apostolic Faith Church, under the auspices of the Outreach
+                Department of the Youth Development Directorate (YDD). She is a
+                body made up of Christian students across various higher
+                institutions in West and Central Africa (WeCA). AFCF was
+                formerly known as Association of Visiting Secretaries (AVS),
+                modified to Campus AVS.
+              </p>
+            </div>
+            <div className="col-sm-12 col-md-6 sliding">
+              <img src="/ydd-photos/afcfprogram.jpg" alt="" />
+            </div>
+          </div>
+
+          <div className="main-carousel" style={{ paddingTop: "30px" }}>
+            <hr />
+            <MainCarousel
+              pictures={[
+                "/ydd-photos/follow.jpg",
+                "/ydd-photos/slide8.jpg",
+                "/ydd-photos/slide3.jpg",
+                "/ydd-photos/slide8.png",
+              ]}
+            />
+            <hr />
+          </div>
 
           <div className="row" style={{ marginTop: "70px" }}>
             <div className="col-md-4">
@@ -125,16 +92,13 @@ export default function afcf() {
                   >
                     <i className="icon-dialogue-text"></i>
                   </a>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html#respond"
-                    className="comments-go"
-                  >
+                  <a href="#" className="comments-go">
                     <i className="icon-dialogue-text"></i>
                   </a>{" "}
                   <h4>FEATURED</h4>
                 </div>
                 <img
-                  src="/ydd-photos/slide1-800x500.jpg"
+                  src="/ydd-photos/afcfreport.jpg"
                   className="attachment-800x500 size-800x500 wp-post-image"
                   alt=""
                 />{" "}
@@ -155,10 +119,7 @@ export default function afcf() {
                   but to make the sinner want to be just like the Christian.
                 </p>{" "}
                 <p>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
-                  >
+                  <a href="#" className="basic-link">
                     Continue reading <i className="fa fa-angle-right"></i>
                   </a>
                 </p>
@@ -167,23 +128,16 @@ export default function afcf() {
             <div className="col-md-4">
               <div className="very-latest-post format-standard">
                 <div className="title-row">
-                  <a
-                    href="blog-post.html#comments"
-                    className="comments-go"
-                    title="10 comments"
-                  >
+                  <a href="#" className="comments-go" title="10 comments">
                     <i className="icon-dialogue-text"></i>
                   </a>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html#respond"
-                    className="comments-go"
-                  >
+                  <a href="#" className="comments-go">
                     <i className="icon-dialogue-text"></i>
                   </a>{" "}
                   <h4>SOUL FOOD</h4>
                 </div>
                 <img
-                  src="/ydd-photos/slide1-800x500.jpg"
+                  src="/ydd-photos/soulfood.png"
                   className="attachment-800x500 size-800x500 wp-post-image"
                   alt=""
                 />{" "}

@@ -1,21 +1,26 @@
 import React from "react";
 import { Carousel } from "antd";
 
-export default function MainCarousel() {
+export default function MainCarousel({ pictures }) {
   return (
-    <Carousel>
-      <div className="carousel">
-        <div className="slide1"></div>
-      </div>
-      <div className="carousel">
-        <div className="slide2"></div>
-      </div>
-      <div className="carousel">
-        <div className="slide3"></div>
-      </div>
-      <div className="carousel">
-        <div className="slide4"></div>
-      </div>
+    <Carousel autoplay>
+      {pictures &&
+        pictures.map((pic) => (
+          <div className="carousel">
+            <div className="slide">
+              <img
+                src={pic}
+                alt=""
+                style={{
+                  // width: "100%",
+                  height: "110%",
+                  // objectPosition: "center",
+                  // objectFit: "cover",
+                }}
+              />
+            </div>
+          </div>
+        ))}
     </Carousel>
   );
 }

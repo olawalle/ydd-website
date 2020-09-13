@@ -5,184 +5,149 @@ import React from "react";
 import { Menu, Dropdown, Avatar } from "antd";
 import Link from "next/link";
 import "../pages/styles/nav.scss";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Nav = () => {
+  const [darkNav, setDarkNav] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    window.scrollY > 70 ? setDarkNav(true) : setDarkNav(false);
+  };
+
   return (
-    <header class="site-header nav">
-      <div class="container for-navi">
-        <div class="" style={{ display: "inline-block" }}>
-          <h1>
-            <a href="" title="Logo">
-              <div class="text-logo">
-                <span class="logo-icon">
-                  <i class="fa fa-heart"></i>
-                </span>
-                <span class="logo-text">
-                  AFMWECA<span> YDD</span>
-                </span>
-              </div>
-              {/* <div class="">
+    <header className={`nav ${darkNav ? "transparent" : ""}`}>
+      <div className="container">
+        <div className="for-navi">
+          <div className="" style={{ display: "inline-block" }}>
+            <h1>
+              <Link href="/">
+                <a title="Logo">
+                  <div className="text-logo">
+                    <span className="logo-icon">
+                      <i className="fa fa-heart"></i>
+                    </span>
+                    <span className="logo-text">
+                      AFMWECA<span> YDD</span>
+                    </span>
+                  </div>
+                  {/* <div className="">
                 <img src="logo.png" alt="" style={{ height: "50px" }} />
               </div>{" "} */}
-            </a>
-          </h1>
-        </div>
-        <div
-          className="navigation-links"
-          style={{ float: "right", display: "inline-block" }}
-        >
-          <span>
-            <Link href="/">Home</Link>
-          </span>
-          <span>
-            <Link href="/about">About</Link>
-          </span>
-          <span>
-            <Dropdown
-              overlay={
-                <Menu>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Videos
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Audio
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Soundcloud audios
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Webcast
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Youth reports
-                    </a>
-                  </Menu.Item>
-                </Menu>
-              }
-            >
-              <a
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
+                </a>
+              </Link>
+            </h1>
+          </div>
+          <div
+            className="navigation-links"
+            style={{ float: "right", display: "inline-block" }}
+          >
+            <span>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </span>
+            <span>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </span>
+            <span>
+              <Dropdown
+                overlay={
+                  <Menu>
+                    <Menu.Item>
+                      <a href="http://www.alipay.com/">Videos</a>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <a href="http://www.alipay.com/">Audio</a>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <a href="http://www.alipay.com/">Soundcloud audios</a>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <a href="http://www.alipay.com/">Webcast</a>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <a href="http://www.alipay.com/">Youth reports</a>
+                    </Menu.Item>
+                  </Menu>
+                }
               >
-                Gallery
-              </a>
-            </Dropdown>
-          </span>
-          <span>
-            <Dropdown
-              style={{ marginLeft: "20px" }}
-              overlay={
-                <Menu>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Teenage ministry
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      AFCF
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      AFCMF
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      YPF
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Couples & Family
-                    </a>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="http://www.alipay.com/"
-                    >
-                      Singles forumn
-                    </a>
-                  </Menu.Item>
-                </Menu>
-              }
-            >
-              <a
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
+                <a
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Gallery
+                </a>
+              </Dropdown>
+            </span>
+            <span>
+              <Dropdown
+                style={{ marginLeft: "20px" }}
+                overlay={
+                  <Menu>
+                    <Menu.Item>
+                      <Link href="/teenage">
+                        <a>Teenage ministry</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link href="/afcf">
+                        <a>AFCF</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link href="/afcmf">
+                        <a>AFCMF</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link href="/ypf">
+                        <a>YPF</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link href="/couples">
+                        <a>Couples & Family</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <a>Singles forumn</a>
+                    </Menu.Item>
+                  </Menu>
+                }
               >
-                Platforms
-              </a>
-            </Dropdown>
-          </span>
-          <span>Blog</span>
-          <span>
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-          </span>
-          <span>
-            <Link href="/profile">
-              <div className="avatar">
-                <img
-                  src="https://randomuser.me/api/portraits/men/91.jpg"
-                  alt=""
-                />
-              </div>
-            </Link>
-          </span>
+                <a
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Platforms
+                </a>
+              </Dropdown>
+            </span>
+            <span>Blog</span>
+            <span>
+              <Link href="/login">
+                <a>Login</a>
+              </Link>
+            </span>
+            {/* <span>
+              <Link href="/profile">
+                <a>
+                  <div className="avatar">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/91.jpg"
+                      alt=""
+                    />
+                  </div>
+                </a>
+              </Link>
+            </span> */}
+          </div>
         </div>
       </div>
     </header>

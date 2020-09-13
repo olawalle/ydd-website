@@ -84,9 +84,11 @@ export default function login() {
           Log in
         </button>
         <Link href="/signup">
-          <p style={{ marginTop: 10, cursor: "pointer" }}>
-            Do not have an account? Sign up
-          </p>
+          <a>
+            <p style={{ marginTop: 10, cursor: "pointer" }}>
+              Do not have an account? Sign up
+            </p>
+          </a>
         </Link>
       </div>
     </div>

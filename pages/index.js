@@ -14,8 +14,14 @@ export default function Home() {
     <div className="wrapper index">
       <div className="body">
         <Nav />
-
-        <MainCarousel />
+        <MainCarousel
+          pictures={[
+            "/ydd-photos/follow.jpg",
+            "/ydd-photos/slide8.jpg",
+            "/ydd-photos/slide3.jpg",
+            "/ydd-photos/slide8.png",
+          ]}
+        />
         <Vision />
 
         <Platforms />
@@ -603,15 +609,17 @@ export default function Home() {
           <ul>
             <li className="format-link">
               <Link href="/gallery">
-                <div className="grid-item-inner">
-                  <a href="#" target="_blank" className="media-box">
-                    <img
-                      src="/ydd-photos/video.jpg"
-                      className="attachment-400x400 size-400x400 wp-post-image"
-                      alt=""
-                    />
-                  </a>
-                </div>
+                <a>
+                  <div className="grid-item-inner">
+                    <a target="_blank" className="media-box">
+                      <img
+                        src="/ydd-photos/video.jpg"
+                        className="attachment-400x400 size-400x400 wp-post-image"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </a>
               </Link>
             </li>
             <li className="format-link">

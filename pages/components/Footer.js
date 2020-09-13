@@ -60,7 +60,6 @@ export default function Footer() {
                   id="message"
                   required
                   data-validation-required-message="Please enter your message"
-                  maxlength="999"
                   placeholder="Enter your Prayer request for the people of God to intercede on your behalf"
                 ></textarea>
 
