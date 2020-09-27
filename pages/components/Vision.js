@@ -36,7 +36,7 @@ export default function Vision() {
           </div>
         </div>
         <div className="col-md-4 col-sm-4 featured-block featured-block-equal   ">
-          <h3>Our Core Values</h3>
+          <h3>Our Values</h3>
           <figure>
             <a href="#">
               <img src="/ourvalues.png" alt="" />

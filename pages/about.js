@@ -142,7 +142,7 @@ export default function about() {
           </div>
 
           <div className="values_fixed">
-            <div className="strip">OUR CORE VALUES</div>
+            <div className="strip">OUR VALUES</div>
           </div>
           <h1 className="mission-heading">Our Core Values</h1>
           <p className="mission-text">
