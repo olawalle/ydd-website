@@ -6,12 +6,12 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import MainCarousel from "./components/MainCarousel";
 
-export default function afcf() {
+export default function about_afcf() {
   const [visible, setvisible] = useState(false);
   return (
-    <div className="afcf">
+    <div className="afcf about-afcf">
       <Nav />
-      <div className="banner">
+      <div className="banner about-afcf-banner">
         <p>APOSTOLIC FAITH CAMPUS FELLOWSHIP (AFCF)</p>
         <Button shape="round" size="large" style={{ marginRight: "12px" }}>
           Register
@@ -50,41 +50,60 @@ export default function afcf() {
             </Button>
           </div>
 
-          <h1 className="page-heading">
-            <hr />
-            <span>Welcome to the AFCF Homepage</span>
-            <hr />
+          <h1 className="page-heading" style={{ textAlign: "center" }}>
+            <hr
+              style={{
+                width: "50%",
+                height: "3px",
+                border: "2px solid #323465",
+              }}
+            />
+            <span>About us AFCF</span>
+            <hr
+              style={{
+                width: "30%",
+                height: "3px",
+                border: "2px solid #323465",
+              }}
+            />
           </h1>
 
           <div className="row">
-            <div className="col-md-6 col-sm-12">
-              <p className="heading mt100">About us</p>
+            <div
+              className="col-sm-12"
+              style={{ fontSize: 16, fontWeight: "300", lineHeight: "26px" }}
+            >
               <p className="header-desc">
-                Apostolic Faith Campus Fellowship (AFCF) is the Campus wing of
-                The Apostolic Faith Church, under the auspices of the Outreach
-                Department of the Youth Development Directorate (YDD). She is a
-                body made up of Christian students across various higher
-                institutions in West and Central Africa (WeCA). AFCF was
-                formerly known as Association of Visiting Secretaries (AVS),
-                modified to Campus AVS.
+                AFCF was formerly known as Association of Visiting Secretaries
+                (AVS), modified to Campus AVS. She shares the burning vision of
+                the YDD "to raise and retain an army of outstanding young people
+                going to heaven and persuading others to come along”. Members
+                are encouraged to seek God and in turn, bring others to Christ
+                by the lives they live. Therefore, young soldiers can be raised
+                and efforts geared towards nurturing them through the undiluted
+                word of God and doctrinal practices as ordained by God through
+                His Church.
+              </p>
+              <p className="header-desc">
+                The main aim of every member is to get to Heaven at last and not
+                alone - but with as many students within our reach through
+                various means of evangelism, because we have been empowered to
+                be witnesses on our campuses.
+              </p>
+              <p className="header-desc">
+                AFCF as a body organises programmes that cut across various
+                spheres of a student's life; particularly the academic,
+                physical, spiritual and social spheres. Her programmes are
+                organised appealingly to every individual in the school
+                community.
+              </p>
+
+              <p className="header-desc">
+                AFCF is a means of nurturing and monitoring young members to
+                remain in the faith even outside their locality. Forever, our
+                light shines! AFCF ... <b>be a shining light</b>
               </p>
             </div>
-            <div className="col-sm-12 col-md-6 sliding">
-              <img src="/ydd-photos/afcfprogram.jpg" alt="" />
-            </div>
-          </div>
-
-          <div className="main-carousel" style={{ paddingTop: "30px" }}>
-            <hr />
-            <MainCarousel
-              pictures={[
-                "/ydd-photos/follow.jpg",
-                "/ydd-photos/slide8.jpg",
-                "/ydd-photos/slide3.jpg",
-                "/ydd-photos/slide8.png",
-              ]}
-            />
-            <hr />
           </div>
 
           <div className="row" style={{ marginTop: "70px" }}>

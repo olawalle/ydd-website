@@ -12,8 +12,8 @@ export default function MainCarousel({ pictures }) {
                 src={pic}
                 alt=""
                 style={{
-                  // width: "100%",
-                  height: "110%",
+                  width: "110%",
+                  // height: "110%",
                   // objectPosition: "center",
                   // objectFit: "cover",
                 }}

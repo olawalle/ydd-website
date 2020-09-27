@@ -1,25 +1,40 @@
-.afcf {
+.afcmf {
   .banner {
     width: 100%;
-    background-image: url("/ydd-photos/afcfbanner.jpg");
+    background-image: url("/ydd-photos/afcmfbanner.jpg");
     background-position-y: -180px;
     background-size: cover;
     height: 500px;
     padding-top: 230px;
     text-align: center;
-    &.afcmf-banner {
-      background-image: url("/ydd-photos/afcmfbanner.jpg");
-    }
-    &.about-afcf-banner {
-      background-image: url("/ydd-photos/afcfslider2.jpg");
-    }
     p {
-      line-height: 45px;
+      line-height: 28px;
       color: #fff;
       letter-spacing: 1.5px;
       text-shadow: 5px 5px 5px rgb(14, 33, 33);
       font-size: 40px;
       font-weight: 600;
+    }
+  }
+  .page-heading {
+    text-align: center;
+    hr {
+      display: block;
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      background: #ccc;
+      width: 60%;
+      height: 2px;
+      border: 1px solid #05982e;
+    }
+    span {
+      margin: 0 0 18px 0;
+      color: #333333;
+      font-weight: 400;
+      line-height: 1.5em;
+      letter-spacing: 1px;
     }
   }
   .main-carousel {
@@ -142,6 +157,15 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #031169;
   }
+  .header-desc,
+  .inner-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    border-bottom: 2px solid #05982e;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+  }
   h3 {
     font-weight: 300;
     font-size: 18px;
@@ -190,6 +214,33 @@
       .inner-slide {
         top: 0;
       }
+    }
+  }
+
+  .cards-wrap {
+    padding: 30px 20px 20px;
+    margin: 30px 0 0 0;
+    box-shadow: 0px 10px 10px 0px rgba(5, 152, 46, 0.45);
+
+    .card-heading {
+      border-bottom: 1px solid #031169;
+      margin: 10px 0 20px;
+      font-weight: 600;
+      color: #222;
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+    .ant-card-body {
+      padding: 20px 0;
+    }
+    .card-text {
+      font-size: 16px;
+      color: #222;
+      line-height: 20px;
+      padding: 0;
+      margin-top: -15px;
+      text-align: center;
+      color: #05982e;
     }
   }
 }

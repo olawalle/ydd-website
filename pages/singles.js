@@ -1,132 +1,167 @@
-import React from "react";
-import "./styles/teenage.scss";
+import React, { useState } from "react";
 import Nav from "../components/Nav";
+import "./styles/singles.scss";
+import { Card } from "antd";
 import Footer from "./components/Footer";
 import MainCarousel from "./components/MainCarousel";
-import { Card } from "antd";
+import { useEffect } from "react";
 import Link from "next/link";
 
-export default function Teenage() {
+export default function Singles() {
+  const [items, setitems] = useState([
+    `To establish a platform that
+    helps singles connect with God through
+    prayers and study of The Word.`,
+    `To establish and build a
+    network of outstanding singles.`,
+    `To educate the Singles on how to build
+    and maximise their singlehood.`,
+    `To guide the singles on matters
+    as to relationship.`,
+    `To help them prepare for a life fulfilling marriage.`,
+  ]);
+  const [selectedItem, setselectedItem] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      selectedItem < 4 ? setselectedItem(selectedItem + 1) : setselectedItem(0);
+    }, 3000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [selectedItem]);
+
   return (
-    <div className="teenage">
+    <div className="singles">
       <div className="body">
         <Nav />
-        <div className="banner">.</div>
+        <div className="banner">
+          <p>
+            WELCOME TO THE <br /> <strong>Singles Forum</strong>
+          </p>
+        </div>
 
         <h1 className="page-heading">
           <hr />
-          <span>Welcome to the Teenage Homepage</span>
+          <span>Welcome to the Singles forum</span>
           <hr />
         </h1>
-        <div className="teen-content container">
+        <div className="ypf-content container">
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <p className="heading mt5">About us</p>
+              <p className="heading mt100">About us</p>
               <p className="header-desc">
-                The Teenage Ministry is a unit within the Outreach Department
-                under the Youth Development Directorate. It caters to all
-                teenage activities throughout the year in Apostolic Faith, and
-                brings all teenagers together, creating an avenue for them to
-                share their voices, ask questions and seek counselling.
-                <p
-                  style={{
-                    lineHeight: "30px",
-                    paddingLeft: 30,
-                    float: "right",
-                    marginTop: 30,
-                  }}
-                >
-                  <Link href="/about-teenagers">continue reading</Link>
-                </p>
+                This forum is established for singles who are 18(or 16) and
+                above. It is a platform where the issues concerning the singles
+                life are thoroughly examined to ensure that they are chaste,
+                outstanding in their career paths, prepared for marriage and
+                exploits for Lord.
               </p>
             </div>
             <div className="col-sm-12 col-md-6 sliding">
-              <h3>
-                Are you ready for the next big thing? Watch out for-{" "}
-                <strong>Who wants to be a Bible Giant (Season 6)</strong>
-              </h3>
-              <img src="/ydd-photos/biblegiantbanner.jpg" alt="" />
+              <div className="small-carousel">
+                <MainCarousel
+                  pictures={[
+                    "/ydd-photos/singles1.jpg",
+                    "/ydd-photos/singles2.jpg",
+                    "/ydd-photos/singles3.jpg",
+                    "/ydd-photos/singles4.jpg",
+                    "/ydd-photos/singles5.jpg",
+                    "/ydd-photos/singles6.jpg",
+                  ]}
+                />
+              </div>
             </div>
           </div>
-
-          <div className="row giants">
-            <p className="heading">Meet our Bible Giants</p>
+          <div className="row objectives">
+            <p className="heading">Our Objectives</p>
             <h3>
-              Starting 2015, the Teenage Ministry began putting together an
-              annual Bible giants quiz competition aimed at promoting a
-              scripture reading culture, as well as developing the spiritual
-              capacity of our teenagers, in line with the Youth Development
-              Directorate’s vision statement. Below are some of the past winners
-              of the competition
+              The objective of the Singles forum is to fulfill the YDD care
+              mission of providing physical, spiritual and emotionally care for
+              singles. This grand objective is broken down into the following:
             </h3>
-            <div className="main-carousel">
-              <MainCarousel
-                pictures={[
-                  "/ydd-photos/2167.jpg",
-                  "/ydd-photos/biblegiant1.jpg",
-                  "/ydd-photos/2016biblegiants.jpg",
-                ]}
-              />
+
+            <div className="circle-wrap">
+              <div className="circle">
+                <div
+                  className="inner inner1"
+                  style={{
+                    backgroundImage:
+                      selectedItem === 0 ? `url('/ydd-photos/ypf5.jpg')` : null,
+                  }}
+                ></div>
+                <div
+                  className="inner inner3"
+                  style={{
+                    backgroundImage:
+                      selectedItem === 1 ? `url('/ydd-photos/ypf3.jpg')` : null,
+                  }}
+                ></div>
+                <div
+                  className="inner inner2"
+                  style={{
+                    backgroundImage:
+                      selectedItem === 2 ? `url('/ydd-photos/ypf2.jpg')` : null,
+                  }}
+                ></div>
+                <div
+                  className="inner inner4"
+                  style={{
+                    backgroundImage:
+                      selectedItem === 3 ? `url('/ydd-photos/ypf4.jpg')` : null,
+                  }}
+                ></div>
+                <div
+                  className="inner inner5"
+                  style={{
+                    backgroundImage:
+                      selectedItem === 4 ? `url('/ydd-photos/ypf1.jpg')` : null,
+                  }}
+                ></div>
+                <div className="text">{items[selectedItem]}</div>
+              </div>
             </div>
           </div>
 
-          <h1 className="programs-heading">Our Programs</h1>
-          <p className="programs-text">
-            Several programs have been set-up at various levels by the teenage
-            ministry to develop our teenagers. See details of our teenage
-            program bouquet below:
+          <p className="heading">Our Programs</p>
+          <p className="inner-desc">
+            The YPF has put together several programs in order to achieve her
+            objectives. A few of these programs are stated below:
           </p>
           <div className="cards-wrap" style={{ marginBottom: "120px" }}>
             <div className="row">
               <div className="col-md-4 col-sm-12">
-                <p className="card-heading">BRANCH/ZONAL LEVEL</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
-                  cover={
-                    <img alt="example" src="/ydd-photos/teensprograms1.jpg" />
-                  }
+                  cover={<img alt="example" src="/ydd-photos/singles9.jpg" />}
                 >
-                  <p className="card-text">
-                    September Back to School <br />
-                    Pre-Varsity forum/Parent Orientation <br />
-                    Other Teenage specific programs at the Branch level.
-                  </p>
+                  <p className="card-text">Singles Hangout With Jesus</p>
                 </Card>
               </div>
               <div className="col-md-4 col-sm-12">
-                <p className="card-heading">DISTRICT/ZONAL LEVEL</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
-                  cover={
-                    <img alt="example" src="/ydd-photos/teensprograms2.jpg" />
-                  }
+                  cover={<img alt="example" src="/ydd-photos/sf.jpg" />}
                 >
-                  <p className="card-text">
-                    May 27 Teenagers Programme (a part of the Youth Weekend)
-                  </p>
+                  <p className="card-text">Singles Forum</p>
                 </Card>
               </div>
               <div className="col-md-4 col-sm-12">
-                <p className="card-heading">NATIONAL/WECA LEVEL</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
-                  cover={
-                    <img alt="example" src="/ydd-photos/teensprograms3.jpg" />
-                  }
+                  cover={<img alt="example" src="/ydd-photos/singles2.jpg" />}
                 >
                   <p className="card-text">
-                    August Camp Meeting Teenagers Programs.
+                    There are other varieties of programmes for as regarding the
+                    singles welfare.
                   </p>
                 </Card>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="main" role="main">
           <div id="content" className="content full">
             <div className="container">
-              <hr className="fw"></hr>
               <div className="row">
                 <div className="col-md-12">
                   <p className="heading mt100">
@@ -139,7 +174,7 @@ export default function Teenage() {
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
                           <a
-                            href="blog-post.html#comments"
+                            href="#"
                             className="comments-go"
                             title="10 comments"
                           >
@@ -150,31 +185,20 @@ export default function Teenage() {
                           </a>{" "}
                           <h4>Featured</h4>
                         </div>
-                        <img
-                          src="/ydd-photos/featuredteen.jpg"
-                          className="attachment-800x500 size-800x500 wp-post-image"
-                          alt=""
-                        />{" "}
                         <h3 className="post-title">
-                          <a href="#">How many yards is your faith?</a>
+                          <a href="#">Agent Of Change</a>
                         </h3>
                         <div className="meta-data">
-                          <a href="#">Teen Series 5 on August 15, 2020 in</a>{" "}
-                          <a href="category/featured/index.html">
-                            Teens Resources, Soul Food
-                          </a>
+                          by <a href="#">Rey Richardson</a> on January 24, 2018
+                          in <a href="#">in Youth Resources, Soul Foods</a>
                         </div>
                         <p>
-                          You have that dream. You have that vision. You have
-                          that aspiration. You have crafted and designed your
-                          life perfectly in your mind. But then, how many yards
-                          is your faith?
+                          The way to winning souls is not to be just like the
+                          sinner, but to make the sinner want to be just like
+                          the Christian.
                         </p>{" "}
                         <p>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html"
-                            className="basic-link"
-                          >
+                          <a href="#" className="basic-link">
                             Continue reading{" "}
                             <i className="fa fa-angle-right"></i>
                           </a>
@@ -191,13 +215,10 @@ export default function Teenage() {
                           >
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html#respond"
-                            className="comments-go"
-                          >
+                          <a href="#" className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
-                          <h4>Featured</h4>
+                          <h4>SOUL FOOD</h4>
                         </div>
                         <img
                           src="/ydd-photos/soulfood.png"
@@ -205,29 +226,25 @@ export default function Teenage() {
                           alt=""
                         />{" "}
                         <h3 className="post-title">
-                          <a href="#">Symbiotic Trust</a>
+                          <a href="2018/01/24/standard-post-format/index.html">
+                            Agent Of Change
+                          </a>
                         </h3>
                         <div className="meta-data">
+                          by{" "}
                           <a href="author/imicreation/index.html">
-                            Teen Series 1
+                            Rey Richardson
                           </a>{" "}
-                          on August 15, 2020 in{" "}
+                          on January 24, 2018 in{" "}
                           <a href="category/featured/index.html">
-                            Teens Resources, Soul Food
+                            in Youth Resources, Soul Foods
                           </a>
                         </div>
-                        <h3 className="post-title">
-                          <a href="#">Spiritual Immunisation</a>
-                        </h3>
-                        <div className="meta-data">
-                          <a href="author/imicreation/index.html">
-                            Teen Series 4
-                          </a>{" "}
-                          on August 15, 2020 in{" "}
-                          <a href="category/featured/index.html">
-                            Teens Resources, Soul Food
-                          </a>
-                        </div>
+                        <p>
+                          The way to winning souls is not to be just like the
+                          sinner, but to make the sinner want to be just like
+                          the Christian.
+                        </p>{" "}
                         <p>
                           <a
                             href="2018/01/24/standard-post-format/index.html"
@@ -291,15 +308,16 @@ export default function Teenage() {
           </div>
         </div>
       </div>
+
       <div className="gallery-updates cols5 clearfix">
         <ul>
           <li className="format-link">
             <Link href="/gallery">
               <a>
                 <div className="grid-item-inner">
-                  <a target="_blank" className="media-box">
+                  <a href="#" target="_blank" className="media-box">
                     <img
-                      src="/ydd-photos/teensvids.jpg"
+                      src="/ydd-photos/video.jpg"
                       className="attachment-400x400 size-400x400 wp-post-image"
                       alt=""
                     />
@@ -331,7 +349,7 @@ export default function Teenage() {
                 className="media-box"
               >
                 <img
-                  src="/ydd-photos/teenspics.jpg"
+                  src="/ydd-photos/sermon.jpg"
                   className="attachment-400x400 size-400x400 wp-post-image"
                   alt=""
                 />
@@ -346,7 +364,7 @@ export default function Teenage() {
                 className="media-box"
               >
                 <img
-                  src="/ydd-photos/inspired.jpg"
+                  src="/ydd-photos/webcast.jpg"
                   className="attachment-400x400 size-400x400 wp-post-image"
                   alt=""
                 />
@@ -361,7 +379,7 @@ export default function Teenage() {
                 className="media-box"
               >
                 <img
-                  src="/ydd-photos/teensreport.jpg"
+                  src="/ydd-photos/inspired.jpg"
                   className="attachment-400x400 size-400x400 wp-post-image"
                   alt=""
                 />

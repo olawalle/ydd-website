@@ -116,7 +116,9 @@ const Nav = () => {
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <a>Singles forumn</a>
+                      <Link href="/singles">
+                        <a>Singles forumn</a>
+                      </Link>
                     </Menu.Item>
                   </Menu>
                 }
@@ -129,7 +131,37 @@ const Nav = () => {
                 </a>
               </Dropdown>
             </span>
-            <span>Blog</span>
+            <span>
+              <Dropdown
+                style={{ marginLeft: "20px" }}
+                overlay={
+                  <Menu>
+                    <Menu.Item>
+                      <Link href="/afcf">
+                        <a>Reports</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link href="/afcmf">
+                        <a>Testimonies</a>
+                      </Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Link href="/ypf">
+                        <a>Soul Food</a>
+                      </Link>
+                    </Menu.Item>
+                  </Menu>
+                }
+              >
+                <a
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Youth Resources
+                </a>
+              </Dropdown>
+            </span>
             <span>
               <Link href="/login">
                 <a>Login</a>

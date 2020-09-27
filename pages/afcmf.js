@@ -1,18 +1,18 @@
 import React from "react";
-import "./styles/afcf.scss";
+import "./styles/afcmf.scss";
 import Nav from "../components/Nav";
-import { Button, Row, Col, Modal } from "antd";
+import { Button, Row, Col, Modal, Card } from "antd";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import MainCarousel from "./components/MainCarousel";
 
-export default function afcf() {
+export default function Afcmf() {
   const [visible, setvisible] = useState(false);
   return (
-    <div className="afcf">
+    <div className="afcmf">
       <Nav />
       <div className="banner">
-        <p>APOSTOLIC FAITH CAMPUS FELLOWSHIP (AFCF)</p>
+        <p>APOSTOLIC FAITH CORPS MEMBERS FELLOWSHIP (AFCMF)</p>
         <Button shape="round" size="large" style={{ marginRight: "12px" }}>
           Register
         </Button>{" "}
@@ -28,63 +28,110 @@ export default function afcf() {
       </div>
       <div className="container">
         <div className="afcf-content">
-          <div className="top-btns">
-            <Button
-              type="primary"
-              shape="round"
-              size="large"
-              className="f-left"
-            >
-              Contact us
-            </Button>
-            <Button type="primary" shape="round" size="large">
-              Contact us
-            </Button>
-            <Button
-              type="primary"
-              shape="round"
-              size="large"
-              className="f-right"
-            >
-              Contact us
-            </Button>
-          </div>
-
           <h1 className="page-heading">
             <hr />
-            <span>Welcome to the AFCF Homepage</span>
+            <span>Welcome to the AFCMF Homepage</span>
             <hr />
           </h1>
 
           <div className="row">
-            <div className="col-md-6 col-sm-12">
-              <p className="heading mt100">About us</p>
+            <div className="col-md-12 col-sm-12">
               <p className="header-desc">
-                Apostolic Faith Campus Fellowship (AFCF) is the Campus wing of
-                The Apostolic Faith Church, under the auspices of the Outreach
-                Department of the Youth Development Directorate (YDD). She is a
-                body made up of Christian students across various higher
-                institutions in West and Central Africa (WeCA). AFCF was
-                formerly known as Association of Visiting Secretaries (AVS),
-                modified to Campus AVS.
+                In line with the Youth Development Directorate’s vision
+                statement of “raising an army of outstanding young people going
+                to heaven and persuading others to come along”, the Apostolic
+                Faith Corps Members Fellowship (AFCMF) was created. AFCMF is an
+                outreach arm of the Apostolic Faith Youth Development
+                Directorate (YDD). The aim of the fellowship is to persuasively
+                link and commit corps members to the church and her activities,
+                thereby fueling their interest and active participation.
               </p>
-            </div>
-            <div className="col-sm-12 col-md-6 sliding">
-              <img src="/ydd-photos/afcfprogram.jpg" alt="" />
             </div>
           </div>
 
           <div className="main-carousel" style={{ paddingTop: "30px" }}>
-            <hr />
             <MainCarousel
               pictures={[
-                "/ydd-photos/follow.jpg",
-                "/ydd-photos/slide8.jpg",
-                "/ydd-photos/slide3.jpg",
-                "/ydd-photos/slide8.png",
+                "/ydd-photos/afcmfslide1.jpg",
+                "/ydd-photos/afcmfslide2.jpg",
+                "/ydd-photos/afcmfslide3.jpg",
+                "/ydd-photos/afcmfslide4.jpg",
               ]}
             />
-            <hr />
+          </div>
+
+          <p
+            className="heading"
+            style={{
+              textAlign: "center",
+              width: "80%",
+              borderBottom: "1px solid #05982e",
+              margin: "50px auto 10px",
+            }}
+          >
+            Our Programs and Events
+          </p>
+          <p
+            className="inner-desc"
+            style={{ border: 0, marginBottom: 0, paddingBottom: 0 }}
+          >
+            All members of AFCMF would take part in all the three (3) programmes
+            and three (3) major events within their calendar year which are
+            stated below:
+          </p>
+          <div className="cards-wrap" style={{ marginBottom: "120px" }}>
+            <div className="row">
+              <div className="col-md-4 col-sm-12">
+                <Card
+                  style={{ width: "100%", border: 0 }}
+                  cover={<img alt="example" src="/ydd-photos/outreach.jpg" />}
+                >
+                  <p className="card-text">Outreach</p>
+                </Card>
+              </div>
+              <div className="col-md-4 col-sm-12">
+                <Card
+                  style={{ width: "100%", border: 0 }}
+                  cover={<img alt="example" src="/ydd-photos/reachout.jpg" />}
+                >
+                  <p className="card-text">Reach-out</p>
+                </Card>
+              </div>
+              <div className="col-md-4 col-sm-12">
+                <Card
+                  style={{ width: "100%", border: 0 }}
+                  cover={
+                    <img alt="example" src="/ydd-photos/regionalretreat.jpg" />
+                  }
+                >
+                  <p className="card-text">Regional Retreat</p>
+                </Card>
+              </div>
+              <div className="col-md-4 col-sm-12">
+                <Card
+                  style={{ width: "100%", border: 0 }}
+                  cover={<img alt="example" src="/ydd-photos/camp.jpg" />}
+                >
+                  <p className="card-text">Regional Retreat</p>
+                </Card>
+              </div>
+              <div className="col-md-4 col-sm-12">
+                <Card
+                  style={{ width: "100%", border: 0 }}
+                  cover={<img alt="example" src="/ydd-photos/agm.jpg" />}
+                >
+                  <p className="card-text">Regional Retreat</p>
+                </Card>
+              </div>
+              <div className="col-md-4 col-sm-12">
+                <Card
+                  style={{ width: "100%", border: 0 }}
+                  cover={<img alt="example" src="/ydd-photos/iycparrade.jpg" />}
+                >
+                  <p className="card-text">Regional Retreat</p>
+                </Card>
+              </div>
+            </div>
           </div>
 
           <div className="row" style={{ marginTop: "70px" }}>
