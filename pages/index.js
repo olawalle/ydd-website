@@ -8,6 +8,8 @@ import MainCarousel from "./components/MainCarousel";
 import Vision from "./components/Vision";
 import Platforms from "./components/Platforms";
 import Footer from "./components/Footer";
+import Event from "./components/Event";
+import { eventsList } from "../mocks/eventsList";
 
 export default function Home() {
   return (
@@ -22,6 +24,16 @@ export default function Home() {
             "/ydd-photos/slide8.png",
           ]}
         />
+        <div
+          style={{
+            width: "100%",
+            height: "300px",
+            marginBottom: "-250px",
+            marginTop: "-75px",
+            backgroundColor: "#f8f8f8",
+          }}
+        ></div>
+
         <Vision />
 
         <Platforms />
@@ -147,262 +159,13 @@ export default function Home() {
                       <h3 className="element-title">Upcoming Events</h3>
                       <hr className="sm"></hr>
                     </div>
-                    <div className="events-listing-content">
-                      <div className="event-list-item-date">
-                        <span className="event-date">
-                          <span className="event-day">19</span>
-                          <span className="event-month">Apr, 20</span>
-                        </span>
-                      </div>
-                      <div className="event-list-item-info">
-                        <div className="lined-info">
-                          <h4>
-                            <a
-                              href="index33fe.html?event=sunday-meet-up&amp;event_date=2020-04-19"
-                              className="event-title"
-                            >
-                              Youth Leaders Capacity Training
-                            </a>
-                          </h4>
+                    {eventsList.slice(0, 3).map((evnt) => {
+                      return (
+                        <div style={{ marginBottom: 40 }}>
+                          <Event noreg={false} event={evnt} />
                         </div>
-                        <div className="lined-info">
-                          <span className="meta-data">
-                            <i className="fa fa-clock-o"></i> Sunday,{" "}
-                            <span className="event-time">
-                              3:00 pm - 8:00 pm
-                            </span>{" "}
-                            <span className="label label-primary">
-                              Upcoming
-                            </span>
-                          </span>
-                        </div>
-                        <div className="lined-info event-location">
-                          <span className="meta-data">
-                            <i className="fa fa-map-marker"></i>{" "}
-                            <span className="event-location-address">
-                              Cross Rivers District
-                            </span>
-                          </span>
-                        </div>{" "}
-                      </div>
-                      <div className="event-list-item-actions">
-                        {" "}
-                        <a
-                          id="register-2763|1587308401"
-                          href="#"
-                          className="btn btn-default btn-transparent event-tickets event-register-button"
-                        >
-                          Register
-                        </a>
-                        <ul className="action-buttons">
-                          {" "}
-                          <li title="Share Event">
-                            <a
-                              href="#"
-                              data-trigger="focus"
-                              data-placement="top"
-                              data-content=""
-                              data-toggle="popover"
-                              data-original-title="Share Event"
-                              className="event-share-link"
-                            >
-                              <i className="icon-share"></i>
-                            </a>
-                          </li>{" "}
-                          <li title="Get directions" className="hidden-xs">
-                            <a
-                              href="#"
-                              className="cover-overlay-trigger event-direction-link"
-                            >
-                              <i className="icon-compass"></i>
-                            </a>
-                          </li>{" "}
-                          <li title="Contact event manager">
-                            <a
-                              id="contact-2763|1587308401"
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#Econtact"
-                              className="event-contact-link"
-                            >
-                              <i className="icon-mail"></i>
-                            </a>
-                          </li>{" "}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="element-block events-listing">
-                    <div className="events-listing-content">
-                      <div className="event-list-item-date">
-                        <span className="event-date">
-                          <span className="event-day">19</span>
-                          <span className="event-month">Apr, 20</span>
-                        </span>
-                      </div>
-                      <div className="event-list-item-info">
-                        <div className="lined-info">
-                          <h4>
-                            <a
-                              href="index33fe.html?event=sunday-meet-up&amp;event_date=2020-04-19"
-                              className="event-title"
-                            >
-                              Purpose Driven Teens Series
-                            </a>
-                          </h4>
-                        </div>
-                        <div className="lined-info">
-                          <span className="meta-data">
-                            <i className="fa fa-clock-o"></i> Sunday,{" "}
-                            <span className="event-time">
-                              3:00 pm - 8:00 pm
-                            </span>{" "}
-                            <span className="label label-primary">
-                              Upcoming
-                            </span>
-                          </span>
-                        </div>
-                        <div className="lined-info event-location">
-                          <span className="meta-data">
-                            <i className="fa fa-map-marker"></i>{" "}
-                            <span className="event-location-address">
-                              All regions
-                            </span>
-                          </span>
-                        </div>{" "}
-                      </div>
-                      <div className="event-list-item-actions">
-                        {" "}
-                        <a
-                          id="register-2763|1587308401"
-                          href="#"
-                          className="btn btn-default btn-transparent event-tickets event-register-button"
-                        >
-                          Register
-                        </a>
-                        <ul className="action-buttons">
-                          {" "}
-                          <li title="Share Event">
-                            <a
-                              href="#"
-                              data-trigger="focus"
-                              data-placement="top"
-                              data-content=""
-                              data-toggle="popover"
-                              data-original-title="Share Event"
-                              className="event-share-link"
-                            >
-                              <i className="icon-share"></i>
-                            </a>
-                          </li>{" "}
-                          <li title="Get directions" className="hidden-xs">
-                            <a
-                              href="#"
-                              className="cover-overlay-trigger event-direction-link"
-                            >
-                              <i className="icon-compass"></i>
-                            </a>
-                          </li>{" "}
-                          <li title="Contact event manager">
-                            <a
-                              id="contact-2763|1587308401"
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#Econtact"
-                              className="event-contact-link"
-                            >
-                              <i className="icon-mail"></i>
-                            </a>
-                          </li>{" "}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="element-block events-listing">
-                    <div className="events-listing-content">
-                      <div className="event-list-item-date">
-                        <span className="event-date">
-                          <span className="event-day">19</span>
-                          <span className="event-month">Apr, 20</span>
-                        </span>
-                      </div>
-                      <div className="event-list-item-info">
-                        <div className="lined-info">
-                          <h4>
-                            <a
-                              href="index33fe.html?event=sunday-meet-up&amp;event_date=2020-04-19"
-                              className="event-title"
-                            >
-                              International Youth Campmeeting
-                            </a>
-                          </h4>
-                        </div>
-                        <div className="lined-info">
-                          <span className="meta-data">
-                            <i className="fa fa-clock-o"></i> Sunday,{" "}
-                            <span className="event-time">
-                              3:00 pm - 8:00 pm
-                            </span>{" "}
-                            <span className="label label-primary">
-                              Upcoming
-                            </span>
-                          </span>
-                        </div>
-                        <div className="lined-info event-location">
-                          <span className="meta-data">
-                            <i className="fa fa-map-marker"></i>{" "}
-                            <span className="event-location-address">
-                              Campground Igbesa
-                            </span>
-                          </span>
-                        </div>{" "}
-                      </div>
-                      <div className="event-list-item-actions">
-                        {" "}
-                        <a
-                          id="register-2763|1587308401"
-                          href="#"
-                          className="btn btn-default btn-transparent event-tickets event-register-button"
-                        >
-                          Register
-                        </a>
-                        <ul className="action-buttons">
-                          {" "}
-                          <li title="Share Event">
-                            <a
-                              href="#"
-                              data-trigger="focus"
-                              data-placement="top"
-                              data-content=""
-                              data-toggle="popover"
-                              data-original-title="Share Event"
-                              className="event-share-link"
-                            >
-                              <i className="icon-share"></i>
-                            </a>
-                          </li>{" "}
-                          <li title="Get directions" className="hidden-xs">
-                            <a
-                              href="#"
-                              className="cover-overlay-trigger event-direction-link"
-                            >
-                              <i className="icon-compass"></i>
-                            </a>
-                          </li>{" "}
-                          <li title="Contact event manager">
-                            <a
-                              id="contact-2763|1587308401"
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#Econtact"
-                              className="event-contact-link"
-                            >
-                              <i className="icon-mail"></i>
-                            </a>
-                          </li>{" "}
-                        </ul>
-                      </div>
-                    </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

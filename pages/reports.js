@@ -4,6 +4,8 @@ import Nav from "../components/Nav";
 import Footer from "./components/Footer";
 import "./styles/reports.scss";
 import { CalendarOutlined } from "@ant-design/icons";
+import Event from "./components/Event";
+import { eventsList } from "../mocks/eventsList";
 
 export default function reports() {
   const reports = [
@@ -59,7 +61,7 @@ export default function reports() {
               onSearch={(value) => console.log(value)}
               enterButton
             />
-            <p style={{ fontSize: 34, marginTop: 50, color: "#000" }}>
+            <p style={{ fontSize: 30, marginTop: 50, color: "#000" }}>
               Report Categories
             </p>
             <ul style={{ padding: 0, margin: 0 }}>
@@ -76,6 +78,13 @@ export default function reports() {
                 </li>
               ))}
             </ul>
+
+            <p style={{ fontSize: 30, marginTop: 50, color: "#000" }}>
+              Upcoming Events
+            </p>
+            {eventsList.map((e) => (
+              <Event noreg={true} event={e} />
+            ))}
           </div>
         </div>
       </div>

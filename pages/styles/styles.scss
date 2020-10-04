@@ -2446,7 +2446,7 @@ body.boxed .body {
 .featured-block figure img {
   position: relative;
   display: block;
-  opacity: 0.5;
+  // opacity: 0.5;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-backface-visibility: hidden;
@@ -2598,7 +2598,7 @@ body.boxed .body {
 }
 .event-list-item-date {
   float: left;
-  width: 15%;
+  min-width: 15%;
   margin-right: 2%;
 }
 .widget_upcoming_events .event-list-item-date {
@@ -2649,8 +2649,10 @@ body.boxed .body {
 .event-list-item-info {
   float: left;
   padding-bottom: 34px;
-  width: 64%;
-  padding-right: 2%;
+  min-width: 64%;
+  max-width: 64%;
+  padding-left: 1%;
+  padding-right: 1%;
   border-right: 2px solid #f8f8f8;
   margin-right: 2%;
 }
@@ -5163,12 +5165,12 @@ body.boxed .popover {
    7. Responsive Media Queries
 ================================================== */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .event-list-item-date {
-    width: 18%;
-  }
-  .event-list-item-info {
-    width: 61%;
-  }
+  // .event-list-item-date {
+  //   width: 18%;
+  // }
+  // .event-list-item-info {
+  //   width: 61%;
+  // }
   .lead-content-wrapper {
     margin-left: -500px !important;
     width: 1000px !important;

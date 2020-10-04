@@ -113,7 +113,7 @@ a.list-group-item.active:focus,
 .bbp-search-form input[type="submit"]:hover,
 .bbp-topic-pagination .current,
 .pricing-column.highlight h3 {
-  background-color: #3bafda;
+  background-color: #fff;
 }
 .btn-primary:hover,
 .btn-primary:focus,
