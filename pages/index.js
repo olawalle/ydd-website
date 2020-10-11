@@ -10,8 +10,44 @@ import Platforms from "./components/Platforms";
 import Footer from "./components/Footer";
 import Event from "./components/Event";
 import { eventsList } from "../mocks/eventsList";
+import { useEffect } from "react";
+import * as dayjs from "dayjs";
+import { useState } from "react";
+import axios from "axios";
 
 export default function Home() {
+  const [countdown, setcountdown] = useState({
+    second: 0,
+    minute: 0,
+    hour: 0,
+    day: 0,
+  });
+  useEffect(() => {
+    axios.get(
+      "http://api.soundcloud.com/users/apostolic-faith-weca/playlists?client_id=0gk6cWFxRJcIGpDjYPiqm0zXGM6O6cLx"
+    );
+
+    // "https://api-v2.soundcloud.com/me/play-history/tracks?client_id=0gk6cWFxRJcIGpDjYPiqm0zXGM6O6cLx&limit=25&offset=0&linked_partitioning=1&app_version=1602237125&app_locale=en"
+    const interval = setInterval(() => {
+      let today = dayjs(eventsList[0].date);
+      let endDate = dayjs();
+      let second = today.diff(endDate, "second") % 60;
+      let minute = today.diff(endDate, "minute") % 60;
+      let hour = today.diff(endDate, "hour") % 24;
+      let day = today.diff(endDate, "day") % 24;
+      setcountdown({
+        second: second ? second : 60,
+        minute: minute ? minute : 60,
+        hour,
+        day,
+      });
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div className="wrapper index">
       <div className="body">
@@ -53,61 +89,72 @@ export default function Home() {
                         className="media-box"
                       >
                         <img
-                          src="/ydd-photos/upcoming.jpg"
+                          src={eventsList[0].banner}
                           className="attachment-600x400 size-600x400 wp-post-image"
                           alt=""
                         />
                       </a>
                       <div className="upcoming-event-content">
-                        <span className="label label-primary upcoming-event-label">
+                        <span
+                          className="label label-primary upcoming-event-label"
+                          style={{ backgroundColor: "#3aafdb" }}
+                        >
                           Next coming event
                         </span>
-                        <div
-                          id="event-counter-event_counter-1"
-                          className="counter clearfix"
-                          data-date="1587308401"
-                        >
-                          <div className="timer-col">
-                            {" "}
-                            <span id="days"></span>{" "}
-                            <span className="timer-type">Days</span>{" "}
-                          </div>
-                          <div className="timer-col">
-                            {" "}
-                            <span id="hours"></span>{" "}
-                            <span className="timer-type">Hours</span>{" "}
-                          </div>
-                          <div className="timer-col">
-                            {" "}
-                            <span id="minutes"></span>{" "}
-                            <span className="timer-type">Minutes</span>{" "}
-                          </div>
-                          <div className="timer-col">
-                            {" "}
-                            <span id="seconds"></span>{" "}
-                            <span className="timer-type">Seconds</span>{" "}
-                          </div>
-                        </div>
                         <h3>
                           <a
                             href="index33fe.html?event=sunday-meet-up&amp;event_date=2020-04-19"
                             className="event-title"
                           >
-                            Youth Leaders Capacity Training
+                            {eventsList[0].name}
                           </a>
                         </h3>
                         <span className="meta-data">
-                          On <span className="event-date">June 12, 2020</span>{" "}
-                          at <span className="event-time">3:00 pm</span> at
+                          On{" "}
+                          <span className="event-date">
+                            {dayjs(eventsList[0].date).format("DD MMM, YYYY")}
+                          </span>{" "}
+                          by{" "}
+                          <span className="event-time">
+                            {eventsList[0].time}
+                          </span>{" "}
+                          at
                         </span>
                         <span className="meta-data event-location">
                           {" "}
                           <span className="event-location-address">
-                            Cross River District
+                            {eventsList[0].address}
                           </span>
                         </span>
+
+                        <div
+                          id="event-counter-event_counter-1"
+                          className="counter clearfix"
+                          style={{ marginTop: 20 }}
+                        >
+                          <div className="timer-col">
+                            {" "}
+                            <span id="days">{countdown.day}</span>{" "}
+                            <span className="timer-type">Days</span>{" "}
+                          </div>
+                          <div className="timer-col">
+                            {" "}
+                            <span id="hours">{countdown.hour}</span>{" "}
+                            <span className="timer-type">Hours</span>{" "}
+                          </div>
+                          <div className="timer-col">
+                            {" "}
+                            <span id="minutes">{countdown.minute}</span>{" "}
+                            <span className="timer-type">Minutes</span>{" "}
+                          </div>
+                          <div className="timer-col">
+                            {" "}
+                            <span id="seconds">{countdown.second}</span>{" "}
+                            <span className="timer-type">Seconds</span>{" "}
+                          </div>
+                        </div>
                       </div>
-                      <div className="upcoming-event-footer">
+                      {/* <div className="upcoming-event-footer">
                         <a
                           id="imicregister-2763|1587308401"
                           href="#"
@@ -149,7 +196,7 @@ export default function Home() {
                             </a>
                           </li>
                         </ul>
-                      </div>
+                      </div> */}
                     </section>
                   </div>
                 </div>

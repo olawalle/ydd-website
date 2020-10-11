@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/event.scss";
+import * as dayjs from "dayjs";
 
 export default function Event({ noreg, event }) {
   return (
@@ -14,9 +15,9 @@ export default function Event({ noreg, event }) {
       >
         <div className="event-list-item-date">
           <span className="event-date">
-            <span className="event-day">{event.date.split(" ")[0]}</span>
+            <span className="event-day">{dayjs(event.date).format("DD")}</span>
             <span className="event-month">
-              {event.date.split(" ")[1]} {event.date.split(" ")[2]}
+              {dayjs(event.date).format("MMM, YYYY")}
             </span>
           </span>
         </div>

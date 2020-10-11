@@ -1,74 +1,83 @@
 export const eventsList = [
   {
     name: "Sunday Meet Up",
-    date: "14 Oct, 2020",
+    date: "2020-10-12 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "general",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "Holy shift: Strategic think",
-    date: "24 Oct, 2020",
+    date: "2020-24-10 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "afcf",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "Youth Service",
-    date: "25 Oct, 2020",
+    date: "2020-25-10 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "general",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "Singles Forum",
-    date: "28 Oct, 2020",
+    date: "2020-28-10 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "singles",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "Youth Leaders’ Capacity Building (YLCB)",
-    date: "1 Nov, 2020",
+    date: "2020-01-11 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "general",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "International Youth Campmeeting",
-    date: "4 Nov, 2020",
+    date: "2020-04-11 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "general",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "Sunday Meet Up",
-    date: "6 Nov, 2020",
+    date: "2020-06-11 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "general",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "Youth Service",
-    date: "9 Nov, 2020",
+    date: "2020-09-11 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "general",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
     name: "AFCMF Retreat",
-    date: "15 Dec, 2020",
+    date: "2020-15-12 14:00",
     time: "2pm - 4pm",
     address: "Campground Anthony village Lagos",
     group: "afcmf",
-    banner: "/ydd-photos/upcoming.jpg",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
 ];
