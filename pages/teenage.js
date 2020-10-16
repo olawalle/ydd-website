@@ -21,13 +21,23 @@ export default function Teenage() {
         <div className="teen-content container">
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <p className="heading mt100">About us</p>
+              <p className="heading mt5">About us</p>
               <p className="header-desc">
                 The Teenage Ministry is a unit within the Outreach Department
                 under the Youth Development Directorate. It caters to all
                 teenage activities throughout the year in Apostolic Faith, and
                 brings all teenagers together, creating an avenue for them to
                 share their voices, ask questions and seek counselling.
+                <p
+                  style={{
+                    lineHeight: "30px",
+                    paddingLeft: 30,
+                    float: "right",
+                    marginTop: 30,
+                  }}
+                >
+                  <Link href="/about-teenagers">continue reading</Link>
+                </p>
               </p>
             </div>
             <div className="col-sm-12 col-md-6 sliding">
@@ -50,7 +60,13 @@ export default function Teenage() {
               of the competition
             </h3>
             <div className="main-carousel">
-              <MainCarousel pictures={[]} />
+              <MainCarousel
+                pictures={[
+                  "/ydd-photos/2167.jpg",
+                  "/ydd-photos/biblegiant1.jpg",
+                  "/ydd-photos/2016biblegiants.jpg",
+                ]}
+              />
             </div>
           </div>
 

@@ -1,13 +1,12 @@
 import axios from "axios";
 import * as urls from "./urls";
 
-let login = (data, authId) => {
+let login = (data) => {
   return axios({
     method: "post",
-    url: urls.loginUrl,
+    url: "http://195.54.162.30:7000/api/v1/user/login",
     headers: {
-      clientId: "A6w0Xu6",
-      authId,
+      clientId: "A4m0xs4",
     },
     data,
   });
@@ -18,7 +17,7 @@ let signup = (data) => {
     method: "post",
     url: urls.signupUrl,
     headers: {
-      clientId: "A6w0Xu6",
+      clientId: "A4m0xs4",
     },
     data,
   });

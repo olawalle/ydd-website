@@ -5,7 +5,7 @@ export default function Vision() {
     <div className="container" style={{ padding: "50px 0" }}>
       <div className="row">
         <div className="col-md-4 col-sm-4 featured-block featured-block-equal">
-          <h3>Our Vision</h3>
+          <h3 style={{ textAlign: "center" }}>Our Vision</h3>
           <figure>
             <a href="vision.html">
               <img src="/ourvision.png" alt="" />
@@ -20,7 +20,7 @@ export default function Vision() {
           </div>
         </div>
         <div className="col-md-4 col-sm-4 featured-block featured-block-equal">
-          <h3>Our Mission</h3>
+          <h3 style={{ textAlign: "center" }}>Our Mission</h3>
           <figure>
             <a href="vision.html">
               <img src="/ourmission.png" alt="" />
@@ -36,7 +36,7 @@ export default function Vision() {
           </div>
         </div>
         <div className="col-md-4 col-sm-4 featured-block featured-block-equal   ">
-          <h3>Our Core Values</h3>
+          <h3 style={{ textAlign: "center" }}>Our Values</h3>
           <figure>
             <a href="#">
               <img src="/ourvalues.png" alt="" />

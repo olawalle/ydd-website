@@ -16,8 +16,14 @@ export default function afcf() {
         <p>APOSTOLIC FAITH CAMPUS FELLOWSHIP (AFCF)</p>
         <Button shape="round" size="large" style={{ marginRight: "12px" }}>
           Register
-        </Button>
-        <Button type="primary" shape="round" size="large">
+        </Button>{" "}
+        <br />
+        <Button
+          style={{ marginTop: 12 }}
+          type="primary"
+          shape="round"
+          size="large"
+        >
           Contact us
         </Button>
       </div>

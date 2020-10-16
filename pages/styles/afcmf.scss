@@ -1,0 +1,246 @@
+.afcmf {
+  .banner {
+    width: 100%;
+    background-image: url("/ydd-photos/afcmfbanner.jpg");
+    background-position-y: -180px;
+    background-size: cover;
+    height: 500px;
+    padding-top: 230px;
+    text-align: center;
+    p {
+      line-height: 28px;
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-shadow: 5px 5px 5px rgb(14, 33, 33);
+      font-size: 40px;
+      font-weight: 600;
+    }
+  }
+  .page-heading {
+    text-align: center;
+    hr {
+      display: block;
+      clear: both;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      background: #ccc;
+      width: 60%;
+      height: 2px;
+      border: 1px solid #05982e;
+    }
+    span {
+      margin: 0 0 18px 0;
+      color: #333333;
+      font-weight: 400;
+      line-height: 1.5em;
+      letter-spacing: 1px;
+    }
+  }
+  .main-carousel {
+    .carousel {
+      width: 100%;
+      height: 500px;
+      .slide1 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/follow.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .slide2 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/slide8.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+      .slide3 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/slide8.png");
+        background-position: center;
+        background-size: cover;
+      }
+      .slide4 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/slide3.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    .ant-carousel .slick-dots-bottom {
+      position: relative;
+      top: -100px;
+      li button {
+        background-color: #222 !important;
+        width: 10px !important;
+        height: 10px !important;
+        border-radius: 100% !important;
+        margin: 0 5px !important;
+      }
+      li.slick-active button {
+        margin: 0 5px !important;
+        background-color: #3bafda !important;
+      }
+    }
+  }
+
+  .small-carousel {
+    height: 300px;
+    overflow: hidden;
+    .carousel {
+      width: 100%;
+      height: 300px;
+      .slide1 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/ydd-photos/YDD-Banner.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .slide2 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/slide8.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+      .slide3 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/slide8.png");
+        background-position: center;
+        background-size: cover;
+      }
+      .slide4 {
+        width: 100%;
+        height: 100%;
+        background-image: url("/slides/slide3.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    .ant-carousel .slick-dots-bottom {
+      position: relative;
+      top: -290px;
+      li button {
+        background-color: #222 !important;
+        width: 10px !important;
+        height: 10px !important;
+        border-radius: 100% !important;
+        margin: 0 5px !important;
+      }
+      li.slick-active button {
+        margin: 0 5px !important;
+        background-color: #3bafda !important;
+      }
+    }
+  }
+
+  .afcf-content {
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  .top-btns {
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+  }
+  .heading {
+    font-weight: 600;
+    width: 100%;
+    font-size: 24px;
+    color: #222;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #031169;
+  }
+  .header-desc,
+  .inner-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    border-bottom: 2px solid #05982e;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+  }
+  h3 {
+    font-weight: 300;
+    font-size: 18px;
+  }
+  .grid1 {
+    background-color: #323565;
+    color: #fff;
+    font-size: 26px;
+    line-height: 40px;
+    height: 170px;
+    padding: 30px 20px;
+  }
+  .grid2 {
+    background-image: url("/ydd-photos/img_community-600x400.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 170px;
+    padding: 30px 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    &.grid3 {
+      background-image: url("/ydd-photos/img_mission-600x400.jpg");
+    }
+    &.grid4 {
+      background-image: url("/ydd-photos/afcf.png");
+    }
+    .inner-slide {
+      background-color: rgba(255, 255, 255, 0.925);
+      color: #000;
+      position: absolute;
+      top: 70%;
+      left: 0;
+      transition: linear all 0.3s;
+      height: 100%;
+      width: 100%;
+      padding: 15px;
+      p {
+        font-size: 18px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+    &:hover {
+      .inner-slide {
+        top: 0;
+      }
+    }
+  }
+
+  .cards-wrap {
+    padding: 30px 20px 20px;
+    margin: 30px 0 0 0;
+    box-shadow: 0px 10px 10px 0px rgba(5, 152, 46, 0.45);
+
+    .card-heading {
+      border-bottom: 1px solid #031169;
+      margin: 10px 0 20px;
+      font-weight: 600;
+      color: #222;
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+    .ant-card-body {
+      padding: 20px 0;
+    }
+    .card-text {
+      font-size: 16px;
+      color: #222;
+      line-height: 20px;
+      padding: 0;
+      margin-top: -15px;
+      text-align: center;
+      color: #05982e;
+    }
+  }
+}

@@ -6,6 +6,9 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    &.teens {
+      background-image: url("/ydd-photos/teenslide.jpg");
+    }
     p {
       text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
       color: #fff;
@@ -150,6 +153,26 @@
         }
       }
     }
+    .stagnant {
+      height: 600px;
+      background-image: url("/ydd-photos/Teens.jpg");
+      opacity: 0.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 200;
+      font-size: 54px;
+      line-height: 28px;
+      color: #000000;
+      text-shadow: 4px 3px 5px rgb(14, 33, 33);
+      color: #fff;
+    }
     .objectives {
       padding: 80px 0;
       h3 {
@@ -159,6 +182,19 @@
       }
       .circle-wrap {
         margin: 100px auto;
+        &.teens-circle {
+          .circle {
+            .inner1 {
+              background-image: url("../../public/ydd-photos/prayingimage.png");
+            }
+            .inner2 {
+              background-image: url("../../public/ydd-photos/marriage.jpg");
+            }
+            .inner3 {
+              background-image: url("../../public/ydd-photos/networkpeople.png");
+            }
+          }
+        }
         .circle {
           width: 600px;
           height: 600px;

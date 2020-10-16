@@ -1,0 +1,23 @@
+.contact {
+  padding: 0;
+  width: 100%;
+  .banner {
+    height: 500px;
+    overflow: hidden;
+  }
+  .contact-content {
+    background-color: #3bafdae3;
+    padding: 40px;
+    margin-top: 40px;
+    .header {
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      text-align: center;
+      width: 300px;
+      margin: 0 auto 40px;
+      padding: 20px 0;
+      font-size: 30px;
+      color: #000;
+    }
+  }
+}

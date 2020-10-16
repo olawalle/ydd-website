@@ -27,7 +27,7 @@ export default function login() {
     };
     console.log(data);
     apiServices
-      .login(data, authId)
+      .login(data)
       .then((res) => {
         console.log(res);
       })
@@ -38,7 +38,6 @@ export default function login() {
   };
 
   useEffect(() => {
-    console.log(router);
     let query = router.query.authId
       ? router.query.authId.replace(" ", "+")
       : "";

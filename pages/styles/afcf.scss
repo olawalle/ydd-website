@@ -7,8 +7,14 @@
     height: 500px;
     padding-top: 230px;
     text-align: center;
+    &.afcmf-banner {
+      background-image: url("/ydd-photos/afcmfbanner.jpg");
+    }
+    &.about-afcf-banner {
+      background-image: url("/ydd-photos/afcfslider2.jpg");
+    }
     p {
-      line-height: 28px;
+      line-height: 45px;
       color: #fff;
       letter-spacing: 1.5px;
       text-shadow: 5px 5px 5px rgb(14, 33, 33);
