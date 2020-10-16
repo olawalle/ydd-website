@@ -5,6 +5,7 @@ import { Button, Row, Col, Modal } from "antd";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import MainCarousel from "./components/MainCarousel";
+import Link from "next/link";
 
 export default function afcf() {
   const [visible, setvisible] = useState(false);
@@ -179,6 +180,11 @@ export default function afcf() {
                   </a>
                   <h4>TESTIMONIES</h4>
                 </div>
+                <img
+                  src="/ydd-photos/testimonies.jpg"
+                  className="attachment-800x500 size-800x500 wp-post-image"
+                  alt=""
+                />{" "}
                 <h3 className="post-title">
                   <a href="2018/01/24/standard-post-format/index.html">
                     Agent Of Change
@@ -205,6 +211,91 @@ export default function afcf() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="gallery-updates cols5 clearfix">
+        <ul>
+          <li className="format-link">
+            <Link href="/gallery">
+              <a>
+                <div className="grid-item-inner">
+                  <a target="_blank" className="media-box">
+                    <img
+                      src="/ydd-photos/Campus Videos.jpg"
+                      className="attachment-400x400 size-400x400 wp-post-image"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </a>
+            </Link>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://www.flickr.com/photos/145401401@N03/albums/72157707542025395"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/sound.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://vimeo.com/manage/folders/2583758"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/Campusphotos.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://www.instagram.com/afmwecayouth/"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/inspired.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://www.flickr.com/photos/145401401@N03/albums/with/72157677283635267"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/Campus Reports.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+        </ul>
+        <div className="gallery-updates-overlay">
+          <div className="container">
+            <i className="icon-multiple-image"></i>
+            <h2>Updates from our gallery</h2>
           </div>
         </div>
       </div>
