@@ -55,8 +55,13 @@
       .blog-text {
         font-size: 18px;
         font-weight: 300;
-        line-height: 26px;
+        line-height: 30px;
         color: #000;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 30px;
       }
       .foot {
         display: flex;

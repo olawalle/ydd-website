@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 export const eventsList = [
   {
     name: "Sunday Meet Up",
@@ -80,4 +82,4 @@ export const eventsList = [
     banner:
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
-];
+].filter((e) => dayjs(e.date).isAfter(dayjs()));

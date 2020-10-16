@@ -4,6 +4,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
     p {
       text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
       color: #fff;
@@ -22,6 +26,8 @@
       font-weight: 500;
       padding-bottom: 15px;
       border-bottom: 1px solid #000;
+      color: #000;
+      margin-top: 20px;
     }
     .time {
       font-style: italic;
@@ -34,6 +40,31 @@
       font-weight: 500;
       padding-bottom: 15px;
       border-bottom: 1px solid #000;
+      color: #000;
+      margin-top: 45px;
+    }
+    .txt {
+      font-size: 18px;
+      line-height: 30px;
+      color: #000;
+    }
+    .tags {
+      display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      width: 100%;
+      .tag {
+        border: 1px solid #eee;
+        border-radius: 2px;
+        padding: 4px 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+          border-color: #6bbcff;
+          color: #6bbcff;
+        }
+      }
     }
   }
 }

@@ -1,21 +1,30 @@
 import Search from "antd/lib/input/Search";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "./components/Footer";
 import "./styles/reports.scss";
 import { CalendarOutlined } from "@ant-design/icons";
 import Event from "./components/Event";
 import { eventsList } from "../mocks/eventsList";
+import { reportsList } from "../mocks/reportsList";
+import dayjs from "dayjs";
+import Link from "next/link";
 
 export default function reports() {
-  const reports = [
-    "Teens Reports (3)",
-    "AFCF Reports (3)",
-    "AFCMF Reports (3)",
-    "YPF Reports (3)",
-    "Couples and Family (3)",
-    "Singles Reports (3)",
-  ];
+  const [reports, setreports] = useState([]);
+  useEffect(() => {
+    let itms = reportsList.reduce((agg, itm) => {
+      agg[itm.category]
+        ? (agg[itm.category] = agg[itm.category] + 1)
+        : (agg[itm.category] = 1);
+      return agg;
+    }, {});
+    let reports = Object.keys(itms).map(
+      (key) => `${key} Reports (${itms[key]})`
+    );
+    setreports(reports);
+  }, []);
+
   return (
     <div className="reports">
       <Nav />
@@ -26,30 +35,23 @@ export default function reports() {
       <div className="container reports-contents">
         <div className="row">
           <div className="col-sm-12 col-md-8">
-            {[1, 2, 3, 4, 5].map((blog) => (
+            {reportsList.map((blog, i) => (
               <div className="blog">
-                <img src="/ydd-photos/afcfreport.jpg" alt="" />
+                <img src={`/ydd-photos/${blog.banner}`} alt="" />
                 <p className="time">
-                  <CalendarOutlined /> January 24, 2018 by <span>Admin</span>
+                  <CalendarOutlined /> {dayjs(blog.date).format("DD MMM YYYY")}{" "}
+                  <span style={{ marginLeft: 5 }}>Admin</span>
                 </p>
-                <p className="blog-title">Young Couples Forum</p>
-                <p className="blog-text">
-                  The virtual program had two guest couples connected from their
-                  respective locations, to give their various experiences and
-                  perspectives as regards the topic... how important it is for
-                  Husband and Wife to work together in Partnership to make their
-                  marriage a success. He also identified some key advantages of
-                  couples working together from Ecclesiastes 4:9-12. Some of
-                  these are - They have good reward for their labour, to prevent
-                  one another from falling, to keep warm and to have victory
-                  over the enemy in partnership.
-                </p>
+                <p className="blog-title">{blog.title}</p>
+                <p className="blog-text">{blog.content}</p>
                 <div className="foot">
-                  <span className="cont">CONTINUE READING</span>
-                  <p>
+                  <Link href={`/single-report?id=${i}`}>
+                    <span className="cont">CONTINUE READING</span>
+                  </Link>
+                  {/* <p>
                     <span>FEATURED</span>| <span>GENERAL</span>|{" "}
                     <span>UNCATEGORIZED</span> NO COMMENTS YET
-                  </p>
+                  </p> */}
                 </div>
               </div>
             ))}
@@ -82,7 +84,7 @@ export default function reports() {
             <p style={{ fontSize: 30, marginTop: 50, color: "#000" }}>
               Upcoming Events
             </p>
-            {eventsList.map((e) => (
+            {eventsList.slice(0, 3).map((e) => (
               <Event noreg={true} event={e} />
             ))}
           </div>
