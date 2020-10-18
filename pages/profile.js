@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import "./styles/profile.scss";
-import { Row, Input, Col, Avatar } from "antd";
+import { Row, Input, Col, Avatar, Button } from "antd";
 
 export default function profile() {
+  const [userData, setuserData] = useState({});
+
+  useEffect(() => {
+    let user = window.localStorage.getItem("afm-data");
+    setuserData(user ? JSON.parse(user) : {});
+  }, []);
+
+  const getDetailsIndex = () => {
+    console.log(userData);
+    if (userData.username) {
+      return `${userData.firstName.split("")[0]}${
+        userData.lastName.split("")[0]
+      }`;
+    } else {
+      return "";
+    }
+  };
+
   return (
     <div className="profile">
       <Nav />
+      <div className="banner">
+        <p className="big">Profile</p>
+      </div>
       <div className="profile-content container">
-        <div className="left">
+        {/* <div className="left">
           <ul>
             <li className="active">Personal Information</li>
             <li>Personal Information</li>
@@ -16,43 +37,36 @@ export default function profile() {
             <li>Personal Information</li>
             <li>Personal Information</li>
           </ul>
-        </div>
+        </div> */}
         <div className="right">
-          <Avatar
-            style={{
-              width: "200px",
-              height: "200px",
-              marginBottom: "30px",
-              border: "1px solid #eee",
-            }}
-            src="https://randomuser.me/api/portraits/men/91.jpg"
-          />
+          <div className="avatar">{getDetailsIndex()}</div>
           <Row gutter={20}>
-            <Col span={12}>
+            <Col md={12} sm={24}>
               <label>Firstname</label>
-              <Input size="large" />
+              <Input size="large" value={userData.firstName} />
             </Col>
-            <Col span={12}>
+            <Col md={12} sm={24}>
               <label>Lastname</label>
-              <Input size="large" />
+              <Input size="large" value={userData.lastName} />
             </Col>
-            <Col span={12}>
+            <Col md={12} sm={24}>
               <label>Username</label>
-              <Input size="large" />
+              <Input size="large" value={userData.username} />
             </Col>
-            <Col span={12}>
+            <Col md={12} sm={24}>
               <label>Branch</label>
               <Input size="large" />
             </Col>
-            <Col span={12}>
+            <Col md={12} sm={24}>
               <label>Phone number</label>
-              <Input size="large" />
+              <Input size="large" value={userData.phone} />
             </Col>
-            <Col span={12}>
+            <Col md={12} sm={24}>
               <label>Email address</label>
-              <Input size="large" />
+              <Input size="large" value={userData.email} />
             </Col>
           </Row>
+          <Button type="primary">Update</Button>
         </div>
       </div>
     </div>

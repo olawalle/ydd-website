@@ -5,6 +5,7 @@ import { Button, Row, Col, Modal, Card } from "antd";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import MainCarousel from "./components/MainCarousel";
+import Link from "next/link";
 
 export default function Afcmf() {
   const [visible, setvisible] = useState(false);
@@ -37,14 +38,19 @@ export default function Afcmf() {
           <div className="row">
             <div className="col-md-12 col-sm-12">
               <p className="header-desc">
-                In line with the Youth Development Directorate’s vision
-                statement of “raising an army of outstanding young people going
-                to heaven and persuading others to come along”, the Apostolic
-                Faith Corps Members Fellowship (AFCMF) was created. AFCMF is an
-                outreach arm of the Apostolic Faith Youth Development
-                Directorate (YDD). The aim of the fellowship is to persuasively
-                link and commit corps members to the church and her activities,
-                thereby fueling their interest and active participation.
+                In line with the Youth Development Directorate’s{" "}
+                <Link href="/about#vision">
+                  <a href="" style={{ fontWeight: "600" }}>
+                    vision statement
+                  </a>
+                </Link>{" "}
+                of “raising an army of outstanding young people going to heaven
+                and persuading others to come along”, the Apostolic Faith Corps
+                Members Fellowship (AFCMF) was created. AFCMF is an outreach arm
+                of the Apostolic Faith Youth Development Directorate (YDD). The
+                aim of the fellowship is to persuasively link and commit corps
+                members to the church and her activities, thereby fueling their
+                interest and active participation.
               </p>
             </div>
           </div>
@@ -112,7 +118,7 @@ export default function Afcmf() {
                   style={{ width: "100%", border: 0 }}
                   cover={<img alt="example" src="/ydd-photos/camp.jpg" />}
                 >
-                  <p className="card-text">Regional Retreat</p>
+                  <p className="card-text">Orientation camp</p>
                 </Card>
               </div>
               <div className="col-md-4 col-sm-12">
@@ -120,7 +126,7 @@ export default function Afcmf() {
                   style={{ width: "100%", border: 0 }}
                   cover={<img alt="example" src="/ydd-photos/agm.jpg" />}
                 >
-                  <p className="card-text">Regional Retreat</p>
+                  <p className="card-text">Annual General Meeting</p>
                 </Card>
               </div>
               <div className="col-md-4 col-sm-12">
@@ -128,7 +134,7 @@ export default function Afcmf() {
                   style={{ width: "100%", border: 0 }}
                   cover={<img alt="example" src="/ydd-photos/iycparrade.jpg" />}
                 >
-                  <p className="card-text">Regional Retreat</p>
+                  <p className="card-text">IYC Parade</p>
                 </Card>
               </div>
             </div>
@@ -211,31 +217,34 @@ export default function Afcmf() {
                   but to make the sinner want to be just like the Christian.
                 </p>{" "}
                 <p>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
+                  <Link
+                    href={{
+                      pathname: "/soulfood",
+                      query: { category: "AFCMF" },
+                    }}
                   >
-                    Continue reading <i className="fa fa-angle-right"></i>
-                  </a>
+                    <a className="basic-link">
+                      Continue reading <i className="fa fa-angle-right"></i>
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="very-latest-post format-standard">
                 <div className="title-row">
-                  <a
-                    href="blog-post.html#comments"
-                    className="comments-go"
-                    title="10 comments"
-                  >
+                  <a className="comments-go" title="10 comments">
                     <i className="icon-dialogue-text"></i>
                   </a>
                   <h4>TESTIMONIES</h4>
                 </div>
+                <img
+                  src="/ydd-photos/testimonies.jpg"
+                  className="attachment-800x500 size-800x500 wp-post-image"
+                  alt=""
+                />{" "}
                 <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
-                    Agent Of Change
-                  </a>
+                  <a>Agent Of Change</a>
                 </h3>
                 <div className="meta-data">
                   by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
@@ -249,18 +258,119 @@ export default function Afcmf() {
                   but to make the sinner want to be just like the Christian.
                 </p>{" "}
                 <p>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
+                  <Link
+                    href={{
+                      pathname: "/testimonies",
+                      query: { category: "AFCMF" },
+                    }}
                   >
-                    Continue reading <i className="fa fa-angle-right"></i>
-                  </a>
+                    <a className="basic-link">
+                      Continue reading <i className="fa fa-angle-right"></i>
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div className="gallery-updates cols5 clearfix">
+        <ul>
+          <li className="format-link">
+            <Link
+              href={{
+                pathname: "/gallery",
+                query: { category: "AFCMF" },
+              }}
+            >
+              <a>
+                <div className="grid-item-inner">
+                  <a target="_blank" className="media-box">
+                    <img
+                      src="/ydd-photos/video.jpg"
+                      className="attachment-400x400 size-400x400 wp-post-image"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </a>
+            </Link>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://soundcloud.com/apostolic-faith-weca/sets/afcmf-inspiring-audios"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/sound.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <Link
+                href={{
+                  pathname: "/picgallery",
+                  query: { category: "AFCMF" },
+                }}
+              >
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/sermon.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <Link
+                href={{
+                  pathname: "/reports",
+                  query: { category: "AFCMF" },
+                }}
+              >
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/youthreportgallery.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://www.flickr.com/photos/145401401@N03/albums/with/72157677283635267"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/inspired.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+        </ul>
+        <div className="gallery-updates-overlay">
+          <div className="container">
+            <i className="icon-multiple-image"></i>
+            <h2>Updates from our gallery</h2>
+          </div>
+        </div>
+      </div>
+
       <Footer />
       <Modal
         title="Our Mission"

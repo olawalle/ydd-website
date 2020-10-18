@@ -4,7 +4,7 @@ import * as urls from "./urls";
 let login = (data) => {
   return axios({
     method: "post",
-    url: "http://195.54.162.30:7000/api/v1/user/login",
+    url: urls.loginUrl,
     headers: {
       clientId: "A4m0xs4",
     },

@@ -1,24 +1,35 @@
 import React from "react";
 import { Carousel } from "antd";
+import { useEffect } from "react";
+import "../styles/carousel.scss";
+
+const Slide = ({ pic, i }) => {
+  return (
+    <>
+      <div className="slide">
+        <style jsx>
+          {`
+            .slide {
+              width: 100%;
+              height: 100%;
+              background-image: url("${pic}");
+              background-size: cover;
+              background-position: center;
+            }
+          `}
+        </style>
+      </div>
+    </>
+  );
+};
 
 export default function MainCarousel({ pictures }) {
   return (
     <Carousel autoplay>
       {pictures &&
-        pictures.map((pic) => (
-          <div className="carousel">
-            <div className="slide">
-              <img
-                src={pic}
-                alt=""
-                style={{
-                  width: "110%",
-                  // height: "110%",
-                  // objectPosition: "center",
-                  // objectFit: "cover",
-                }}
-              />
-            </div>
+        pictures.map((pic, i) => (
+          <div className="carousel" key={`item${i}`}>
+            <Slide pic={pic} key={i} i={i} />
           </div>
         ))}
     </Carousel>

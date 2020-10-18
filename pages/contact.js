@@ -71,7 +71,10 @@ export default function contact() {
             {...viewPort}
           />
         </div>
-        <div className="container contact-content">
+        <div
+          className="container contact-content"
+          style={{ marginBottom: 100 }}
+        >
           <p className="header">AFCF in Nigeria</p>
           <div className="row">
             <div className="col-sm-12 col-md-6">

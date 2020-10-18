@@ -5,6 +5,7 @@ import { Button, Row, Col, Modal } from "antd";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import MainCarousel from "./components/MainCarousel";
+import Link from "next/link";
 
 export default function afcf() {
   const [visible, setvisible] = useState(false);
@@ -23,12 +24,12 @@ export default function afcf() {
           shape="round"
           size="large"
         >
-          Contact us
+          <Link href="/contact">Contact us</Link>
         </Button>
       </div>
       <div className="container">
         <div className="afcf-content">
-          <div className="top-btns">
+          {/* <div className="top-btns">
             <Button
               type="primary"
               shape="round"
@@ -48,7 +49,7 @@ export default function afcf() {
             >
               Contact us
             </Button>
-          </div>
+          </div> */}
 
           <h1 className="page-heading">
             <hr />
@@ -78,10 +79,13 @@ export default function afcf() {
             <hr />
             <MainCarousel
               pictures={[
-                "/ydd-photos/follow.jpg",
-                "/ydd-photos/slide8.jpg",
-                "/ydd-photos/slide3.jpg",
-                "/ydd-photos/slide8.png",
+                "/ydd-photos/afcf2.jpg",
+                "/ydd-photos/afcf3.jpg",
+                "/ydd-photos/afcf5.jpg",
+                "/ydd-photos/afcfslider4.jpg",
+                "/ydd-photos/afcfslider5.jpg",
+                "/ydd-photos/afcfslider5.jpg",
+                "/ydd-photos/img_sermon216.jpg",
               ]}
             />
             <hr />
@@ -155,21 +159,30 @@ export default function afcf() {
                 <div className="meta-data">
                   by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
                   on January 24, 2018 in{" "}
-                  <a href="category/featured/index.html">
-                    in Youth Resources, Soul Foods
-                  </a>
+                  <Link
+                    href={{
+                      pathname: "/soulfood",
+                      query: { category: "AFCF" },
+                    }}
+                  >
+                    <a>in Youth Resources, Soul Foods</a>
+                  </Link>
                 </div>
                 <p>
                   The way to winning souls is not to be just like the sinner,
                   but to make the sinner want to be just like the Christian.
                 </p>{" "}
                 <p>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
+                  <Link
+                    href={{
+                      pathname: "/soulfood",
+                      query: { category: "AFCF" },
+                    }}
                   >
-                    Continue reading <i className="fa fa-angle-right"></i>
-                  </a>
+                    <a className="basic-link">
+                      Continue reading <i className="fa fa-angle-right"></i>
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -185,35 +198,152 @@ export default function afcf() {
                   </a>
                   <h4>TESTIMONIES</h4>
                 </div>
+                <img
+                  src="/ydd-photos/testimonies.jpg"
+                  className="attachment-800x500 size-800x500 wp-post-image"
+                  alt=""
+                />{" "}
                 <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
-                    Agent Of Change
-                  </a>
+                  <Link
+                    href={{
+                      pathname: "/reports",
+                      query: { category: "AFCF" },
+                    }}
+                  >
+                    <a>Agent Of Change</a>
+                  </Link>
                 </h3>
                 <div className="meta-data">
                   by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
                   on January 24, 2018 in{" "}
-                  <a href="category/featured/index.html">
-                    in Youth Resources, Soul Foods
-                  </a>
+                  <Link
+                    href={{
+                      pathname: "/reports",
+                      query: { category: "AFCF" },
+                    }}
+                  >
+                    <a>in Youth Resources, Soul Foods</a>
+                  </Link>
                 </div>
                 <p>
                   The way to winning souls is not to be just like the sinner,
                   but to make the sinner want to be just like the Christian.
                 </p>{" "}
                 <p>
-                  <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
+                  <Link
+                    href={{
+                      pathname: "/reports",
+                      query: { category: "ACFC" },
+                    }}
                   >
-                    Continue reading <i className="fa fa-angle-right"></i>
-                  </a>
+                    <a className="basic-link">
+                      Continue reading <i className="fa fa-angle-right"></i>
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="gallery-updates cols5 clearfix">
+        <ul>
+          <li className="format-link">
+            <Link
+              href={{
+                pathname: "/gallery",
+                query: { category: "AFCF" },
+              }}
+            >
+              <a>
+                <div className="grid-item-inner">
+                  <a target="_blank" className="media-box">
+                    <img
+                      src="/ydd-photos/Campus_Videos.jpg"
+                      className="attachment-400x400 size-400x400 wp-post-image"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </a>
+            </Link>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://soundcloud.com/apostolic-faith-weca/sets/afcf-inspiring-audios"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/sound.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <Link
+                href={{
+                  pathname: "/picgallery",
+                  query: { category: "AFCF" },
+                }}
+              >
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/Campus_Photos.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <a
+                href="https://www.instagram.com/afmwecayouth/"
+                target="_blank"
+                className="media-box"
+              >
+                <img
+                  src="/ydd-photos/inspired.jpg"
+                  className="attachment-400x400 size-400x400 wp-post-image"
+                  alt=""
+                />
+              </a>
+            </div>
+          </li>
+          <li className="format-link">
+            <div className="grid-item-inner">
+              <Link
+                href={{
+                  pathname: "/reports",
+                  query: { category: "AFCF" },
+                }}
+              >
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/Campus_Reports.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
+            </div>
+          </li>
+        </ul>
+        <div className="gallery-updates-overlay">
+          <div className="container">
+            <i className="icon-multiple-image"></i>
+            <h2>Updates from our gallery</h2>
+          </div>
+        </div>
+      </div>
+
       <Footer />
       <Modal
         title="Our Mission"

@@ -276,6 +276,12 @@ export default function Singles() {
                       </a>{" "}
                       <h4>TESTIMONIES</h4>
                     </div>
+                    <img
+                      src="/ydd-photos/testimonies.jpg"
+                      className="attachment-800x500 size-800x500 wp-post-image"
+                      alt=""
+                      style={{ marginBottom: 12 }}
+                    />{" "}
                     <h3 className="post-title">
                       <a href="#">Taught by God</a>
                     </h3>
@@ -312,10 +318,15 @@ export default function Singles() {
       <div className="gallery-updates cols5 clearfix">
         <ul>
           <li className="format-link">
-            <Link href="/gallery">
+            <Link
+              href={{
+                pathname: "/gallery",
+                query: { category: "Singles" },
+              }}
+            >
               <a>
                 <div className="grid-item-inner">
-                  <a href="#" target="_blank" className="media-box">
+                  <a className="media-box">
                     <img
                       src="/ydd-photos/video.jpg"
                       className="attachment-400x400 size-400x400 wp-post-image"
@@ -329,7 +340,7 @@ export default function Singles() {
           <li className="format-link">
             <div className="grid-item-inner">
               <a
-                href="https://www.flickr.com/photos/145401401@N03/albums/72157707542025395"
+                href="https://soundcloud.com/apostolic-faith-weca/sets/ydd-singles-forum-audios"
                 target="_blank"
                 className="media-box"
               >
@@ -343,17 +354,20 @@ export default function Singles() {
           </li>
           <li className="format-link">
             <div className="grid-item-inner">
-              <a
-                href="http://www.imithemes.com/"
-                target="_blank"
-                className="media-box"
+              <Link
+                href={{
+                  pathname: "/picgallery",
+                  query: { category: "Singles" },
+                }}
               >
-                <img
-                  src="/ydd-photos/sermon.jpg"
-                  className="attachment-400x400 size-400x400 wp-post-image"
-                  alt=""
-                />
-              </a>
+                <a className="media-box">
+                  <img
+                    src="/ydd-photos/sermon.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
             </div>
           </li>
           <li className="format-link">

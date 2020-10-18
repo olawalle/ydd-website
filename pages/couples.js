@@ -152,24 +152,20 @@ export default function Couples() {
                     <div className="col-md-6">
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
+                          <a className="comments-go" title="10 comments">
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a href="#" className="comments-go">
+                          <a className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
                           <h4>Featured</h4>
                         </div>
                         <h3 className="post-title">
-                          <a href="#">Agent Of Change</a>
+                          <a>Agent Of Change</a>
                         </h3>
                         <div className="meta-data">
-                          by <a href="#">Rey Richardson</a> on January 24, 2018
-                          in <a href="#">in Youth Resources, Soul Foods</a>
+                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
+                          <a>in Youth Resources, Soul Foods</a>
                         </div>
                         <p>
                           The way to winning souls is not to be just like the
@@ -177,7 +173,7 @@ export default function Couples() {
                           the Christian.
                         </p>{" "}
                         <p>
-                          <a href="#" className="basic-link">
+                          <a className="basic-link">
                             Continue reading{" "}
                             <i className="fa fa-angle-right"></i>
                           </a>
@@ -187,14 +183,10 @@ export default function Couples() {
                     <div className="col-md-6">
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
+                          <a className="comments-go" title="10 comments">
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a href="#" className="comments-go">
+                          <a className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
                           <h4>SOUL FOOD</h4>
@@ -205,19 +197,11 @@ export default function Couples() {
                           alt=""
                         />{" "}
                         <h3 className="post-title">
-                          <a href="2018/01/24/standard-post-format/index.html">
-                            Agent Of Change
-                          </a>
+                          <a>Agent Of Change</a>
                         </h3>
                         <div className="meta-data">
-                          by{" "}
-                          <a href="author/imicreation/index.html">
-                            Rey Richardson
-                          </a>{" "}
-                          on January 24, 2018 in{" "}
-                          <a href="category/featured/index.html">
-                            in Youth Resources, Soul Foods
-                          </a>
+                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
+                          <a>in Youth Resources, Soul Foods</a>
                         </div>
                         <p>
                           The way to winning souls is not to be just like the
@@ -225,13 +209,17 @@ export default function Couples() {
                           the Christian.
                         </p>{" "}
                         <p>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html"
-                            className="basic-link"
+                          <Link
+                            href={{
+                              pathname: "/reports",
+                              query: { category: "Couples" },
+                            }}
                           >
-                            Continue reading{" "}
-                            <i className="fa fa-angle-right"></i>
-                          </a>
+                            <a className="basic-link">
+                              Continue reading{" "}
+                              <i className="fa fa-angle-right"></i>
+                            </a>
+                          </Link>
                         </p>
                       </div>
                     </div>
@@ -240,45 +228,34 @@ export default function Couples() {
                 <div className="col-md-4">
                   <div className="very-latest-post format-standard">
                     <div className="title-row">
-                      <a
-                        href="blog-post.html#comments"
-                        className="comments-go"
-                        title="10 comments"
-                      >
+                      <a className="comments-go" title="10 comments">
                         <i className="icon-dialogue-text"></i>
                       </a>
-                      <a
-                        href="2018/01/24/standard-post-format/index.html#respond"
-                        className="comments-go"
-                      >
+                      <a className="comments-go">
                         <i className="icon-dialogue-text"></i>
                       </a>{" "}
                       <h4>TESTIMONIES</h4>
                     </div>
+                    <img
+                      src="/ydd-photos/testimonies.jpg"
+                      className="attachment-800x500 size-800x500 wp-post-image"
+                      alt=""
+                      style={{ marginBottom: 12 }}
+                    />{" "}
                     <h3 className="post-title">
-                      <a href="#">Taught by God</a>
+                      <a>Taught by God</a>
                     </h3>
                     <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">
-                        Ayomide Aderibigbe
-                      </a>{" "}
-                      on August 14, 2020 in{" "}
-                      <a href="category/featured/index.html">
-                        in Teens Resources, My School Experience
-                      </a>
+                      by <a>Ayomide Aderibigbe</a> on August 14, 2020 in{" "}
+                      <a>in Teens Resources, My School Experience</a>
                     </div>
                     <br />
                     <h3 className="post-title">
-                      <a href="#">Trusting God</a>
+                      <a>Trusting God</a>
                     </h3>
                     <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">Bolude Ajiboye</a>{" "}
-                      on August 15, 2020 in{" "}
-                      <a href="category/featured/index.html">
-                        in Teens Resources, My School Experience
-                      </a>
+                      by <a>Bolude Ajiboye</a> on August 15, 2020 in{" "}
+                      <a>in Teens Resources, My School Experience</a>
                     </div>
                   </div>
                 </div>
@@ -291,7 +268,12 @@ export default function Couples() {
       <div className="gallery-updates cols5 clearfix">
         <ul>
           <li className="format-link">
-            <Link href="/gallery">
+            <Link
+              href={{
+                pathname: "/gallery",
+                query: { category: "Couples" },
+              }}
+            >
               <a>
                 <div className="grid-item-inner">
                   <a target="_blank" className="media-box">
@@ -308,7 +290,7 @@ export default function Couples() {
           <li className="format-link">
             <div className="grid-item-inner">
               <a
-                href="https://www.flickr.com/photos/145401401@N03/albums/72157707542025395"
+                href="https://soundcloud.com/apostolic-faith-weca/sets/marriage-family-audios"
                 target="_blank"
                 className="media-box"
               >
@@ -322,17 +304,20 @@ export default function Couples() {
           </li>
           <li className="format-link">
             <div className="grid-item-inner">
-              <a
-                href="http://www.imithemes.com/"
-                target="_blank"
-                className="media-box"
+              <Link
+                href={{
+                  pathname: "/picgallery",
+                  query: { category: "Couples" },
+                }}
               >
-                <img
-                  src="/ydd-photos/sermon.jpg"
-                  className="attachment-400x400 size-400x400 wp-post-image"
-                  alt=""
-                />
-              </a>
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/sermon.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
             </div>
           </li>
           <li className="format-link">

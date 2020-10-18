@@ -17,22 +17,32 @@ export default function login() {
     password: "pa$$word",
   });
   const [authId, setauthId] = useState("");
+  const [loading, setloading] = useState(false);
 
   const userLogin = (e) => {
-    e.preventDefault();
+    setloading(true);
     const { username, password } = loginData;
     let data = {
       username,
       password,
     };
-    console.log(data);
     apiServices
       .login(data)
       .then((res) => {
-        console.log(res);
+        setloading(false);
+        window.localStorage.setItem(
+          "afm-data",
+          JSON.stringify(res.data.data.user)
+        );
+        window.localStorage.setItem(
+          "afm-data-token",
+          JSON.stringify(res.data.data.token)
+        );
+        router.push("/");
       })
       .catch((err) => {
         console.log({ err });
+        setloading(false);
         openSnackbar("Invalid username or password", 6000);
       });
   };
@@ -47,15 +57,15 @@ export default function login() {
 
   return (
     <div className="auth-wrap">
-      <img src={ydd_logo} alt="" className="logo" />
-
       <div className="login">
+        <img src={ydd_logo} alt="" className="logo" />
         <h1>Login</h1>
         <input
           type="text"
           name="u"
           placeholder="Username"
           required="required"
+          defaultValue={loginData.username}
           onChange={(e) =>
             setloginData({
               ...loginData,
@@ -68,6 +78,7 @@ export default function login() {
           name="p"
           placeholder="Password"
           required="required"
+          defaultValue={loginData.password}
           onChange={(e) =>
             setloginData({
               ...loginData,
@@ -76,9 +87,9 @@ export default function login() {
           }
         />
         <button
-          type="submit"
           className="btn btn-primary btn-block btn-large"
           onClick={userLogin}
+          disabled={loading}
         >
           Log in
         </button>

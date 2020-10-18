@@ -192,24 +192,20 @@ of human endeavour.`,
                     <div className="col-md-6">
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
+                          <a className="comments-go" title="10 comments">
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a href="#" className="comments-go">
+                          <a className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
                           <h4>Featured</h4>
                         </div>
                         <h3 className="post-title">
-                          <a href="#">Agent Of Change</a>
+                          <a>Agent Of Change</a>
                         </h3>
                         <div className="meta-data">
-                          by <a href="#">Rey Richardson</a> on January 24, 2018
-                          in <a href="#">in Youth Resources, Soul Foods</a>
+                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
+                          <a>in Youth Resources, Soul Foods</a>
                         </div>
                         <p>
                           The way to winning souls is not to be just like the
@@ -217,7 +213,7 @@ of human endeavour.`,
                           the Christian.
                         </p>{" "}
                         <p>
-                          <a href="#" className="basic-link">
+                          <a className="basic-link">
                             Continue reading{" "}
                             <i className="fa fa-angle-right"></i>
                           </a>
@@ -227,14 +223,10 @@ of human endeavour.`,
                     <div className="col-md-6">
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
+                          <a className="comments-go" title="10 comments">
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a href="#" className="comments-go">
+                          <a className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
                           <h4>SOUL FOOD</h4>
@@ -295,8 +287,13 @@ of human endeavour.`,
                       </a>{" "}
                       <h4>TESTIMONIES</h4>
                     </div>
+                    <img
+                      src="/ydd-photos/testimonies.jpg"
+                      className="attachment-800x500 size-800x500 wp-post-image"
+                      alt=""
+                    />{" "}
                     <h3 className="post-title">
-                      <a href="#">Taught by God</a>
+                      <a>Taught by God</a>
                     </h3>
                     <div className="meta-data">
                       by{" "}
@@ -310,7 +307,7 @@ of human endeavour.`,
                     </div>
                     <br />
                     <h3 className="post-title">
-                      <a href="#">Trusting God</a>
+                      <a>Trusting God</a>
                     </h3>
                     <div className="meta-data">
                       by{" "}
@@ -331,10 +328,15 @@ of human endeavour.`,
       <div className="gallery-updates cols5 clearfix">
         <ul>
           <li className="format-link">
-            <Link href="/gallery">
+            <Link
+              href={{
+                pathname: "/gallery",
+                query: { category: "YPF" },
+              }}
+            >
               <a>
                 <div className="grid-item-inner">
-                  <a href="#" target="_blank" className="media-box">
+                  <a target="_blank" className="media-box">
                     <img
                       src="/ydd-photos/video.jpg"
                       className="attachment-400x400 size-400x400 wp-post-image"
@@ -348,7 +350,7 @@ of human endeavour.`,
           <li className="format-link">
             <div className="grid-item-inner">
               <a
-                href="https://www.flickr.com/photos/145401401@N03/albums/72157707542025395"
+                href="https://soundcloud.com/apostolic-faith-weca/sets/ydd-ypf-audios"
                 target="_blank"
                 className="media-box"
               >
@@ -362,17 +364,20 @@ of human endeavour.`,
           </li>
           <li className="format-link">
             <div className="grid-item-inner">
-              <a
-                href="http://www.imithemes.com/"
-                target="_blank"
-                className="media-box"
+              <Link
+                href={{
+                  pathname: "/picgallery",
+                  query: { category: "YPF" },
+                }}
               >
-                <img
-                  src="/ydd-photos/sermon.jpg"
-                  className="attachment-400x400 size-400x400 wp-post-image"
-                  alt=""
-                />
-              </a>
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/sermon.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
             </div>
           </li>
           <li className="format-link">

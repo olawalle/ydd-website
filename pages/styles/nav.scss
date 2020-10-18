@@ -64,4 +64,50 @@
       }
     }
   }
+  .initials {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background: #aaaaaa;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 9px;
+    font-style: 20px;
+    cursor: pointer;
+  }
+  .mobile {
+    display: none !important;
+  }
+
+  @media (max-width: 767px) {
+    .mobile {
+      display: block !important;
+    }
+    .for-navi {
+      padding: 0 !important;
+    }
+    .navigation-links {
+      display: none !important;
+      &.show {
+        display: block !important;
+        width: 200px;
+        background-color: #fff;
+        position: absolute;
+        top: 58px;
+        right: 0px;
+        z-index: 1000000000;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        overflow: hidden;
+        span {
+          display: block;
+          padding: 10px 20px;
+          border-bottom: 1px solid #eee;
+          a {
+            color: #3bafda;
+          }
+        }
+      }
+    }
+  }
 }

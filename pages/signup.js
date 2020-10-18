@@ -123,9 +123,8 @@ export default function signup() {
 
   return (
     <div className="auth-wrap">
-      <img src={ydd_logo} alt="" className="logo" />
-
-      <div className="login" style={{ top: "35%" }}>
+      <div className="login signup">
+        <img src={ydd_logo} alt="" className="logo" />
         <h1>Signup</h1>
         <div className="left">
           <span>First Name</span>

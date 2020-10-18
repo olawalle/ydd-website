@@ -7,15 +7,33 @@ import Link from "next/link";
 import "../pages/styles/nav.scss";
 import { useEffect } from "react";
 import { useState } from "react";
+import { MenuOutlined } from "@ant-design/icons";
 
 const Nav = () => {
   const [darkNav, setDarkNav] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
+  const [userData, setuserData] = useState({});
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
+    let user = window.localStorage.getItem("afm-data");
+    setuserData(user ? JSON.parse(user) : {});
   }, []);
 
   const handleScroll = () => {
     window.scrollY > 70 ? setDarkNav(true) : setDarkNav(false);
+  };
+
+  const getDetailsIndex = () => {
+    console.log(userData);
+    if (userData.username) {
+      return `${userData.firstName.split("")[0]}${
+        userData.lastName.split("")[0]
+      }`;
+    } else {
+      return "";
+    }
   };
 
   return (
@@ -28,9 +46,14 @@ const Nav = () => {
                 <a title="Logo">
                   <div className="text-logo">
                     <span className="logo-icon">
-                      <i className="fa fa-heart"></i>
+                      {/* <i className="fa fa-heart"></i> */}
+                      <img
+                        src="/ydd-photos/ydd_logo.png"
+                        alt=""
+                        style={{ width: "45px" }}
+                      />
                     </span>
-                    <span className="logo-text">
+                    <span className="logo-text web">
                       AFMWECA<span> YDD</span>
                     </span>
                   </div>
@@ -41,8 +64,16 @@ const Nav = () => {
               </Link>
             </h1>
           </div>
+
+          <div className={`mobile`}>
+            {" "}
+            <Link href="/profile">
+              <div className="initials">{getDetailsIndex()}</div>
+            </Link>
+          </div>
+
           <div
-            className="navigation-links"
+            className={`navigation-links ${mobileNav ? "show" : ""}`}
             style={{ float: "right", display: "inline-block" }}
           >
             <span>
@@ -52,7 +83,7 @@ const Nav = () => {
             </span>
             <span>
               <Link href="/about">
-                <a>About</a>
+                <a>About Us</a>
               </Link>
             </span>
             <span>
@@ -60,19 +91,27 @@ const Nav = () => {
                 overlay={
                   <Menu>
                     <Menu.Item>
-                      <a href="http://www.alipay.com/">Videos</a>
+                      <Link href="/gallery">
+                        <a>Videos</a>
+                      </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="http://www.alipay.com/">Audio</a>
+                      <Link href="/picgallery">
+                        <a>Photos</a>
+                      </Link>
                     </Menu.Item>
                     <Menu.Item>
                       <a href="http://www.alipay.com/">Soundcloud audios</a>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="http://www.alipay.com/">Webcast</a>
+                      <a href="http://www.apostolicfaithweca.org/livecast/newlivecast.html">
+                        Webcast
+                      </a>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="http://www.alipay.com/">Youth reports</a>
+                      <a href="https://vimeo.com/user118214378">
+                        Inspiring Videos
+                      </a>
                     </Menu.Item>
                   </Menu>
                 }
@@ -142,12 +181,12 @@ const Nav = () => {
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/afcmf">
+                      <Link href="/testimonies">
                         <a>Testimonies</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/ypf">
+                      <Link href="/soulfood">
                         <a>Soul Food</a>
                       </Link>
                     </Menu.Item>
@@ -163,9 +202,15 @@ const Nav = () => {
               </Dropdown>
             </span>
             <span>
-              <Link href="/login">
-                <a>Login</a>
-              </Link>
+              {!userData.username ? (
+                <Link href="/login">
+                  <a>Login</a>
+                </Link>
+              ) : (
+                <Link href="/profile">
+                  <div className="initials">{getDetailsIndex()}</div>
+                </Link>
+              )}
             </span>
             {/* <span>
               <Link href="/profile">
@@ -180,6 +225,12 @@ const Nav = () => {
               </Link>
             </span> */}
           </div>
+
+          <MenuOutlined
+            onClick={() => setMobileNav(!mobileNav)}
+            style={{ color: "#000" }}
+            className="mobile"
+          />
         </div>
       </div>
     </header>

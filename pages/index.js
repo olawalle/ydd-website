@@ -23,11 +23,10 @@ export default function Home() {
     day: 0,
   });
   useEffect(() => {
-    axios.get(
-      "http://api.soundcloud.com/users/apostolic-faith-weca/playlists?client_id=0gk6cWFxRJcIGpDjYPiqm0zXGM6O6cLx"
-    );
+    // axios.get(
+    //   "http://api.soundcloud.com/users/apostolic-faith-weca/playlists?client_id=0gk6cWFxRJcIGpDjYPiqm0zXGM6O6cLx"
+    // );
 
-    // "https://api-v2.soundcloud.com/me/play-history/tracks?client_id=0gk6cWFxRJcIGpDjYPiqm0zXGM6O6cLx&limit=25&offset=0&linked_partitioning=1&app_version=1602237125&app_locale=en"
     const interval = setInterval(() => {
       let today = dayjs(eventsList[0].date);
       let endDate = dayjs();
@@ -52,14 +51,16 @@ export default function Home() {
     <div className="wrapper index">
       <div className="body">
         <Nav />
-        <MainCarousel
-          pictures={[
-            "/ydd-photos/follow.jpg",
-            "/ydd-photos/slide8.jpg",
-            "/ydd-photos/slide3.jpg",
-            "/ydd-photos/slide8.png",
-          ]}
-        />
+        <div className="main-carousel">
+          <MainCarousel
+            pictures={[
+              "/ydd-photos/follow.jpg",
+              "/ydd-photos/slide8.jpg",
+              "/ydd-photos/slide3.jpg",
+              "/ydd-photos/slide8.png",
+            ]}
+          />
+        </div>
         <div
           style={{
             width: "100%",
@@ -78,16 +79,13 @@ export default function Home() {
           <div id="content" className="content full">
             <div className="container">
               <div className="row">
-                <div className="col-md-4 col-sm-5" id="sidebar-col">
+                <div className="col-md-5 col-sm-5" id="sidebar-col">
                   <div
                     id="event_counter-1"
                     className="widget sidebar-widget widget_event_counter"
                   >
                     <section className="upcoming-event format-standard event-list-item event-dynamic">
-                      <a
-                        href="index33fe.html?event=sunday-meet-up&amp;event_date=2020-04-19"
-                        className="media-box"
-                      >
+                      <a className="media-box">
                         <img
                           src={eventsList[0].banner}
                           className="attachment-600x400 size-600x400 wp-post-image"
@@ -102,12 +100,7 @@ export default function Home() {
                           Next coming event
                         </span>
                         <h3>
-                          <a
-                            href="index33fe.html?event=sunday-meet-up&amp;event_date=2020-04-19"
-                            className="event-title"
-                          >
-                            {eventsList[0].name}
-                          </a>
+                          <a className="event-title">{eventsList[0].name}</a>
                         </h3>
                         <span className="meta-data">
                           On{" "}
@@ -200,16 +193,23 @@ export default function Home() {
                     </section>
                   </div>
                 </div>
-                <div className="col-md-8 col-sm-7" id="content-col">
+                <div className="col-md-7 col-sm-7" id="content-col">
                   <div className="element-block events-listing">
                     <div className="events-listing-header">
-                      <h3 className="element-title">Upcoming Events</h3>
+                      <Link href="/allevents">
+                        <h3
+                          className="element-title"
+                          style={{ cursor: "pointer" }}
+                        >
+                          Upcoming Events
+                        </h3>
+                      </Link>
                       <hr className="sm"></hr>
                     </div>
                     {eventsList.slice(0, 3).map((evnt) => {
                       return (
                         <div style={{ marginBottom: 40 }}>
-                          <Event noreg={false} event={evnt} />
+                          <Event noreg={true} event={evnt} />
                         </div>
                       );
                     })}
@@ -231,17 +231,10 @@ export default function Home() {
                     <div className="col-md-6">
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
-                          <a
-                            href="blog-post.html#comments"
-                            className="comments-go"
-                            title="10 comments"
-                          >
+                          <a className="comments-go" title="10 comments">
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html#respond"
-                            className="comments-go"
-                          >
+                          <a className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
                           <h4>FROM OUR BLOG</h4>
@@ -252,19 +245,11 @@ export default function Home() {
                           alt=""
                         />{" "}
                         <h3 className="post-title">
-                          <a href="2018/01/24/standard-post-format/index.html">
-                            Agent Of Change
-                          </a>
+                          <a>Agent Of Change</a>
                         </h3>
                         <div className="meta-data">
-                          by{" "}
-                          <a href="author/imicreation/index.html">
-                            Rey Richardson
-                          </a>{" "}
-                          on January 24, 2018 in{" "}
-                          <a href="category/featured/index.html">
-                            in Youth Resources, Soul Foods
-                          </a>
+                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
+                          <a>in Youth Resources, Soul Foods</a>
                         </div>
                         <p>
                           The way to winning souls is not to be just like the
@@ -272,10 +257,7 @@ export default function Home() {
                           the Christian.
                         </p>{" "}
                         <p>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html"
-                            className="basic-link"
-                          >
+                          <a className="basic-link">
                             Continue reading{" "}
                             <i className="fa fa-angle-right"></i>
                           </a>
@@ -287,18 +269,14 @@ export default function Home() {
                         <li className="format-standard">
                           <div className="row">
                             <div className="col-md-12">
-                              <a href="2018/01/24/self-hosted-audio-post-example/index.html">
+                              <a>
                                 <strong className="post-title">
                                   God Still Speaks
                                 </strong>
                               </a>
                               <div className="meta-data">
-                                by{" "}
-                                <a href="author/imicreation/index.html">
-                                  Tobi Popogbe
-                                </a>{" "}
-                                on January 24, 2018 in{" "}
-                                <a href="category/featured/index.html">
+                                by <a>Tobi Popogbe</a> on January 24, 2018 in{" "}
+                                <a>
                                   in Youth Resources, My Praythrough Experience
                                 </a>
                               </div>
@@ -308,10 +286,7 @@ export default function Home() {
                                 saw that I was desperate to have His Will done.
                               </p>{" "}
                               <p>
-                                <a
-                                  href="2018/01/24/self-hosted-audio-post-example/index.html"
-                                  className="basic-link"
-                                >
+                                <a className="basic-link">
                                   Continue reading{" "}
                                   <i className="fa fa-angle-right"></i>
                                 </a>
@@ -322,20 +297,14 @@ export default function Home() {
                         <li className="format-standard">
                           <div className="row">
                             <div className="col-md-12">
-                              <a href="2018/01/24/gallery-post-format/index.html">
+                              <a>
                                 <strong className="post-title">
                                   Mercy Found Me
                                 </strong>
                               </a>
                               <div className="meta-data">
-                                by{" "}
-                                <a href="author/imicreation/index.html">
-                                  Peter Oyeniyi
-                                </a>{" "}
-                                on January 24, 2018 in{" "}
-                                <a href="category/featured/index.html">
-                                  Youth Resources, My Salvation Story
-                                </a>
+                                by <a>Peter Oyeniyi</a> on January 24, 2018 in{" "}
+                                <a>Youth Resources, My Salvation Story</a>
                               </div>
                               <p>
                                 I remember wispering a prayer out of desperation
@@ -344,7 +313,7 @@ export default function Home() {
                                 faithful...
                               </p>{" "}
                               <p>
-                                <a href="" className="basic-link">
+                                <a>
                                   Continue reading{" "}
                                   <i className="fa fa-angle-right"></i>
                                 </a>
@@ -361,20 +330,13 @@ export default function Home() {
                   <hr className="sm"></hr>
                   <div className="very-latest-post format-standard">
                     <div className="title-row">
-                      <a
-                        href="blog-post.html#comments"
-                        className="comments-go"
-                        title="10 comments"
-                      >
+                      <a className="comments-go" title="10 comments">
                         <i className="icon-dialogue-text"></i>
                       </a>
-                      <a
-                        href="2018/01/24/standard-post-format/index.html#respond"
-                        className="comments-go"
-                      >
+                      <a className="comments-go">
                         <i className="icon-dialogue-text"></i>
                       </a>{" "}
-                      <h4>FROM OUR BLOG</h4>
+                      <h4>REPORTS FROM YDD</h4>
                     </div>
                     <img
                       src="/ydd-photos/slide1-800x500.jpg"
@@ -382,29 +344,18 @@ export default function Home() {
                       alt=""
                     />{" "}
                     <h3 className="post-title">
-                      <a href="2018/01/24/standard-post-format/index.html">
-                        Akure YLCB
-                      </a>
+                      <a>Akure YLCB</a>
                     </h3>
                     <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">
-                        Tosin Shobukola
-                      </a>{" "}
-                      on January 24, 2018 in{" "}
-                      <a href="category/featured/index.html">
-                        in Youth Resources, Reports
-                      </a>
+                      by <a>Tosin Shobukola</a> on January 24, 2018 in{" "}
+                      <a>in Youth Resources, Reports</a>
                     </div>
                     <p>
                       He stressed that the world is more interested in seeing
                       Christians live what they preach.
                     </p>{" "}
                     <p>
-                      <a
-                        href="2018/01/24/standard-post-format/index.html"
-                        className="basic-link"
-                      >
+                      <a className="basic-link">
                         Continue reading <i className="fa fa-angle-right"></i>
                       </a>
                     </p>
@@ -448,24 +399,22 @@ export default function Home() {
               </div>
             </li>
             <li className="format-link">
-              <div className="grid-item-inner">
-                <a
-                  href="http://www.imithemes.com/"
-                  target="_blank"
-                  className="media-box"
-                >
-                  <img
-                    src="/ydd-photos/sermon.jpg"
-                    className="attachment-400x400 size-400x400 wp-post-image"
-                    alt=""
-                  />
-                </a>
-              </div>
+              <Link href="/picgallery">
+                <div className="grid-item-inner">
+                  <a target="_blank" className="media-box">
+                    <img
+                      src="/ydd-photos/sermon.jpg"
+                      className="attachment-400x400 size-400x400 wp-post-image"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </Link>
             </li>
             <li className="format-link">
               <div className="grid-item-inner">
                 <a
-                  href="https://www.instagram.com/afmwecayouth/"
+                  href="http://www.apostolicfaithweca.org/livecast/newlivecast.html"
                   target="_blank"
                   className="media-box"
                 >
@@ -480,7 +429,7 @@ export default function Home() {
             <li className="format-link">
               <div className="grid-item-inner">
                 <a
-                  href="https://www.flickr.com/photos/145401401@N03/albums/with/72157677283635267"
+                  href="https://vimeo.com/user118214378"
                   target="_blank"
                   className="media-box"
                 >

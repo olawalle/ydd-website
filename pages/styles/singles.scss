@@ -1,7 +1,7 @@
 .singles {
   .banner {
     width: 100%;
-    height: 500px;
+    height: 550px;
     background-image: url("/ydd-photos/singles.jpg");
     background-size: cover;
     background-position: center;
@@ -83,33 +83,6 @@
     border-bottom: 1px solid #d937f1;
   }
 
-  &.couples {
-    .heading {
-      border-bottom: 1px solid #a40073;
-    }
-    .page-heading {
-      text-align: center;
-      background-color: #fafafa;
-      padding: 60px 0;
-      hr {
-        border: 2px solid #a40073;
-      }
-    }
-    .objectives {
-      .circle-wrap {
-        margin: 100px auto;
-        .circle {
-          border: 5px solid #a40073 !important;
-          .inner {
-            background-color: #a40073 !important;
-          }
-        }
-      }
-    }
-    .cards-wrap {
-      box-shadow: 0px 10px 10px 0px rgba(164, 0, 115, 0.45) !important;
-    }
-  }
   .ypf-content {
     .header-desc {
       font-weight: 200;
@@ -118,7 +91,7 @@
       line-height: 1.8;
       color: #000000;
       padding: 30px 0;
-      border-bottom: 1px solid #d937f1;
+      // border-bottom: 1px solid #d937f1;
     }
     .small-carousel {
       height: 300px;
@@ -289,6 +262,69 @@
         color: #222;
         line-height: 24px;
         padding: 0;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .banner {
+      height: 350px;
+      p {
+        font-weight: 200;
+        line-height: 36px;
+        color: #f7d6ac;
+        letter-spacing: 1.5px;
+        text-shadow: 4px 3px 5px #0e2121;
+        margin-bottom: 0;
+        font-size: 25px;
+        z-index: 5;
+        position: absolute;
+        text-align: center;
+        top: 45%;
+        right: unset;
+        width: 99%;
+      }
+    }
+    .ypf-content {
+      .inner-desc {
+        width: 90%;
+      }
+      .objectives {
+        padding: 80px 20px;
+        .circle-wrap {
+          .circle {
+            width: 80%;
+            height: 80vw;
+            margin: 0 10%;
+            .inner {
+              width: 110px;
+              height: 110px;
+              border: 0;
+            }
+            .inner1 {
+              margin-left: -60px;
+              margin-top: -70px;
+            }
+            .inner3 {
+              right: 0px;
+              top: 60px;
+              margin-right: -40px;
+            }
+            .inner2 {
+              top: 60px;
+              margin-left: -45px;
+            }
+            .inner5 {
+              top: 255px;
+            }
+            .inner4 {
+              top: 255px;
+            }
+          }
+        }
+      }
+      .cards-wrap .card-text {
+        margin-bottom: 40px;
       }
     }
   }

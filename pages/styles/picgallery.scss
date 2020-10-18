@@ -1,0 +1,48 @@
+.pic-gallery {
+  .pic-content {
+    margin-top: 50px;
+  }
+  .cards-wrap {
+    .card-heading {
+      border-bottom: 1px solid #031169;
+      margin: 10px 0 20px;
+      font-weight: 600;
+      color: #222;
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+    .ant-card-body {
+      padding: 10px 20px;
+    }
+    .time {
+      margin-bottom: 5px;
+      span {
+        background-color: #3bafda;
+        padding: 1px 10px;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 10px;
+      }
+    }
+    .card-title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #222;
+      line-height: 30px;
+      padding: 0;
+    }
+    .card-text {
+      font-size: 16px;
+      color: #686868;
+      line-height: 20px;
+      padding: 0;
+      min-height: 70px;
+    }
+    .viewmore {
+      color: #3bafda;
+      text-align: right;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+  }
+}

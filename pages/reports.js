@@ -9,10 +9,21 @@ import { eventsList } from "../mocks/eventsList";
 import { reportsList } from "../mocks/reportsList";
 import dayjs from "dayjs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function reports() {
   const [reports, setreports] = useState([]);
+  const router = useRouter();
+  const category = router.query.category;
+  const [items, setitems] = useState([]);
+  console.log({ category });
   useEffect(() => {
+    setitems(
+      category
+        ? reportsList.filter((r) => r.category === category)
+        : reportsList
+    );
+
     let itms = reportsList.reduce((agg, itm) => {
       agg[itm.category]
         ? (agg[itm.category] = agg[itm.category] + 1)
@@ -23,7 +34,7 @@ export default function reports() {
       (key) => `${key} Reports (${itms[key]})`
     );
     setreports(reports);
-  }, []);
+  }, [category]);
 
   return (
     <div className="reports">
@@ -35,14 +46,16 @@ export default function reports() {
       <div className="container reports-contents">
         <div className="row">
           <div className="col-sm-12 col-md-8">
-            {reportsList.map((blog, i) => (
+            {items.map((blog, i) => (
               <div className="blog">
                 <img src={`/ydd-photos/${blog.banner}`} alt="" />
                 <p className="time">
                   <CalendarOutlined /> {dayjs(blog.date).format("DD MMM YYYY")}{" "}
                   <span style={{ marginLeft: 5 }}>Admin</span>
                 </p>
-                <p className="blog-title">{blog.title}</p>
+                <p className="blog-title">
+                  {blog.title} {blog.category}
+                </p>
                 <p className="blog-text">{blog.content}</p>
                 <div className="foot">
                   <Link href={`/single-report?id=${i}`}>
@@ -76,7 +89,14 @@ export default function reports() {
                     paddingBottom: 5,
                   }}
                 >
-                  {itm}
+                  <Link
+                    href={{
+                      pathname: "/reports",
+                      query: { category: itm.split(" ")[0] },
+                    }}
+                  >
+                    {itm}
+                  </Link>
                 </li>
               ))}
             </ul>

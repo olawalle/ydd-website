@@ -7,6 +7,7 @@ import { videos } from "../mocks/videosList";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function gallery() {
   const [visible, setvisible] = useState(false);
@@ -14,6 +15,8 @@ export default function gallery() {
   const [currentVideoSet, setcurrentVideoSet] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
   const pageCount = 12;
+  const router = useRouter();
+  const category = router.query.category;
   const openModal = (link) => {
     setvisible(true);
     setSrc(link);
@@ -27,9 +30,8 @@ export default function gallery() {
         };
       })
       .slice((currentPage - 1) * pageCount, currentPage * 12);
-    console.log(videoSet, currentPage);
     setcurrentVideoSet(videoSet);
-  }, [currentPage]);
+  }, [currentPage, category]);
 
   const pageChanged = (e) => {
     setcurrentPage(e);

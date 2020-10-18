@@ -12,7 +12,7 @@ export default function about() {
         <Nav />
         <div className="main-carousel">
           <MainCarousel
-            pictures={["/ydd-photos/slide8.jpg", "/ydd-photos/follow.jpg"]}
+            pictures={["/ydd-photos/slide8.png", "/ydd-photos/follow.jpg"]}
           />
         </div>
 
@@ -34,8 +34,11 @@ export default function about() {
                 population of the Church.
                 <p>
                   <span>
-                    We are an army of <b>outstanding young people</b> serving
-                    the Lord.
+                    We are an army of{" "}
+                    <b style={{ fontWeight: "600" }}>
+                      outstanding young people
+                    </b>{" "}
+                    serving the Lord.
                   </span>
                   <span>We are a complement.</span>
                   <span>
@@ -61,7 +64,7 @@ export default function about() {
             </div>
           </div>
 
-          <div className="vision_fixed"></div>
+          <div className="vision_fixed" id="vision"></div>
 
           <div className="vision-text">
             <h3>Our Vision is:</h3>
@@ -72,7 +75,7 @@ export default function about() {
             </p>
           </div>
 
-          <div className="mission_fixed">
+          <div className="mission_fixed" id="mission">
             <div className="strip">OUR MISSION</div>
           </div>
 
@@ -113,7 +116,7 @@ export default function about() {
                 </Card>
               </div>
               <div className="col-md-3 col-sm-12">
-                <p className="card-heading">PROGRAMS</p>
+                <p className="card-heading">PROGRAMMES</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
                   cover={
@@ -141,49 +144,44 @@ export default function about() {
             </div>
           </div>
 
-          <div className="values_fixed">
+          <div className="values_fixed" id="values">
             <div className="strip">OUR VALUES</div>
           </div>
-          <h1 className="mission-heading">Our Core Values</h1>
+          <h1 className="mission-heading">Our Values</h1>
           <p className="mission-text">
-            Our belief system is based on the following core values:
+            Our belief system is based on the following values:
           </p>
           <div className="cards-wrap" style={{ marginBottom: "120px" }}>
             <div className="row">
               <div className="col-md-4 col-sm-12">
-                <p className="card-heading">STRUCTURE</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
                   cover={<img alt="example" src="/ydd-photos/aboutus4.jpg" />}
                 >
                   <p className="card-text">
-                    To facilitate the implementation of an organisational
-                    structure that will support the Youth Directorate.
+                    We value and strive to maintain the presence of God in our
+                    lives more than anything in the world
                   </p>
                 </Card>
               </div>
               <div className="col-md-4 col-sm-12">
-                <p className="card-heading">PLATFORMS</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
                   cover={<img alt="example" src="/ydd-photos/ypfslider3.jpg" />}
                 >
                   <p className="card-text">
-                    To create platforms using relevant channels through which
-                    young people can discover themselves, connect with God, the
-                    Church and one another as means of converting the world.
+                    Everything we do is geared towards the realization of our
+                    vision statement
                   </p>
                 </Card>
               </div>
               <div className="col-md-4 col-sm-12">
-                <p className="card-heading">PROGRAMS</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
                   cover={<img alt="example" src="/ydd-photos/aboutus.jpg" />}
                 >
                   <p className="card-text">
-                    To develop Spirit-inspired programmes that will passionately
-                    connect all young people to God.
+                    We give God all praises for the little He has aided us to do
                   </p>
                 </Card>
               </div>

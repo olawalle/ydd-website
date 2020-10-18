@@ -29,19 +29,19 @@ export default function Footer() {
               <h4 className="widgettitle">QUICK LINKS TO RESOURCES</h4>
               <ul>
                 <li>
-                  <a href="">Sunday School:</a>
+                  <a href="">Sunday School: </a>
                   View lessons from our beloved Sunday School books
                 </li>
                 <li>
-                  <a href="">Devotionals:</a>
+                  <a href="">Devotionals: </a>
                   Enjoy Daily morsels for your Spiritual growth
                 </li>
                 <li>
-                  <a href="">Doctrinal Resources:</a>
+                  <a href="">Doctrinal Resources: </a>
                   View lessons from our beloved Sunday School books
                 </li>
                 <li>
-                  <a href="">AFM Magazines:</a>
+                  <a href="">AFM Magazines: </a>
                   Edify your spirit with soul lifting articles
                 </li>
               </ul>
@@ -109,22 +109,25 @@ export default function Footer() {
                 </h4>
                 <ul className="social-icons-colored inversed">
                   <li className="facebook">
-                    <a href="http://www.facebook.com/" target="_blank">
+                    <a
+                      href="http://www.facebook.com/afmwecayouth"
+                      target="_blank"
+                    >
                       <i className="fa fa-facebook"></i>
                     </a>
                   </li>
                   <li className="twitter">
-                    <a href="http://twitter.com/" target="_blank">
+                    <a href="http://twitter.com/afmwecayouth" target="_blank">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li className="google-plus">
-                    <a href="http://plus.google.com/" target="_blank">
-                      <i className="fa fa-google-plus"></i>
+                    <a href="http://instagram.com/afmwecayouth" target="_blank">
+                      <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li className="vimeo-square">
-                    <a href="#" target="_blank">
+                    <a href="https://vimeo.com/user118214378" target="_blank">
                       <i className="fa fa-vimeo-square"></i>
                     </a>
                   </li>{" "}
@@ -138,7 +141,7 @@ export default function Footer() {
             <div className="col-md-6 col-sm-6 copyrights-coll">
               © 2020 AFMWECA YDD. All Rights Reserved{" "}
             </div>
-            <div className="col-md-6 col-sm-6 copyrights-colr">
+            {/* <div className="col-md-6 col-sm-6 copyrights-colr">
               <nav className="footer-nav" role="navigation">
                 <ul id="menu-footer-menu" className="">
                   <li
@@ -163,7 +166,7 @@ export default function Footer() {
                   </li>
                 </ul>{" "}
               </nav>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

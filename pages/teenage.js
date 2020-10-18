@@ -5,13 +5,16 @@ import Footer from "./components/Footer";
 import MainCarousel from "./components/MainCarousel";
 import { Card } from "antd";
 import Link from "next/link";
+// import "./styles/index.scss";
 
 export default function Teenage() {
   return (
     <div className="teenage">
       <div className="body">
         <Nav />
-        <div className="banner">.</div>
+        <div className="banner">
+          <span>Welcome to the</span> <br /> <i>Teenage Homepage</i>{" "}
+        </div>
 
         <h1 className="page-heading">
           <hr />
@@ -56,9 +59,14 @@ export default function Teenage() {
               annual Bible giants quiz competition aimed at promoting a
               scripture reading culture, as well as developing the spiritual
               capacity of our teenagers, in line with the Youth Development
-              Directorate’s vision statement. Below are some of the past winners
-              of the competition
+              Directorate’s{" "}
+              <span style={{ fontWeight: "600", color: "#031169" }}>
+                {" "}
+                <Link href="/about#vision">vision statement.</Link>{" "}
+              </span>{" "}
+              Below are some of the past winners of the competition
             </h3>
+
             <div className="main-carousel">
               <MainCarousel
                 pictures={[
@@ -70,11 +78,11 @@ export default function Teenage() {
             </div>
           </div>
 
-          <h1 className="programs-heading">Our Programs</h1>
+          <h1 className="programs-heading">Our flagship programmes</h1>
           <p className="programs-text">
-            Several programs have been set-up at various levels by the teenage
+            Several programmes have been set-up at various levels by the teenage
             ministry to develop our teenagers. See details of our teenage
-            program bouquet below:
+            programme bouquet:
           </p>
           <div className="cards-wrap" style={{ marginBottom: "120px" }}>
             <div className="row">
@@ -83,7 +91,7 @@ export default function Teenage() {
                 <Card
                   style={{ width: "100%", border: 0 }}
                   cover={
-                    <img alt="example" src="/ydd-photos/teensprograms1.jpg" />
+                    <img alt="example" src="/ydd-photos/teensprograms2.jpg" />
                   }
                 >
                   <p className="card-text">
@@ -97,9 +105,7 @@ export default function Teenage() {
                 <p className="card-heading">DISTRICT/ZONAL LEVEL</p>
                 <Card
                   style={{ width: "100%", border: 0 }}
-                  cover={
-                    <img alt="example" src="/ydd-photos/teensprograms2.jpg" />
-                  }
+                  cover={<img alt="example" src="/ydd-photos/staff111.jpg" />}
                 >
                   <p className="card-text">
                     May 27 Teenagers Programme (a part of the Youth Weekend)
@@ -171,30 +177,27 @@ export default function Teenage() {
                           is your faith?
                         </p>{" "}
                         <p>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html"
-                            className="basic-link"
+                          <Link
+                            href={{
+                              pathname: "/soulfood",
+                              query: { category: "Teens" },
+                            }}
                           >
-                            Continue reading{" "}
-                            <i className="fa fa-angle-right"></i>
-                          </a>
+                            <a className="basic-link">
+                              Continue reading{" "}
+                              <i className="fa fa-angle-right"></i>
+                            </a>
+                          </Link>
                         </p>
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="very-latest-post format-standard">
                         <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
+                          <a className="comments-go" title="10 comments">
                             <i className="icon-dialogue-text"></i>
                           </a>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html#respond"
-                            className="comments-go"
-                          >
+                          <a className="comments-go">
                             <i className="icon-dialogue-text"></i>
                           </a>{" "}
                           <h4>Featured</h4>
@@ -205,28 +208,18 @@ export default function Teenage() {
                           alt=""
                         />{" "}
                         <h3 className="post-title">
-                          <a href="#">Symbiotic Trust</a>
+                          <a>Symbiotic Trust</a>
                         </h3>
                         <div className="meta-data">
-                          <a href="author/imicreation/index.html">
-                            Teen Series 1
-                          </a>{" "}
-                          on August 15, 2020 in{" "}
-                          <a href="category/featured/index.html">
-                            Teens Resources, Soul Food
-                          </a>
+                          <a>Teen Series 1</a> on August 15, 2020 in{" "}
+                          <a>Teens Resources, Soul Food</a>
                         </div>
                         <h3 className="post-title">
                           <a href="#">Spiritual Immunisation</a>
                         </h3>
                         <div className="meta-data">
-                          <a href="author/imicreation/index.html">
-                            Teen Series 4
-                          </a>{" "}
-                          on August 15, 2020 in{" "}
-                          <a href="category/featured/index.html">
-                            Teens Resources, Soul Food
-                          </a>
+                          <a>Teen Series 4</a> on August 15, 2020 in{" "}
+                          <a>Teens Resources, Soul Food</a>
                         </div>
                         <p>
                           <a
@@ -244,11 +237,7 @@ export default function Teenage() {
                 <div className="col-md-4">
                   <div className="very-latest-post format-standard">
                     <div className="title-row">
-                      <a
-                        href="blog-post.html#comments"
-                        className="comments-go"
-                        title="10 comments"
-                      >
+                      <a className="comments-go">
                         <i className="icon-dialogue-text"></i>
                       </a>
                       <a
@@ -260,29 +249,53 @@ export default function Teenage() {
                       <h4>TESTIMONIES</h4>
                     </div>
                     <h3 className="post-title">
-                      <a href="#">Taught by God</a>
+                      <img
+                        src="/ydd-photos/testimonies.jpg"
+                        className="attachment-800x500 size-800x500 wp-post-image"
+                        alt=""
+                        style={{ marginBottom: 12 }}
+                      />{" "}
+                      <Link
+                        href={{
+                          pathname: "/reports",
+                          query: { category: "Teens" },
+                        }}
+                      >
+                        <a>Taught by God</a>
+                      </Link>
                     </h3>
                     <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">
-                        Ayomide Aderibigbe
-                      </a>{" "}
-                      on August 14, 2020 in{" "}
-                      <a href="category/featured/index.html">
-                        in Teens Resources, My School Experience
-                      </a>
+                      by <a>Ayomide Aderibigbe</a> on August 14, 2020 in{" "}
+                      <Link
+                        href={{
+                          pathname: "/reports",
+                          query: { category: "Teens" },
+                        }}
+                      >
+                        <a>in Teens Resources, My School Experience</a>
+                      </Link>
                     </div>
                     <br />
                     <h3 className="post-title">
-                      <a href="#">Trusting God</a>
+                      <Link
+                        href={{
+                          pathname: "/reports",
+                          query: { category: "Teens" },
+                        }}
+                      >
+                        <a>Trusting God</a>
+                      </Link>
                     </h3>
                     <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">Bolude Ajiboye</a>{" "}
-                      on August 15, 2020 in{" "}
-                      <a href="category/featured/index.html">
-                        in Teens Resources, My School Experience
-                      </a>
+                      by <a>Bolude Ajiboye</a> on August 15, 2020 in{" "}
+                      <Link
+                        href={{
+                          pathname: "/reports",
+                          query: { category: "Teens" },
+                        }}
+                      >
+                        <a>in Teens Resources, My School Experience</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -294,7 +307,12 @@ export default function Teenage() {
       <div className="gallery-updates cols5 clearfix">
         <ul>
           <li className="format-link">
-            <Link href="/gallery">
+            <Link
+              href={{
+                pathname: "/gallery",
+                query: { category: "Teens" },
+              }}
+            >
               <a>
                 <div className="grid-item-inner">
                   <a target="_blank" className="media-box">
@@ -311,7 +329,7 @@ export default function Teenage() {
           <li className="format-link">
             <div className="grid-item-inner">
               <a
-                href="https://www.flickr.com/photos/145401401@N03/albums/72157707542025395"
+                href="https://soundcloud.com/apostolic-faith-weca/sets/ydd-teens-audios"
                 target="_blank"
                 className="media-box"
               >
@@ -325,17 +343,20 @@ export default function Teenage() {
           </li>
           <li className="format-link">
             <div className="grid-item-inner">
-              <a
-                href="http://www.imithemes.com/"
-                target="_blank"
-                className="media-box"
+              <Link
+                href={{
+                  pathname: "/picgallery",
+                  query: { category: "Teens" },
+                }}
               >
-                <img
-                  src="/ydd-photos/teenspics.jpg"
-                  className="attachment-400x400 size-400x400 wp-post-image"
-                  alt=""
-                />
-              </a>
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/teenspics.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
             </div>
           </li>
           <li className="format-link">
@@ -355,17 +376,20 @@ export default function Teenage() {
           </li>
           <li className="format-link">
             <div className="grid-item-inner">
-              <a
-                href="https://www.flickr.com/photos/145401401@N03/albums/with/72157677283635267"
-                target="_blank"
-                className="media-box"
+              <Link
+                href={{
+                  pathname: "/reports",
+                  query: { category: "Teens" },
+                }}
               >
-                <img
-                  src="/ydd-photos/teensreport.jpg"
-                  className="attachment-400x400 size-400x400 wp-post-image"
-                  alt=""
-                />
-              </a>
+                <a target="_blank" className="media-box">
+                  <img
+                    src="/ydd-photos/teensreport.jpg"
+                    className="attachment-400x400 size-400x400 wp-post-image"
+                    alt=""
+                  />
+                </a>
+              </Link>
             </div>
           </li>
         </ul>
