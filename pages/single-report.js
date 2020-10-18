@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 import { CalendarOutlined } from "@ant-design/icons";
 import "./styles/single-report.scss";
 import { useEffect } from "react";
@@ -10,7 +10,7 @@ import { useState } from "react";
 import dayjs from "dayjs";
 import Search from "antd/lib/transfer/search";
 import { eventsList } from "../mocks/eventsList";
-import Event from "./components/Event";
+import Event from "../components/Event";
 
 export default function singleReport() {
   const [currentReport, setReport] = useState({});

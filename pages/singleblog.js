@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Nav from "../components/Nav";
 import { blogsList } from "../mocks/blogsList";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 import "./styles/singleblog.scss";
 
 export default function singleblog() {

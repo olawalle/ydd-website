@@ -26,7 +26,6 @@ const Nav = () => {
   };
 
   const getDetailsIndex = () => {
-    console.log(userData);
     if (userData.username) {
       return `${userData.firstName.split("")[0]}${
         userData.lastName.split("")[0]

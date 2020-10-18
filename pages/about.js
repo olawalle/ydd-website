@@ -2,8 +2,8 @@ import Nav from "../components/Nav";
 import Link from "next/link";
 import "./styles/index.scss";
 import "./styles/about.scss";
-import MainCarousel from "./components/MainCarousel";
-import Footer from "./components/Footer";
+import MainCarousel from "../components/MainCarousel";
+import Footer from "../components/Footer";
 import { Card } from "antd";
 export default function about() {
   return (

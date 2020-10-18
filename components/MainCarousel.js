@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "antd";
 import { useEffect } from "react";
-import "../styles/carousel.scss";
+import "../pages/styles/carousel.scss";
 
 const Slide = ({ pic, i }) => {
   return (

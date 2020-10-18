@@ -1,10 +1,10 @@
 import Search from "antd/lib/input/Search";
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 import "./styles/reports.scss";
 import { CalendarOutlined } from "@ant-design/icons";
-import Event from "./components/Event";
+import Event from "../components/Event";
 import { eventsList } from "../mocks/eventsList";
 import { reportsList } from "../mocks/reportsList";
 import dayjs from "dayjs";

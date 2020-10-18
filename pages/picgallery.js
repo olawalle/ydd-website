@@ -2,8 +2,8 @@ import { Card } from "antd";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import Footer from "./components/Footer";
-import MainCarousel from "./components/MainCarousel";
+import Footer from "../components/Footer";
+import MainCarousel from "../components/MainCarousel";
 import "./styles/picgallery.scss";
 import { gallery } from "../mocks/galleryData";
 
@@ -13,7 +13,9 @@ export default function Picgallery() {
   const [items, setitems] = useState([]);
   useEffect(() => {
     setitems(
-      category ? gallery.filter((r) => r.category === category) : gallery
+      category
+        ? gallery.filter((r) => r.category === category || r.category === "")
+        : gallery
     );
   }, [category]);
 
@@ -40,7 +42,7 @@ export default function Picgallery() {
         <div className="pic-content container">
           <div className="cards-wrap" style={{ marginBottom: "120px" }}>
             <div className="row">
-              {gallery.map((itm) => (
+              {items.map((itm) => (
                 <div
                   className="col-md-3 col-sm-12"
                   style={{ marginBottom: 60 }}

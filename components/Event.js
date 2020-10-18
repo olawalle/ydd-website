@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/event.scss";
+import "../pages/styles/event.scss";
 import * as dayjs from "dayjs";
 
 export default function Event({ noreg, event }) {
@@ -15,9 +15,11 @@ export default function Event({ noreg, event }) {
       >
         <div className="event-list-item-date">
           <span className="event-date">
-            <span className="event-day">{dayjs(event.date).format("DD")}</span>
+            <span className="event-day">
+              {dayjs(event && event.date).format("DD")}
+            </span>
             <span className="event-month">
-              {dayjs(event.date).format("MMM, YYYY")}
+              {dayjs(event && event.date).format("MMM, YYYY")}
             </span>
           </span>
         </div>
@@ -25,21 +27,23 @@ export default function Event({ noreg, event }) {
           <div className="lined-info">
             <h4>
               <a href="#" className="event-title">
-                {event.name}
+                {event && event.name}
               </a>
             </h4>
           </div>
           <div className="lined-info">
             <span className="meta-data">
               <i className="fa fa-clock-o"></i>
-              <span className="event-time">{event.time}</span>{" "}
+              <span className="event-time">{event && event.time}</span>{" "}
               <span className="label label-primary">Upcoming</span>
             </span>
           </div>
           <div className="lined-info event-location">
             <span className="meta-data">
               <i className="fa fa-map-marker"></i>{" "}
-              <span className="event-location-address">{event.address}</span>
+              <span className="event-location-address">
+                {event && event.address}
+              </span>
             </span>
           </div>{" "}
         </div>

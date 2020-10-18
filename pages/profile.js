@@ -59,7 +59,7 @@ export default function profile() {
             </Col>
             <Col md={12} sm={24}>
               <label>Phone number</label>
-              <Input size="large" value={userData.phone} />
+              <Input size="large" value={userData.phoneNumber} />
             </Col>
             <Col md={12} sm={24}>
               <label>Email address</label>

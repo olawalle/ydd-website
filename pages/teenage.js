@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles/teenage.scss";
 import Nav from "../components/Nav";
-import Footer from "./components/Footer";
-import MainCarousel from "./components/MainCarousel";
+import Footer from "../components/Footer";
+import MainCarousel from "../components/MainCarousel";
 import { Card } from "antd";
 import Link from "next/link";
 // import "./styles/index.scss";

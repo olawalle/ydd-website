@@ -2,9 +2,9 @@ import React from "react";
 import "./styles/afcf.scss";
 import Nav from "../components/Nav";
 import { Button, Row, Col, Modal } from "antd";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 import { useState } from "react";
-import MainCarousel from "./components/MainCarousel";
+import MainCarousel from "../components/MainCarousel";
 import Link from "next/link";
 
 export default function afcf() {
@@ -343,7 +343,6 @@ export default function afcf() {
           </div>
         </div>
       </div>
-
       <Footer />
       <Modal
         title="Our Mission"
