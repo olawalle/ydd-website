@@ -25,28 +25,15 @@ export default function about() {
 
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <p className="abt">About us</p>
+              <p className="abt" style={{ marginTop: 50 }}>
+                About us
+              </p>
               <p className="desc">
                 The AFM WECA Youth Development Directorate (YDD) is the youth
                 centered focus-area of the Apostolic Faith Mission work in West
                 and Central Africa, born out of the necessity to focus on
                 various need areas particular to the young and thriving
                 population of the Church.
-                <p>
-                  <span>
-                    We are an army of{" "}
-                    <b style={{ fontWeight: "600" }}>
-                      outstanding young people
-                    </b>{" "}
-                    serving the Lord.
-                  </span>
-                  <span>We are a complement.</span>
-                  <span>
-                    We are executors of the Church Management’s initiatives.
-                  </span>
-                  <span>We are generators of ideas.</span>
-                  <span>We are the energy of the Gospel train.</span>
-                </p>
               </p>
             </div>
             <div className="col-md-6 col-sm-12">
@@ -80,10 +67,6 @@ export default function about() {
           </div>
 
           <h1 className="mission-heading">Our Mission</h1>
-          <p className="mission-text">
-            The following four (4) key pillars have been setup as our mission
-            statement to drive the actualisation of the YDD vision
-          </p>
           <div className="cards-wrap">
             <div className="row">
               <div className="col-md-3 col-sm-12">

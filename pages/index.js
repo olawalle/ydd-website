@@ -10,10 +10,13 @@ import Platforms from "../components/Platforms";
 import Footer from "../components/Footer";
 import Event from "../components/Event";
 import { eventsList } from "../mocks/eventsList";
+import { blogsList } from "../mocks/blogsList";
+import { reportsList } from "../mocks/reportsList";
 import { useEffect } from "react";
 import * as dayjs from "dayjs";
 import { useState } from "react";
 import axios from "axios";
+import Blog from "../components/Blog";
 
 export default function Home() {
   const [countdown, setcountdown] = useState({
@@ -239,29 +242,12 @@ export default function Home() {
                           </a>{" "}
                           <h4>FROM OUR BLOG</h4>
                         </div>
-                        <img
-                          src="/ydd-photos/slide1-800x500.jpg"
-                          className="attachment-800x500 size-800x500 wp-post-image"
-                          alt=""
-                        />{" "}
-                        <h3 className="post-title">
-                          <a>Agent Of Change</a>
-                        </h3>
-                        <div className="meta-data">
-                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
-                          <a>in Youth Resources, Soul Foods</a>
-                        </div>
-                        <p>
-                          The way to winning souls is not to be just like the
-                          sinner, but to make the sinner want to be just like
-                          the Christian.
-                        </p>{" "}
-                        <p>
-                          <a className="basic-link">
-                            Continue reading{" "}
-                            <i className="fa fa-angle-right"></i>
-                          </a>
-                        </p>
+
+                        <ul className="blog-classic-listing">
+                          <li className="format-standard">
+                            <Blog blog={blogsList[0]} withImage={true} />
+                          </li>
+                        </ul>
                       </div>
                     </div>
                     <div className="col-md-6">
@@ -269,55 +255,14 @@ export default function Home() {
                         <li className="format-standard">
                           <div className="row">
                             <div className="col-md-12">
-                              <a>
-                                <strong className="post-title">
-                                  God Still Speaks
-                                </strong>
-                              </a>
-                              <div className="meta-data">
-                                by <a>Tobi Popogbe</a> on January 24, 2018 in{" "}
-                                <a>
-                                  in Youth Resources, My Praythrough Experience
-                                </a>
-                              </div>
-                              <p>
-                                One thing worked for me and it is that I never
-                                wanted anything out of God's will, and He always
-                                saw that I was desperate to have His Will done.
-                              </p>{" "}
-                              <p>
-                                <a className="basic-link">
-                                  Continue reading{" "}
-                                  <i className="fa fa-angle-right"></i>
-                                </a>
-                              </p>
+                              <Blog blog={blogsList[1]} withImage={false} />
                             </div>
                           </div>
                         </li>
                         <li className="format-standard">
                           <div className="row">
                             <div className="col-md-12">
-                              <a>
-                                <strong className="post-title">
-                                  Mercy Found Me
-                                </strong>
-                              </a>
-                              <div className="meta-data">
-                                by <a>Peter Oyeniyi</a> on January 24, 2018 in{" "}
-                                <a>Youth Resources, My Salvation Story</a>
-                              </div>
-                              <p>
-                                I remember wispering a prayer out of desperation
-                                to God saying if He could help me get my life
-                                together, i'll give Him a chance; and God was
-                                faithful...
-                              </p>{" "}
-                              <p>
-                                <a>
-                                  Continue reading{" "}
-                                  <i className="fa fa-angle-right"></i>
-                                </a>
-                              </p>
+                              <Blog blog={blogsList[2]} withImage={false} />
                             </div>
                           </div>
                         </li>
@@ -338,27 +283,11 @@ export default function Home() {
                       </a>{" "}
                       <h4>REPORTS FROM YDD</h4>
                     </div>
-                    <img
-                      src="/ydd-photos/slide1-800x500.jpg"
-                      className="attachment-800x500 size-800x500 wp-post-image"
-                      alt=""
-                    />{" "}
-                    <h3 className="post-title">
-                      <a>Akure YLCB</a>
-                    </h3>
-                    <div className="meta-data">
-                      by <a>Tosin Shobukola</a> on January 24, 2018 in{" "}
-                      <a>in Youth Resources, Reports</a>
-                    </div>
-                    <p>
-                      He stressed that the world is more interested in seeing
-                      Christians live what they preach.
-                    </p>{" "}
-                    <p>
-                      <a className="basic-link">
-                        Continue reading <i className="fa fa-angle-right"></i>
-                      </a>
-                    </p>
+                    <ul className="blog-classic-listing">
+                      <li className="format-standard">
+                        <Blog blog={reportsList[0]} withImage={true} />
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -386,7 +315,7 @@ export default function Home() {
             <li className="format-link">
               <div className="grid-item-inner">
                 <a
-                  href="https://www.flickr.com/photos/145401401@N03/albums/72157707542025395"
+                  href="https://soundcloud.com/apostolic-faith-weca/sets/ydd-teens-audios"
                   target="_blank"
                   className="media-box"
                 >

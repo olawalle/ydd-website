@@ -100,7 +100,9 @@ const Nav = () => {
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="http://www.alipay.com/">Soundcloud audios</a>
+                      <a href="https://soundcloud.com/apostolic-faith-weca/sets/">
+                        Soundcloud audios
+                      </a>
                     </Menu.Item>
                     <Menu.Item>
                       <a href="http://www.apostolicfaithweca.org/livecast/newlivecast.html">

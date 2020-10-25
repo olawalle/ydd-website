@@ -11,6 +11,10 @@ import bg4 from "../public/ydd-photos/ypf4.jpg";
 import bg5 from "../public/ydd-photos/ypf5.jpg";
 import { useEffect } from "react";
 import Link from "next/link";
+import Blog from "../components/Blog";
+import { blogsList } from "../mocks/blogsList";
+import { soulfoodList_ } from "../mocks/soulfoodList";
+import { testimoniesList } from "../mocks/testimoniesList";
 
 export default function Couples() {
   const [items, setitems] = useState([
@@ -139,126 +143,61 @@ export default function Couples() {
             </div>
           </div>
 
-          <div id="content" className="content full">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <p className="heading mt100">
-                    <b>From Our Blog</b>
-                  </p>
+          <div className="row" style={{ marginTop: "70px" }}>
+            <div className="col-md-4">
+              <div className="very-latest-post format-standard">
+                <div className="title-row">
+                  <h4>FEATURED</h4>
                 </div>
-                <div className="col-md-8">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="very-latest-post format-standard">
-                        <div className="title-row">
-                          <a className="comments-go" title="10 comments">
-                            <i className="icon-dialogue-text"></i>
-                          </a>
-                          <a className="comments-go">
-                            <i className="icon-dialogue-text"></i>
-                          </a>{" "}
-                          <h4>Featured</h4>
-                        </div>
-                        <h3 className="post-title">
-                          <a>Agent Of Change</a>
-                        </h3>
-                        <div className="meta-data">
-                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
-                          <a>in Youth Resources, Soul Foods</a>
-                        </div>
-                        <p>
-                          The way to winning souls is not to be just like the
-                          sinner, but to make the sinner want to be just like
-                          the Christian.
-                        </p>{" "}
-                        <p>
-                          <a className="basic-link">
-                            Continue reading{" "}
-                            <i className="fa fa-angle-right"></i>
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="very-latest-post format-standard">
-                        <div className="title-row">
-                          <a className="comments-go" title="10 comments">
-                            <i className="icon-dialogue-text"></i>
-                          </a>
-                          <a className="comments-go">
-                            <i className="icon-dialogue-text"></i>
-                          </a>{" "}
-                          <h4>SOUL FOOD</h4>
-                        </div>
-                        <img
-                          src="/ydd-photos/soulfood.png"
-                          className="attachment-800x500 size-800x500 wp-post-image"
-                          alt=""
-                        />{" "}
-                        <h3 className="post-title">
-                          <a>Agent Of Change</a>
-                        </h3>
-                        <div className="meta-data">
-                          by <a>Rey Richardson</a> on January 24, 2018 in{" "}
-                          <a>in Youth Resources, Soul Foods</a>
-                        </div>
-                        <p>
-                          The way to winning souls is not to be just like the
-                          sinner, but to make the sinner want to be just like
-                          the Christian.
-                        </p>{" "}
-                        <p>
-                          <Link
-                            href={{
-                              pathname: "/reports",
-                              query: { category: "Couples" },
-                            }}
-                          >
-                            <a className="basic-link">
-                              Continue reading{" "}
-                              <i className="fa fa-angle-right"></i>
-                            </a>
-                          </Link>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      blog={
+                        blogsList.find((b) => b.category === "Couples") ||
+                        blogsList[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="very-latest-post format-standard">
+                <div className="title-row">
+                  <h4>SOULFOOD</h4>
                 </div>
-                <div className="col-md-4">
-                  <div className="very-latest-post format-standard">
-                    <div className="title-row">
-                      <a className="comments-go" title="10 comments">
-                        <i className="icon-dialogue-text"></i>
-                      </a>
-                      <a className="comments-go">
-                        <i className="icon-dialogue-text"></i>
-                      </a>{" "}
-                      <h4>TESTIMONIES</h4>
-                    </div>
-                    <img
-                      src="/ydd-photos/testimonies.jpg"
-                      className="attachment-800x500 size-800x500 wp-post-image"
-                      alt=""
-                      style={{ marginBottom: 12 }}
-                    />{" "}
-                    <h3 className="post-title">
-                      <a>Taught by God</a>
-                    </h3>
-                    <div className="meta-data">
-                      by <a>Ayomide Aderibigbe</a> on August 14, 2020 in{" "}
-                      <a>in Teens Resources, My School Experience</a>
-                    </div>
-                    <br />
-                    <h3 className="post-title">
-                      <a>Trusting God</a>
-                    </h3>
-                    <div className="meta-data">
-                      by <a>Bolude Ajiboye</a> on August 15, 2020 in{" "}
-                      <a>in Teens Resources, My School Experience</a>
-                    </div>
-                  </div>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      category="soulfood"
+                      blog={
+                        soulfoodList_.find((b) => b.category === "Couples") ||
+                        soulfoodList_[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="very-latest-post format-standard">
+                <div className="title-row">
+                  <h4>TESTIMONIES</h4>
                 </div>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      category="testimonies"
+                      blog={
+                        testimoniesList.find((b) => b.category === "Couples") ||
+                        testimoniesList[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

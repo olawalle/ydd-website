@@ -124,7 +124,9 @@ export default function signup() {
   return (
     <div className="auth-wrap">
       <div className="login signup">
-        <img src={ydd_logo} alt="" className="logo" />
+        <Link href="/">
+          <img src={ydd_logo} alt="" className="logo" />
+        </Link>
         <h1>Signup</h1>
         <div className="left">
           <span>First Name</span>

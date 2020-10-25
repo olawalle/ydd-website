@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Footer() {
+  const [request, setRequest] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <footer className="site-footer">
       <div className="container">
@@ -29,30 +31,34 @@ export default function Footer() {
               <h4 className="widgettitle">QUICK LINKS TO RESOURCES</h4>
               <ul>
                 <li>
-                  <a href="">Sunday School: </a>
+                  <a href="http://apostolicfaithweca.org/sunday-school-lessons">
+                    Sunday School:{" "}
+                  </a>
                   View lessons from our beloved Sunday School books
                 </li>
                 <li>
-                  <a href="">Devotionals: </a>
+                  <a href="http://apostolicfaith.org/daily-devotional">
+                    Devotionals:{" "}
+                  </a>
                   Enjoy Daily morsels for your Spiritual growth
                 </li>
                 <li>
-                  <a href="">Doctrinal Resources: </a>
+                  <a href="http://apostolicfaith.org/library/doctrinal">
+                    Doctrinal Resources:{" "}
+                  </a>
                   View lessons from our beloved Sunday School books
                 </li>
                 <li>
-                  <a href="">AFM Magazines: </a>
+                  <a href="http://apostolicfaith.org/library/online-magazine/volumes?volumeid=17472906">
+                    AFM Magazines:{" "}
+                  </a>
                   Edify your spirit with soul lifting articles
                 </li>
               </ul>
             </div>
             <div className="col-md-4 col-sm-4 widget footer-widget widget_newsletter">
               <h4 className="widgettitle">PRAYER REQUESTS</h4>
-              <p>
-                Subscribe to our newsletter in order to receive the latest new &
-                articles. We promise we won't spam your inbox!
-              </p>
-              <form method="post" action="#">
+              <form>
                 <textarea
                   rows="3"
                   cols="100"
@@ -60,7 +66,8 @@ export default function Footer() {
                   id="message"
                   required
                   data-validation-required-message="Please enter your message"
-                  placeholder="Enter your Prayer request for the people of God to intercede on your behalf"
+                  placeholder="Enter your prayer requests here. We will join you in prayers"
+                  onChange={(e) => setRequest(e.target.value)}
                 ></textarea>
 
                 <input
@@ -69,13 +76,14 @@ export default function Footer() {
                   id="email-nl"
                   placeholder="Enter your email"
                   className="form-control"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <input
-                  type="submit"
-                  name="newsletter_submit"
+                <a
                   className="btn btn-primary btn-block btn-lg"
-                  value="Submit"
-                />
+                  href={`mailto:youthinfo@apostolicfaithweca.org?subject=Prayer request from ${email}&body=${request}`}
+                >
+                  Submit
+                </a>
               </form>
             </div>
           </div>

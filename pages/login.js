@@ -58,8 +58,12 @@ export default function login() {
   return (
     <div className="auth-wrap">
       <div className="login">
-        <img src={ydd_logo} alt="" className="logo" />
+        <Link href="/">
+          <img src={ydd_logo} alt="" className="logo" />
+        </Link>
         <h1>Login</h1>
+
+        <p className="label">Email address</p>
         <input
           type="text"
           name="u"
@@ -73,6 +77,8 @@ export default function login() {
             })
           }
         />
+
+        <p className="label">Password</p>
         <input
           type="password"
           name="p"

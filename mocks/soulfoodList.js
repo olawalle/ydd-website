@@ -1,11 +1,19 @@
-export const soulfoodList = [
+export const soulfoodList_ = [
   {
     title: "Holy Life",
     date: "January 24, 2018",
     writer: "Dan Baker",
     banner: "soulfood.jpg",
     category: "General",
-    tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Can a person really be expected to live a holy life in this world? When God said, “Be ye holy, for I am holy,” did He really mean for us to take Him literally? Surely, He knows it is possible!
     ​I mean, consider what the average Joe has to face each day: television and advertising assault him with sensuality and materialism; contemporary music glorifies lifestyles that are anything but holy; the people he works with urge him to loosen up and go with the flow. On and on it goes. And it isn’t any better for the average Mary—she faces all the above and more.
     ​So, in the midst of all this, we’re supposed to act like angels? Now I’m not saying we don’t want to, after all, we are Christians and we certainly do want to make Heaven when this life ends. But we get kind of concerned when we read in the twelfth chapter of Hebrews that without holiness, “no man shall see the Lord”. So, what’s the answer? And just what is holiness?
@@ -31,7 +39,15 @@ export const soulfoodList = [
     writer: "Rey Richardson",
     banner: "soulfood.jpg",
     category: "General",
-    tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `During my last semester of Graduate School, I met a gentleman who was very unusual. He had it deep knowledge of the water cold what would made steam well usual is my estimation- And I think in the lights of the world of God also- was that he was covered with the truth honey comes. I do not want to judge him, so I told myself he probably got those before he knew the Lord. If it were me, I would have done the best I could to cover them up, but he seems to pride himself in showing them off.
 
     What caused me to speak up was that one day he came to class wearing across in is right here. We had a break and, as usual, he came to me looking for a deep conversation in the Bible. So I asked him, “what's with the cross on the tattoo? Will you please explain this to me? The last I checked, my Bible says I should not mark my body and I should not bore over in my ear.” He responded by powerful St Paul’s words in 1 Corinthians 9: 20-23, Say, “with did you I became a Jew I went to Gentiles I became a Gentile , all to gain them for Christ.” When I tried to explain this passage to him, I noticed that he got agitated. He told me that i did not know how to gain souls for the Lord, but I asked, “who gained whom here? you are supposed to change a Sinner to believe a comma but you put on the tattoo to identify with him, so who gained whom?”
@@ -63,7 +79,15 @@ export const soulfoodList = [
     writer: "Dan Baker",
     banner: "soulfood.jpg",
     category: "General",
-    tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Should I move my wife and family to Denver or Kansas City? Does God want my husband and me to have children? Who am I going to marry? Is college for me? Is this the time to talk to my wayward grandson about his soul? Which job does the Lord want me to take? What avenue of Christain service am I supposed to be following?
     On and on it goes as we travel through life. We need constant direction, and as Christians, we are taught that we need to look to God for guidance. We know that He alone can see tomorrow and that only He truly knows what is best for us. But our Bible concordances don’t even list Denver or Kansas City! So how are we supposed to know?
     
@@ -100,7 +124,15 @@ export const soulfoodList = [
     writer: "Loyce Carver",
     banner: "soulfood.jpg",
     category: "General",
-    tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Don’t just accept someone else’s idea! Exercise your own will! Be Independent and think for yourself! Have you ever heard that philosophy expressed? in Rd it's the fashion not to worry about doctrines and persuasions that been taught to us. If we have a religious belief, we may be told that we were bent that way by our upbringing. Standing for a believe rightly placed in God almighty is not a sign of being a weakling. It is a sign of strength to stick by your faith and to say, “I want to do what I ought to do.” If you have the position, stay with it. There is power in standing up for your convictions! In the book of Daniel, we read of foiled men who stood for what they knew was right. Daniel, Shadrach, Meshach, and Abednego, captives of the king of Babylon where called to be students in the school of Chaldeans. The young man choosing not to be “skip food in all wisdom unclean in knowledge” that they might be educated in the Chaldean language. The King wanted specimen who would look good in the company of Kings. In number who met the King specification may have been chosen, but Daniel and his friends are the ones who know about it. And the whole story hinges on conviction.
 
     The men selected for this schooling were to be fed with the Kings meet. But we read, “Daniel proposed in his heart that he would not defile himself with the portion of the Kings meat, nor with the wine which he drank: Therefore he requested for the Prince of the eunuchs that he might not defile himself” (Daniel 1:8)

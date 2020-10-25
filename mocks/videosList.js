@@ -28,7 +28,7 @@ export const videos = [
     desc: "Young Couples Forum",
     link: "https://www.youtube.com/embed/40DMcPygQcI",
     date: "May 01, 2020",
-    category: "Marriage and Family",
+    category: "Couples",
   },
   {
     desc: "Shout To The Lord",

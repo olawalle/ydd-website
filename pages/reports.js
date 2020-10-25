@@ -53,13 +53,23 @@ export default function reports() {
                   <CalendarOutlined /> {dayjs(blog.date).format("DD MMM YYYY")}{" "}
                   <span style={{ marginLeft: 5 }}>Admin</span>
                 </p>
-                <p className="blog-title">
-                  {blog.title} {blog.category}
+                <p className="blog-title" style={{ lineHeight: "40px" }}>
+                  {blog.title}
                 </p>
                 <p className="blog-text">{blog.content}</p>
                 <div className="foot">
-                  <Link href={`/single-report?id=${i}`}>
-                    <span className="cont">CONTINUE READING</span>
+                  <Link
+                    href={{
+                      pathname: "/singlereport",
+                      query: {
+                        title: `${blog.title}`,
+                        type: "report",
+                      },
+                    }}
+                  >
+                    <a>
+                      <span className="cont">continue reading</span>
+                    </a>
                   </Link>
                   {/* <p>
                     <span>FEATURED</span>| <span>GENERAL</span>|{" "}

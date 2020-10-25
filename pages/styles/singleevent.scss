@@ -1,0 +1,205 @@
+.single-event {
+  padding: 0;
+  margin: 0;
+  .banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg");
+    &::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 12;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  .info {
+    background-color: #2a334e;
+    padding: 100px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #b6b6b6;
+    p {
+      font-size: 34px;
+      font-weight: 600;
+      color: #fff;
+      padding-bottom: 20px;
+      border-bottom: 0.5px solid #fff;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+    }
+  }
+  .countdown {
+    min-height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 200px;
+    text-align: left;
+    position: relative;
+    background-image: url(https://ladiescamp.schoolofvirtue.org/assets/img/bg-img/17.jpg);
+    &::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: #c63fa4;
+      background-image: -moz-linear-gradient(120deg, #df42b1 0%, #505add 100%);
+      background-image: -webkit-linear-gradient(
+        120deg,
+        #df42b1 0%,
+        #505add 100%
+      );
+      background-image: -ms-linear-gradient(120deg, #df42b1 0%, #505add 100%);
+      opacity: 0.9;
+      z-index: 3;
+    }
+    .container {
+      position: relative;
+      z-index: 6;
+    }
+    .small {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: 400;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    .large {
+      color: #ffffff;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+    .bordered {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #fff;
+      text-align: center;
+      padding-top: 30px;
+      color: #fff;
+      .count {
+        font-weight: 600;
+        font-size: 48px;
+        margin-bottom: 5px;
+      }
+      .tag {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+  .schedule {
+    padding: 100px 0;
+    background-color: #1f273f;
+    text-align: center;
+    .top {
+      color: #b63b50;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+    .btm {
+      font-size: 38px;
+      color: #ffffff;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+    .tabs {
+      border-radius: 12px;
+      overflow: hidden;
+      width: 600px;
+      margin-bottom: 20px;
+      margin: 20px auto;
+      .tab {
+        width: 200px;
+        color: #9293bc;
+        background-color: #1f2371;
+        text-align: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        padding: 15px 30px;
+        border-bottom: none;
+        border-top: none;
+        border-left: none;
+        display: inline-block;
+        cursor: pointer;
+        &.mid {
+          border-right: 1px solid #4c4f8d;
+          border-left: 1px solid #4c4f8d;
+        }
+        &.active {
+          background-color: #494977;
+        }
+        .date {
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 0;
+          text-transform: capitalize;
+        }
+      }
+    }
+    .itenery {
+      width: 100%;
+      border: 1px solid #444675;
+      border-radius: 10px;
+      padding: 25px 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      color: #fff;
+      margin-top: 30px;
+      &:hover {
+        border: 1px solid #683458;
+      }
+      .event {
+        font-size: 20px;
+      }
+      .times {
+        font-weight: 200;
+      }
+      .location {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .join {
+        padding: 10px 50px;
+        border-radius: 40px;
+        border: 0;
+        color: #fff;
+        font-size: 16px;
+        background-image: -webkit-linear-gradient(
+          120deg,
+          #505add 0%,
+          #b63b50 100%
+        );
+        background-image: -ms-linear-gradient(120deg, #505add 0%, #b63b50 100%);
+        i {
+          margin-left: 10px;
+          font-size: 14px;
+          font-weight: 200;
+        }
+        &:active {
+          outline: none;
+        }
+      }
+    }
+  }
+}

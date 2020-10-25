@@ -6,6 +6,10 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import MainCarousel from "../components/MainCarousel";
 import Link from "next/link";
+import Blog from "../components/Blog";
+import { blogsList } from "../mocks/blogsList";
+import { testimoniesList } from "../mocks/testimoniesList";
+import { soulfoodList_ } from "../mocks/soulfoodList";
 
 export default function afcf() {
   const [visible, setvisible] = useState(false);
@@ -95,152 +99,57 @@ export default function afcf() {
             <div className="col-md-4">
               <div className="very-latest-post format-standard">
                 <div className="title-row">
-                  <a
-                    href="blog-post.html#comments"
-                    className="comments-go"
-                    title="10 comments"
-                  >
-                    <i className="icon-dialogue-text"></i>
-                  </a>
-                  <a href="#" className="comments-go">
-                    <i className="icon-dialogue-text"></i>
-                  </a>{" "}
                   <h4>FEATURED</h4>
                 </div>
-                <img
-                  src="/ydd-photos/afcfreport.jpg"
-                  className="attachment-800x500 size-800x500 wp-post-image"
-                  alt=""
-                />{" "}
-                <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
-                    Agent Of Change
-                  </a>
-                </h3>
-                <div className="meta-data">
-                  by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
-                  on January 24, 2018 in{" "}
-                  <a href="category/featured/index.html">
-                    in Youth Resources, Soul Foods
-                  </a>
-                </div>
-                <p>
-                  The way to winning souls is not to be just like the sinner,
-                  but to make the sinner want to be just like the Christian.
-                </p>{" "}
-                <p>
-                  <a href="#" className="basic-link">
-                    Continue reading <i className="fa fa-angle-right"></i>
-                  </a>
-                </p>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      blog={
+                        blogsList.find((b) => b.category === "AFCF") ||
+                        blogsList[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
             <div className="col-md-4">
               <div className="very-latest-post format-standard">
                 <div className="title-row">
-                  <a href="#" className="comments-go" title="10 comments">
-                    <i className="icon-dialogue-text"></i>
-                  </a>
-                  <a href="#" className="comments-go">
-                    <i className="icon-dialogue-text"></i>
-                  </a>{" "}
-                  <h4>SOUL FOOD</h4>
+                  <h4>SOULFOOD</h4>
                 </div>
-                <img
-                  src="/ydd-photos/soulfood.png"
-                  className="attachment-800x500 size-800x500 wp-post-image"
-                  alt=""
-                />{" "}
-                <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
-                    Agent Of Change
-                  </a>
-                </h3>
-                <div className="meta-data">
-                  by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
-                  on January 24, 2018 in{" "}
-                  <Link
-                    href={{
-                      pathname: "/soulfood",
-                      query: { category: "AFCF" },
-                    }}
-                  >
-                    <a>in Youth Resources, Soul Foods</a>
-                  </Link>
-                </div>
-                <p>
-                  The way to winning souls is not to be just like the sinner,
-                  but to make the sinner want to be just like the Christian.
-                </p>{" "}
-                <p>
-                  <Link
-                    href={{
-                      pathname: "/soulfood",
-                      query: { category: "AFCF" },
-                    }}
-                  >
-                    <a className="basic-link">
-                      Continue reading <i className="fa fa-angle-right"></i>
-                    </a>
-                  </Link>
-                </p>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      category="soulfood"
+                      blog={
+                        soulfoodList_.find((b) => b.category === "AFCF") ||
+                        soulfoodList_[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
             <div className="col-md-4">
               <div className="very-latest-post format-standard">
                 <div className="title-row">
-                  <a
-                    href="blog-post.html#comments"
-                    className="comments-go"
-                    title="10 comments"
-                  >
-                    <i className="icon-dialogue-text"></i>
-                  </a>
                   <h4>TESTIMONIES</h4>
                 </div>
-                <img
-                  src="/ydd-photos/testimonies.jpg"
-                  className="attachment-800x500 size-800x500 wp-post-image"
-                  alt=""
-                />{" "}
-                <h3 className="post-title">
-                  <Link
-                    href={{
-                      pathname: "/reports",
-                      query: { category: "AFCF" },
-                    }}
-                  >
-                    <a>Agent Of Change</a>
-                  </Link>
-                </h3>
-                <div className="meta-data">
-                  by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
-                  on January 24, 2018 in{" "}
-                  <Link
-                    href={{
-                      pathname: "/reports",
-                      query: { category: "AFCF" },
-                    }}
-                  >
-                    <a>in Youth Resources, Soul Foods</a>
-                  </Link>
-                </div>
-                <p>
-                  The way to winning souls is not to be just like the sinner,
-                  but to make the sinner want to be just like the Christian.
-                </p>{" "}
-                <p>
-                  <Link
-                    href={{
-                      pathname: "/reports",
-                      query: { category: "ACFC" },
-                    }}
-                  >
-                    <a className="basic-link">
-                      Continue reading <i className="fa fa-angle-right"></i>
-                    </a>
-                  </Link>
-                </p>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      category="testimonies"
+                      blog={
+                        testimoniesList.find((b) => b.category === "AFCF") ||
+                        testimoniesList[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

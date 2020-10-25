@@ -5,7 +5,15 @@ export const blogsList = [
     writer: "Dan Baker",
     banner: "soulfood.jpg",
     category: "General",
-    tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Let’s settle one issue right away. God means exactly what He says. Now before you throw your hands in the air and walk off in hopeless frustration, listen to this: God is not a tyrant; He is not commanding something that He knows is impossible for us to do, nor is He unaware of what you and I face in this wicked world. Yet He still requires the true Christian to be holy`,
   },
   {
@@ -14,7 +22,15 @@ export const blogsList = [
     writer: "Rey Richardson",
     banner: "soulfood.jpg",
     category: "General",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Christians are supposed to be different. You want to change the world around us, not have the world change us who stop in Romans 12 : 2 we read, “and be not conformed to the world: but be transformed by the renewing of your mind. That Jeannie may prove what is that's good, and acceptable, and perfect, will of God.” We are supposed to be agents of change, and to do that, we must first have experienced the change only God can nip through salvage on foster as we continue walking by faith and projecting resource in our daily living , those around those will be changed.`,
   },
   {
@@ -23,7 +39,15 @@ export const blogsList = [
     writer: "Dan Baker",
     banner: "soulfood.jpg",
     category: "General",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Why is it so hard for us to find God’s will for our lives? The answer is simple. Our own will gets in the way. Yes, there are other possible hindrances, and we will discuss some of them here, but the will is the central problem. If we want to be certain we are following God’s plan and not our own, we must make sure our will is fully submitted to His.`,
   },
   {
@@ -32,7 +56,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "General",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `Don’t just accept someone else’s idea! Exercise your own will! Be Independent and think for yourself! Have you ever heard that philosophy expressed? in Rd it's the fashion not to worry about doctrines and persuasions that been taught to us. If we have a religious belief, we may be told that we were bent that way by our upbringing. Standing for a believe rightly placed in God almighty is not a sign of being a weakling. It is a sign of strength to stick by your faith and to say, “I want to do what I ought to do.” If you have the position, stay with it.`,
   },
   {
@@ -41,7 +73,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "AFCMF",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.
@@ -74,7 +114,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "Teens",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.
@@ -107,7 +155,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "YPF",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.
@@ -140,7 +196,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "YPF",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.
@@ -173,7 +237,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "Couples and Family",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.
@@ -206,7 +278,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "Singles",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.
@@ -239,7 +319,15 @@ export const blogsList = [
     writer: "Admin",
     banner: "soulfood.jpg",
     category: "Singles",
- tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
+    tags: [
+      "AFCF",
+      "AFCMF",
+      "General",
+      "Marriage and Family",
+      "Singles Forum",
+      "Teenagers",
+      "YPF",
+    ],
     content: `The online programme - a novel one, which was broadcasted on our social media channels, lasted for 2hrs. 15mins, the session started with songs from the CGS, 14, 612, was followed by an opening prayer by the WECA Youth Leader, Brother Tobi Popogbe, who proceeded to give the announcements. He introduced the Young Couples Forum and explained the topic “IT TAKES TWO” where he talked about how important it is for Husband and Wife to work together in Partnership to make their marriage a success. He also identified some key advantages of couples working together from Ecclesiastes 4:9-12. Some of these are - They have good reward for their labour, to prevent one another from falling, to keep warm and to have victory over the enemy in partnership.
   
           The virtual program had two guest couples connected from their respective locations, to give their various experiences and perspectives as regards the topic. The two couples, are Brother and Sister Lucky Ishomo, Brother and Sister Oladehinde.

@@ -46,7 +46,15 @@ export default function reports() {
                 <p className="blog-title">{blog.title}</p>
                 <p className="blog-text">{blog.content}</p>
                 <div className="foot">
-                  <Link href={`/single-report?id=${i}`}>
+                  <Link
+                    href={{
+                      pathname: "/singlereport",
+                      query: {
+                        title: `${blog.title}`,
+                        type: "testimonies",
+                      },
+                    }}
+                  >
                     <span className="cont">CONTINUE READING</span>
                   </Link>
                   {/* <p>
@@ -77,7 +85,14 @@ export default function reports() {
                     paddingBottom: 5,
                   }}
                 >
-                  {itm}
+                  <Link
+                    href={{
+                      pathname: "/testimonies",
+                      query: { category: itm.split(" ")[0] },
+                    }}
+                  >
+                    <a>{itm}</a>
+                  </Link>
                 </li>
               ))}
             </ul>

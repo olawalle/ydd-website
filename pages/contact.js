@@ -11,181 +11,273 @@ const text = `
   Known for its loyalty and faithfulness,
   it can be found as a welcome guest in many households across the world.
 `;
-const states = [
+const afcmfStates = [
   {
-    "State/District": "WeCA",
-    "CONTACT PERSON": "Ayomikun Akinbobola",
-    PORTFOLIO: "AFCMF President",
-    "PHONE NO.": "07037090335",
-    "E-MAIL ADDRESS": "akinbobolaayomikun@gmail.com",
-  },
-  {
-    "State/District": "WeCA",
-    "CONTACT PERSON": "Oluwatosin Fasanya",
-    PORTFOLIO: " Secretary",
-    "PHONE NO.": "08168038532",
-    "E-MAIL ADDRESS": "oluwatosindeborah680@gmail.com",
-  },
-  {
-    "State/District": "WeCA",
-    "CONTACT PERSON": "Adesanwo Abiodun",
-    PORTFOLIO: "Welfare",
-    "PHONE NO.": "07033934605",
-    "E-MAIL ADDRESS": "adesanwoabiodun@yahoo.com",
-  },
-  {
-    "State/District": "WeCA",
-    "CONTACT PERSON": "Adejumo Adetunji",
-    PORTFOLIO: "Strategy and Planning",
-    "PHONE NO.": "08162605225",
-    "E-MAIL ADDRESS": "adetunjiadejumo62@gmail.com",
+    "State/District": "National",
+    users: [
+      {
+        "CONTACT PERSON": "Ayomikun Akinbobola",
+        PORTFOLIO: "AFCMF President",
+        "PHONE NO.": "07037090335",
+        "E-MAIL ADDRESS": "akinbobolaayomikun@gmail.com",
+      },
+      {
+        "CONTACT PERSON": "Oluwatosin Fasanya",
+        PORTFOLIO: " Secretary",
+        "PHONE NO.": "08168038532",
+        "E-MAIL ADDRESS": "oluwatosindeborah680@gmail.com",
+      },
+      {
+        "CONTACT PERSON": "Adesanwo Abiodun",
+        PORTFOLIO: "Welfare",
+        "PHONE NO.": "07033934605",
+        "E-MAIL ADDRESS": "adesanwoabiodun@yahoo.com",
+      },
+      {
+        "CONTACT PERSON": "Adejumo Adetunji",
+        PORTFOLIO: "Strategy and Planning",
+        "PHONE NO.": "08162605225",
+        "E-MAIL ADDRESS": "adetunjiadejumo62@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Abia",
-    "CONTACT PERSON": "Onwuegbu Samuel",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08064613838",
-    "E-MAIL ADDRESS": "onwuegbusam@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Onwuegbu Samuel",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08064613838",
+        "E-MAIL ADDRESS": "onwuegbusam@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Abuja",
-    "CONTACT PERSON": "Sanmi Alonge",
-    PORTFOLIO: "Regional Outreach Head",
-    "PHONE NO.": "08164947400",
-    "E-MAIL ADDRESS": "jeffdejas@gmail.com",
-  },
-  {
-    "State/District": "Abuja",
-    "CONTACT PERSON": "Chima Anih",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08069079336",
-    "E-MAIL ADDRESS": "anih_david@yahoo.com",
-  },
-  {
-    "State/District": "Ado-Ekiti",
-    "CONTACT PERSON": "Abraham Salau",
-    PORTFOLIO: "Regional Outreach Head",
-    "PHONE NO.": "08067628231",
-    "E-MAIL ADDRESS": "salawuabraham@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Sanmi Alonge",
+        PORTFOLIO: "Regional Outreach Head",
+        "PHONE NO.": "08164947400",
+        "E-MAIL ADDRESS": "jeffdejas@gmail.com",
+      },
+      {
+        "CONTACT PERSON": "Chima Anih",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08069079336",
+        "E-MAIL ADDRESS": "anih_david@yahoo.com",
+      },
+    ],
   },
   {
     "State/District": "Ado-Ekiti",
-    "CONTACT PERSON": "Fasiku Ayo",
-    PORTFOLIO: "AFCMF Coordinator",
-    "PHONE NO.": "07034923362",
-    "E-MAIL ADDRESS": "nil",
+    users: [
+      {
+        "CONTACT PERSON": "Abraham Salau",
+        PORTFOLIO: "Regional Outreach Head",
+        "PHONE NO.": "08067628231",
+        "E-MAIL ADDRESS": "salawuabraham@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Ado-Ekiti",
-    "CONTACT PERSON": "Olowofila Olaolu",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08138339528",
-    "E-MAIL ADDRESS": "sirollyman@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Fasiku Ayo",
+        PORTFOLIO: "AFCMF Coordinator",
+        "PHONE NO.": "07034923362",
+        "E-MAIL ADDRESS": "nil",
+      },
+      {
+        "CONTACT PERSON": "Olowofila Olaolu",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08138339528",
+        "E-MAIL ADDRESS": "sirollyman@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Anambra",
-    "CONTACT PERSON": "Oliseh Okafor",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "07032813444",
-    "E-MAIL ADDRESS": "whengracespeaks@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Oliseh Okafor",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "07032813444",
+        "E-MAIL ADDRESS": "whengracespeaks@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Bayelsa",
-    "CONTACT PERSON": "Promise Blessing",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08032552393",
-    "E-MAIL ADDRESS": "blessprom1@yahoo.com",
+    users: [
+      {
+        "CONTACT PERSON": "Promise Blessing",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08032552393",
+        "E-MAIL ADDRESS": "blessprom1@yahoo.com",
+      },
+    ],
   },
   {
     "State/District": "Cross-River",
-    "CONTACT PERSON": "Agbor Godwin Ebri",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08065294758",
-    "E-MAIL ADDRESS": "godwinagbor2013@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Agbor Godwin Ebri",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08065294758",
+        "E-MAIL ADDRESS": "godwinagbor2013@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Delta",
-    "CONTACT PERSON": "James Ubong Effiong",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "07064977630",
-    "E-MAIL ADDRESS": "eyenabasi1@gmail.com",
-  },
-  {
-    "State/District": "Delta",
-    "CONTACT PERSON": "Effiong Gift",
-    PORTFOLIO: "AFCMF Coordinator",
-    "PHONE NO.": "07062483936",
-    "E-MAIL ADDRESS": "nil",
-  },
-  {
-    "State/District": "Edo",
-    "CONTACT PERSON": "Joshua Omowale",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08034235212",
-    "E-MAIL ADDRESS": "joshuaorogun2013@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "James Ubong Effiong",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "07064977630",
+        "E-MAIL ADDRESS": "eyenabasi1@gmail.com",
+      },
+      {
+        "CONTACT PERSON": "Effiong Gift",
+        PORTFOLIO: "AFCMF Coordinator",
+        "PHONE NO.": "07062483936",
+        "E-MAIL ADDRESS": "nil",
+      },
+    ],
   },
   {
     "State/District": "Edo",
-    "CONTACT PERSON": "Mercy Tope",
-    PORTFOLIO: "AFCMF Coordinator",
-    "PHONE NO.": "08167224144",
-    "E-MAIL ADDRESS": "nil",
+    users: [
+      {
+        "CONTACT PERSON": "Joshua Omowale",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08034235212",
+        "E-MAIL ADDRESS": "joshuaorogun2013@gmail.com",
+      },
+      {
+        "CONTACT PERSON": "Mercy Tope",
+        PORTFOLIO: "AFCMF Coordinator",
+        "PHONE NO.": "08167224144",
+        "E-MAIL ADDRESS": "nil",
+      },
+    ],
   },
   {
     "State/District": "Enugu",
-    "CONTACT PERSON": "Samuel Anih",
-    PORTFOLIO: "Regional Outreach Head",
-    "PHONE NO.": "08033906820",
-    "E-MAIL ADDRESS": "anihsammy2015@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Samuel Anih",
+        PORTFOLIO: "Regional Outreach Head",
+        "PHONE NO.": "08033906820",
+        "E-MAIL ADDRESS": "anihsammy2015@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Faith City",
-    "CONTACT PERSON": "Ope Abioye",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08065411448",
-    "E-MAIL ADDRESS": "abioye.jonathan48@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Ope Abioye",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08065411448",
+        "E-MAIL ADDRESS": "abioye.jonathan48@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Ibadan",
-    "CONTACT PERSON": "Adewale Olumide",
-    PORTFOLIO: "Regional Outreach Head",
-    "PHONE NO.": "08166195650",
-    "E-MAIL ADDRESS": "adewale.mide@yahoo.com",
-  },
-  {
-    "State/District": "Ibadan",
-    "CONTACT PERSON": "Abraham Itanola",
-    PORTFOLIO: "AFCMF Coordinator",
-    "PHONE NO.": "08066669699",
-    "E-MAIL ADDRESS": "nil",
+    users: [
+      {
+        "CONTACT PERSON": "Adewale Olumide",
+        PORTFOLIO: "Regional Outreach Head",
+        "PHONE NO.": "08166195650",
+        "E-MAIL ADDRESS": "adewale.mide@yahoo.com",
+      },
+      {
+        "CONTACT PERSON": "Abraham Itanola",
+        PORTFOLIO: "AFCMF Coordinator",
+        "PHONE NO.": "08066669699",
+        "E-MAIL ADDRESS": "nil",
+      },
+    ],
   },
   {
     "State/District": "Ikot-Ewang",
-    "CONTACT PERSON": "Joseph Udoaka Etim",
-    PORTFOLIO: "Regional Outreach Head",
-    "PHONE NO.": "08142088011",
-    "E-MAIL ADDRESS": "udoakajoseph1993@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Joseph Udoaka Etim",
+        PORTFOLIO: "Regional Outreach Head",
+        "PHONE NO.": "08142088011",
+        "E-MAIL ADDRESS": "udoakajoseph1993@gmail.com",
+      },
+    ],
   },
   {
     "State/District": "Imo ",
-    "CONTACT PERSON": "Nmeregini Oliver",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08058785199",
-    "E-MAIL ADDRESS": "oziokojoshua@yahoo.com",
+    users: [
+      {
+        "CONTACT PERSON": "Nmeregini Oliver",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08058785199",
+        "E-MAIL ADDRESS": "oziokojoshua@yahoo.com",
+      },
+    ],
   },
   {
     "State/District": "Jos",
-    "CONTACT PERSON": "Olubummo Temitope ",
-    PORTFOLIO: "District Outreach Head",
-    "PHONE NO.": "08038516518",
-    "E-MAIL ADDRESS": "olubummojerry@gmail.com",
+    users: [
+      {
+        "CONTACT PERSON": "Olubummo Temitope ",
+        PORTFOLIO: "District Outreach Head",
+        "PHONE NO.": "08038516518",
+        "E-MAIL ADDRESS": "olubummojerry@gmail.com",
+      },
+      {
+        "CONTACT PERSON": "Kemi Dada",
+        PORTFOLIO: "AFCMF Coordinator",
+        "PHONE NO.": "07062718787",
+        "E-MAIL ADDRESS": "nil",
+      },
+    ],
+  },
+];
+
+const afcfStates = [
+  {
+    "State/District": "Abia",
+    users: [
+      {
+        "CONTACT PERSON": "BRO IFEANYI",
+        PORTFOLIO: "COORDINATOR",
+        "PHONE NO.": "08100690160",
+        "E-MAIL ADDRESS": "ABIA STATE UNIVERSITY 0F UTURU",
+      },
+      {
+        "CONTACT PERSON": "BRO FAITH",
+        PORTFOLIO: "COORDINATOR",
+        "PHONE NO.": "08179752156",
+        "E-MAIL ADDRESS": "ABIA STATE POLYTECHNIC ABA",
+      },
+      {
+        "CONTACT PERSON": "BRO SAVIOUR",
+        PORTFOLIO: "COORDINATOR",
+        "PHONE NO.": "08162568979",
+        "E-MAIL ADDRESS": "MICHEAL OKPARA FEDERAL UNIVERSITY UMUDIKE",
+      },
+    ],
   },
   {
-    "State/District": "Jos",
-    "CONTACT PERSON": "Kemi Dada",
-    PORTFOLIO: "AFCMF Coordinator",
-    "PHONE NO.": "07062718787",
-    "E-MAIL ADDRESS": "nil",
+    "State/District": "Anambra",
+    users: [
+      {
+        "CONTACT PERSON": "",
+        PORTFOLIO: "",
+        "PHONE NO.": "",
+        "E-MAIL ADDRESS": "",
+      },
+    ],
   },
 ];
 
@@ -221,7 +313,7 @@ export default function contact() {
                 style={{ backgroundColor: "#3bafdae3", border: 0 }}
                 defaultActiveKey={[]}
               >
-                {states
+                {afcmfStates
                   .filter((s, i) => i % 2 === 0)
                   .map((state) => (
                     <Panel
@@ -229,10 +321,24 @@ export default function contact() {
                       header={state["State/District"]}
                       key={state["State/District"]}
                     >
-                      <p>{state["CONTACT PERSON"]}</p>
-                      <p>{state["PORTFOLIO"]}</p>
-                      <p>{state["PHONE NO."]}</p>
-                      <p>{state["E-MAIL ADDRESS"]}</p>
+                      {state.users.map((user) => (
+                        <div className="user">
+                          <p
+                            style={{
+                              fontSize: 18,
+                              fontWeight: 600,
+                              marginBottom: 10,
+                            }}
+                          >
+                            {user["CONTACT PERSON"]}
+                          </p>
+                          <p style={{ marginBottom: 3 }}>{user["PORTFOLIO"]}</p>
+                          <p style={{ marginBottom: 3 }}>{user["PHONE NO."]}</p>
+                          <p style={{ marginBottom: 3 }}>
+                            {user["E-MAIL ADDRESS"]}
+                          </p>
+                        </div>
+                      ))}
                     </Panel>
                   ))}
               </Collapse>
@@ -243,7 +349,7 @@ export default function contact() {
                 style={{ backgroundColor: "#3bafdae3", border: 0 }}
                 defaultActiveKey={[]}
               >
-                {states
+                {afcmfStates
                   .filter((s, i) => i % 2 === 1)
                   .map((state) => (
                     <Panel
@@ -251,10 +357,24 @@ export default function contact() {
                       header={state["State/District"]}
                       key={state["State/District"]}
                     >
-                      <p>{state["CONTACT PERSON"]}</p>
-                      <p>{state["PORTFOLIO"]}</p>
-                      <p>{state["PHONE NO."]}</p>
-                      <p>{state["E-MAIL ADDRESS"]}</p>
+                      {state.users.map((user) => (
+                        <div className="user">
+                          <p
+                            style={{
+                              fontSize: 18,
+                              fontWeight: 600,
+                              marginBottom: 10,
+                            }}
+                          >
+                            {user["CONTACT PERSON"]}
+                          </p>
+                          <p style={{ marginBottom: 3 }}>{user["PORTFOLIO"]}</p>
+                          <p style={{ marginBottom: 3 }}>{user["PHONE NO."]}</p>
+                          <p style={{ marginBottom: 3 }}>
+                            {user["E-MAIL ADDRESS"]}
+                          </p>
+                        </div>
+                      ))}
                     </Panel>
                   ))}
               </Collapse>

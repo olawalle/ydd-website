@@ -6,6 +6,10 @@ import Footer from "../components/Footer";
 import MainCarousel from "../components/MainCarousel";
 import { useEffect } from "react";
 import Link from "next/link";
+import Blog from "../components/Blog";
+import { blogsList } from "../mocks/blogsList";
+import { soulfoodList_ } from "../mocks/soulfoodList";
+import { testimoniesList } from "../mocks/testimoniesList";
 
 export default function Singles() {
   const [items, setitems] = useState([
@@ -160,155 +164,61 @@ export default function Singles() {
             </div>
           </div>
 
-          <div id="content" className="content full">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <p className="heading mt100">
-                    <b>From Our Blog</b>
-                  </p>
+          <div className="row" style={{ marginTop: "70px" }}>
+            <div className="col-md-4">
+              <div className="very-latest-post format-standard">
+                <div className="title-row">
+                  <h4>FEATURED</h4>
                 </div>
-                <div className="col-md-8">
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="very-latest-post format-standard">
-                        <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
-                            <i className="icon-dialogue-text"></i>
-                          </a>
-                          <a href="#" className="comments-go">
-                            <i className="icon-dialogue-text"></i>
-                          </a>{" "}
-                          <h4>Featured</h4>
-                        </div>
-                        <h3 className="post-title">
-                          <a href="#">Agent Of Change</a>
-                        </h3>
-                        <div className="meta-data">
-                          by <a href="#">Rey Richardson</a> on January 24, 2018
-                          in <a href="#">in Youth Resources, Soul Foods</a>
-                        </div>
-                        <p>
-                          The way to winning souls is not to be just like the
-                          sinner, but to make the sinner want to be just like
-                          the Christian.
-                        </p>{" "}
-                        <p>
-                          <a href="#" className="basic-link">
-                            Continue reading{" "}
-                            <i className="fa fa-angle-right"></i>
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="very-latest-post format-standard">
-                        <div className="title-row">
-                          <a
-                            href="#"
-                            className="comments-go"
-                            title="10 comments"
-                          >
-                            <i className="icon-dialogue-text"></i>
-                          </a>
-                          <a href="#" className="comments-go">
-                            <i className="icon-dialogue-text"></i>
-                          </a>{" "}
-                          <h4>SOUL FOOD</h4>
-                        </div>
-                        <img
-                          src="/ydd-photos/soulfood.png"
-                          className="attachment-800x500 size-800x500 wp-post-image"
-                          alt=""
-                        />{" "}
-                        <h3 className="post-title">
-                          <a href="2018/01/24/standard-post-format/index.html">
-                            Agent Of Change
-                          </a>
-                        </h3>
-                        <div className="meta-data">
-                          by{" "}
-                          <a href="author/imicreation/index.html">
-                            Rey Richardson
-                          </a>{" "}
-                          on January 24, 2018 in{" "}
-                          <a href="category/featured/index.html">
-                            in Youth Resources, Soul Foods
-                          </a>
-                        </div>
-                        <p>
-                          The way to winning souls is not to be just like the
-                          sinner, but to make the sinner want to be just like
-                          the Christian.
-                        </p>{" "}
-                        <p>
-                          <a
-                            href="2018/01/24/standard-post-format/index.html"
-                            className="basic-link"
-                          >
-                            Continue reading{" "}
-                            <i className="fa fa-angle-right"></i>
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      blog={
+                        blogsList.find((b) => b.category === "Singles") ||
+                        blogsList[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="very-latest-post format-standard">
+                <div className="title-row">
+                  <h4>SOULFOOD</h4>
                 </div>
-                <div className="col-md-4">
-                  <div className="very-latest-post format-standard">
-                    <div className="title-row">
-                      <a
-                        href="blog-post.html#comments"
-                        className="comments-go"
-                        title="10 comments"
-                      >
-                        <i className="icon-dialogue-text"></i>
-                      </a>
-                      <a
-                        href="2018/01/24/standard-post-format/index.html#respond"
-                        className="comments-go"
-                      >
-                        <i className="icon-dialogue-text"></i>
-                      </a>{" "}
-                      <h4>TESTIMONIES</h4>
-                    </div>
-                    <img
-                      src="/ydd-photos/testimonies.jpg"
-                      className="attachment-800x500 size-800x500 wp-post-image"
-                      alt=""
-                      style={{ marginBottom: 12 }}
-                    />{" "}
-                    <h3 className="post-title">
-                      <a href="#">Taught by God</a>
-                    </h3>
-                    <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">
-                        Ayomide Aderibigbe
-                      </a>{" "}
-                      on August 14, 2020 in{" "}
-                      <a href="category/featured/index.html">
-                        in Teens Resources, My School Experience
-                      </a>
-                    </div>
-                    <br />
-                    <h3 className="post-title">
-                      <a href="#">Trusting God</a>
-                    </h3>
-                    <div className="meta-data">
-                      by{" "}
-                      <a href="author/imicreation/index.html">Bolude Ajiboye</a>{" "}
-                      on August 15, 2020 in{" "}
-                      <a href="category/featured/index.html">
-                        in Teens Resources, My School Experience
-                      </a>
-                    </div>
-                  </div>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      category="soulfood"
+                      blog={
+                        soulfoodList_.find((b) => b.category === "Singles") ||
+                        soulfoodList_[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="very-latest-post format-standard">
+                <div className="title-row">
+                  <h4>TESTIMONIES</h4>
                 </div>
+                <ul className="blog-classic-listing">
+                  <li className="format-standard">
+                    <Blog
+                      category="testimonies"
+                      blog={
+                        testimoniesList.find((b) => b.category === "Singles") ||
+                        testimoniesList[0]
+                      }
+                      withImage={true}
+                    />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 .single-report {
   .banner {
-    height: 350px;
+    height: 500px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -45,8 +45,9 @@
     }
     .txt {
       font-size: 18px;
-      line-height: 30px;
+      line-height: 32px;
       color: #000;
+      font-weight: 300;
     }
     .tags {
       display: flex;

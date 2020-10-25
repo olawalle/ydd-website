@@ -6,14 +6,14 @@ import "./styles/reports.scss";
 import { CalendarOutlined } from "@ant-design/icons";
 import Event from "../components/Event";
 import { eventsList } from "../mocks/eventsList";
-import { soulfoodList } from "../mocks/soulfoodList";
+import { soulfoodList_ } from "../mocks/soulfoodList";
 import dayjs from "dayjs";
 import Link from "next/link";
 
 export default function Soulfood() {
   const [reports, setreports] = useState([]);
   useEffect(() => {
-    let itms = soulfoodList.reduce((agg, itm) => {
+    let itms = soulfoodList_.reduce((agg, itm) => {
       agg[itm.category]
         ? (agg[itm.category] = agg[itm.category] + 1)
         : (agg[itm.category] = 1);
@@ -35,7 +35,7 @@ export default function Soulfood() {
       <div className="container reports-contents">
         <div className="row">
           <div className="col-sm-12 col-md-8">
-            {soulfoodList.map((blog, i) => (
+            {soulfoodList_.map((blog, i) => (
               <div className="blog">
                 <img src={`/ydd-photos/${blog.banner}`} alt="" />
                 <p className="time">
@@ -45,7 +45,15 @@ export default function Soulfood() {
                 <p className="blog-title">{blog.title}</p>
                 <p className="blog-text">{blog.content}</p>
                 <div className="foot">
-                  <Link href={`/single-report?id=${i}`}>
+                  <Link
+                    href={{
+                      pathname: "/singlereport",
+                      query: {
+                        title: `${blog.title}`,
+                        type: "soulfood",
+                      },
+                    }}
+                  >
                     <span className="cont">CONTINUE READING</span>
                   </Link>
                   {/* <p>
@@ -76,7 +84,14 @@ export default function Soulfood() {
                     paddingBottom: 5,
                   }}
                 >
-                  {itm}
+                  <Link
+                    href={{
+                      pathname: "/soulfood",
+                      query: { category: itm.split(" ")[0] },
+                    }}
+                  >
+                    <a>{itm}</a>
+                  </Link>
                 </li>
               ))}
             </ul>

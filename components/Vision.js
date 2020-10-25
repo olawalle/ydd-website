@@ -5,7 +5,7 @@ export default function Vision() {
   return (
     <div className="container">
       <div className="row" style={{ margin: "50px 0" }}>
-        <div className="col-md-4 col-sm-4 featured-block featured-block-equal">
+        <div className="col-md-4 col-sm-12 featured-block featured-block-equal">
           <h3 style={{ textAlign: "center" }}>Our Vision</h3>
           <figure>
             <Link href="/about#vision">
@@ -21,7 +21,7 @@ export default function Vision() {
             </p>
           </div>
         </div>
-        <div className="col-md-4 col-sm-4 featured-block featured-block-equal">
+        <div className="col-md-4 col-sm-12 featured-block featured-block-equal">
           <h3 style={{ textAlign: "center" }}>Our Mission</h3>
           <figure>
             <Link href="/about#mission">
@@ -53,7 +53,7 @@ export default function Vision() {
             </p>
           </div>
         </div>
-        <div className="col-md-4 col-sm-4 featured-block featured-block-equal   ">
+        <div className="col-md-4 col-sm-12 featured-block featured-block-equal   ">
           <h3 style={{ textAlign: "center" }}>Our Values</h3>
           <figure>
             <Link href="/about#values">
