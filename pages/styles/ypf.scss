@@ -114,12 +114,13 @@
   }
   .ypf-content {
     .header-desc {
-      font-weight: 200;
-      font-size: 16px;
-      letter-spacing: 1.5px;
-      line-height: 1.8;
-      color: #000000;
       padding: 30px 0;
+
+      font-size: 16px;
+      color: #222;
+      line-height: 20px;
+      padding: 0;
+      line-height: 26px;
       // border-bottom: 1px solid #8fcc11;
     }
     .small-carousel {
@@ -176,9 +177,10 @@
     .objectives {
       padding: 80px 0;
       h3 {
-        font-weight: 200;
-        font-size: 18px;
-        color: #777;
+        font-size: 16px;
+        color: #222;
+        line-height: 26px;
+        padding: 0;
       }
       .circle-wrap {
         margin: 100px auto;
@@ -305,10 +307,12 @@
       }
     }
     .inner-desc {
-      font-weight: 200;
-      font-size: 18px;
-      color: #777;
-      width: 50%;
+      width: 60%;
+      font-size: 16px;
+      color: #222;
+      line-height: 20px;
+      padding: 0;
+      line-height: 26px;
     }
     .cards-wrap {
       padding: 30px 20px 20px;

@@ -80,6 +80,10 @@ export default function Footer() {
                 />
                 <a
                   className="btn btn-primary btn-block btn-lg"
+                  style={{
+                    backgroundColor: "#3bafdae3",
+                    border: 0,
+                  }}
                   href={`mailto:youthinfo@apostolicfaithweca.org?subject=Prayer request from ${email}&body=${request}`}
                 >
                   Submit

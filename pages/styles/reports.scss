@@ -53,15 +53,15 @@
         color: #000;
       }
       .blog-text {
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 30px;
+        font-size: 16px;
+        line-height: 26px;
         color: #000;
         display: -webkit-box;
         -webkit-line-clamp: 8;
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin-bottom: 30px;
+        text-align: justify;
       }
       .foot {
         display: flex;
