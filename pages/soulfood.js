@@ -26,25 +26,27 @@ export default function Soulfood() {
   }, []);
 
   return (
-    <div className="reports">
+    <div className='reports'>
       <Nav />
-      <div className="banner">
-        <p className="big">Soul Food</p>
-        <p className="small">Grow in the spirit</p>
+      <div className='banner'>
+        <p className='big'>Soul Food</p>
+        <p className='small'>Grow in the spirit</p>
       </div>
-      <div className="container reports-contents">
-        <div className="row">
-          <div className="col-sm-12 col-md-8">
+      <div className='container reports-contents'>
+        <div className='row'>
+          <div className='col-sm-12 col-md-8'>
             {soulfoodList_.map((blog, i) => (
-              <div className="blog">
-                <img src={`/ydd-photos/${blog.banner}`} alt="" />
-                <p className="time">
+              <div className='blog'>
+                <img src={`/ydd-photos/${blog.banner}`} alt='' />
+                <p className='time'>
                   <CalendarOutlined /> {dayjs(blog.date).format("DD MMM YYYY")}{" "}
                   <span style={{ marginLeft: 5 }}>Admin</span>
                 </p>
-                <p className="blog-title">{blog.title}</p>
-                <p className="blog-text">{blog.content}</p>
-                <div className="foot">
+                <p className='blog-title'>{blog.title}</p>
+                <p className='blog-text'>
+                  {blog.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}
+                </p>
+                <div className='foot'>
                   <Link
                     href={{
                       pathname: "/singlereport",
@@ -54,7 +56,9 @@ export default function Soulfood() {
                       },
                     }}
                   >
-                    <span className="cont">CONTINUE READING</span>
+                    <span className='cont' style={{ cursor: "pointer" }}>
+                      CONTINUE READING
+                    </span>
                   </Link>
                   {/* <p>
                     <span>FEATURED</span>| <span>GENERAL</span>|{" "}
@@ -64,10 +68,10 @@ export default function Soulfood() {
               </div>
             ))}
           </div>
-          <div className="col-sm-12 col-md-4">
+          <div className='col-sm-12 col-md-4'>
             <Search
-              size="large"
-              placeholder="input search text"
+              size='large'
+              placeholder='input search text'
               onSearch={(value) => console.log(value)}
               enterButton
             />

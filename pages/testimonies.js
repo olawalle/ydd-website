@@ -24,28 +24,30 @@ export default function reports() {
   }, []);
 
   return (
-    <div className="reports">
+    <div className='reports'>
       <Nav />
-      <div className="banner">
-        <p className="big">Testimonies</p>
-        <p className="small">
+      <div className='banner'>
+        <p className='big'>Testimonies</p>
+        <p className='small'>
           And they overcame him by the blood of the Lamb, and by the word of
           their testimony... <i>Rev 12:11</i>
         </p>
       </div>
-      <div className="container reports-contents">
-        <div className="row">
-          <div className="col-sm-12 col-md-8">
+      <div className='container reports-contents'>
+        <div className='row'>
+          <div className='col-sm-12 col-md-8'>
             {testimoniesList.map((blog, i) => (
-              <div className="blog">
-                <img src={`/ydd-photos/${blog.banner}`} alt="" />
-                <p className="time">
+              <div className='blog'>
+                <img src={`/ydd-photos/${blog.banner}`} alt='' />
+                <p className='time'>
                   <CalendarOutlined /> {dayjs(blog.date).format("DD MMM YYYY")}{" "}
                   <span style={{ marginLeft: 5 }}>{blog.writer}</span>
                 </p>
-                <p className="blog-title">{blog.title}</p>
-                <p className="blog-text">{blog.content}</p>
-                <div className="foot">
+                <p className='blog-title'>{blog.title}</p>
+                <p className='blog-text'>
+                  {blog.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}
+                </p>
+                <div className='foot'>
                   <Link
                     href={{
                       pathname: "/singlereport",
@@ -55,7 +57,9 @@ export default function reports() {
                       },
                     }}
                   >
-                    <span className="cont">CONTINUE READING</span>
+                    <span className='cont' style={{ cursor: "pointer" }}>
+                      CONTINUE READING
+                    </span>
                   </Link>
                   {/* <p>
                     <span>FEATURED</span>| <span>GENERAL</span>|{" "}
@@ -65,10 +69,10 @@ export default function reports() {
               </div>
             ))}
           </div>
-          <div className="col-sm-12 col-md-4">
+          <div className='col-sm-12 col-md-4'>
             <Search
-              size="large"
-              placeholder="input search text"
+              size='large'
+              placeholder='input search text'
               onSearch={(value) => console.log(value)}
               enterButton
             />

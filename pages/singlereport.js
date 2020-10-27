@@ -24,6 +24,7 @@ export default function singleReport() {
 
   useEffect(() => {
     // let id = window.location.href.split("=")[1];
+    console.log({ title, type_ });
     let payload =
       type_ === "report"
         ? reportsList
@@ -51,18 +52,18 @@ export default function singleReport() {
   return (
     <>
       <Nav />
-      <div className="single-report">
+      <div className='single-report'>
         <div
-          className="banner"
+          className='banner'
           style={{
             backgroundImage: `url("/ydd-photos/${currentReport.banner}")`,
           }}
         ></div>
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-md-8">
-              <p className="blog-title">{currentReport.title}</p>
-              <p className="time">
+        <div className='container'>
+          <div className='row'>
+            <div className='col-sm-12 col-md-8'>
+              <p className='blog-title'>{currentReport.title}</p>
+              <p className='time'>
                 <CalendarOutlined />{" "}
                 {dayjs(currentReport.date).format("DD MMM, YYYY")} by{" "}
                 {currentReport.writer} <span>Youth Resources.</span>
@@ -74,13 +75,16 @@ export default function singleReport() {
             /> */}
               {/* <p className="blog-heading">{currentReport.title}</p> */}
 
-              <p className="txt">{currentReport.content}</p>
+              <p
+                className='txt'
+                dangerouslySetInnerHTML={{ __html: currentReport.content }}
+              ></p>
             </div>
 
-            <div className="col-sm-12 col-md-4">
+            <div className='col-sm-12 col-md-4'>
               <Search
-                size="large"
-                placeholder="input search text"
+                size='large'
+                placeholder='input search text'
                 onSearch={(value) => console.log(value)}
                 enterButton
               />
@@ -106,11 +110,11 @@ export default function singleReport() {
                 Post Tags
               </p>
 
-              <div className="tags">
+              <div className='tags'>
                 {currentReport.tags &&
                   currentReport.tags.map((tag) => {
                     return (
-                      <div key={tag} className="tag">
+                      <div key={tag} className='tag'>
                         {tag}
                       </div>
                     );

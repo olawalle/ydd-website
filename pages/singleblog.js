@@ -17,11 +17,11 @@ export default function singleblog() {
     );
   }, [title]);
   return (
-    <div className="single-blog">
+    <div className='single-blog'>
       <Nav />
-      <div className="banner"></div>
-      <div className="container content">
-        <h1 className="page-heading">
+      <div className='banner'></div>
+      <div className='container content'>
+        <h1 className='page-heading'>
           <hr />
           <span>{blogItem.title}</span>
           <span
@@ -34,8 +34,8 @@ export default function singleblog() {
           </span>
           <hr />
         </h1>
-        <div className="content">
-          <p>{blogItem.content}</p>
+        <div className='content'>
+          <p dangerouslySetInnerHTML={{ __html: blogItem.content }}></p>
         </div>
       </div>
       <Footer />

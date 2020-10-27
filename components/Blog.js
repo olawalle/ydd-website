@@ -8,15 +8,15 @@ export default function Blog({ blog, withImage, category }) {
       {withImage && (
         <img
           src={`/ydd-photos/${blog.banner}`}
-          className="attachment-800x500 size-800x500 wp-post-image"
-          alt=""
+          className='attachment-800x500 size-800x500 wp-post-image'
+          alt=''
           style={{ marginBottom: 10 }}
         />
       )}
       <a>
-        <strong className="post-title">{blog.title}</strong>
+        <strong className='post-title'>{blog.title}</strong>
       </a>
-      <div className="meta-data">
+      <div className='meta-data'>
         by <a>{blog.writer}</a> on {dayjs(blog.date).format("DD MM, YYYY")} in{" "}
         <a>in Youth Resources.</a>
       </div>
@@ -28,7 +28,7 @@ export default function Blog({ blog, withImage, category }) {
           overflow: "hidden",
         }}
       >
-        {blog.content}
+        {blog.content.replace(/<p>/g, "").replace(/<\/p>/g, "")}
       </p>{" "}
       <p>
         <Link
@@ -37,8 +37,8 @@ export default function Blog({ blog, withImage, category }) {
             query: { title: blog.title, type: category },
           }}
         >
-          <a className="basic-link">
-            Continue reading <i className="fa fa-angle-right"></i>
+          <a className='basic-link'>
+            Continue reading <i className='fa fa-angle-right'></i>
           </a>
         </Link>
       </p>

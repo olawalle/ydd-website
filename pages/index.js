@@ -228,7 +228,11 @@ export default function Home() {
               <hr className='fw'></hr>
               <div className='row'>
                 <div className='col-md-8'>
-                  <h3>Youth Resources</h3>
+                  <h3>
+                    <Link href='/youthresources'>
+                      <a>Youth Resources</a>
+                    </Link>
+                  </h3>
                   <hr className='sm'></hr>
                   <div className='row'>
                     <div className='col-md-6'>
@@ -271,7 +275,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className='col-md-4'>
-                  <h3>Youth Reports</h3>
+                  <h3>
+                    <Link href='/reports'>
+                      <a>Youth Reports</a>
+                    </Link>
+                  </h3>
                   <hr className='sm'></hr>
                   <div className='very-latest-post format-standard'>
                     <div className='title-row'>
