@@ -51,10 +51,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="wrapper index">
-      <div className="body">
+    <div className='wrapper index'>
+      <div className='body'>
         <Nav />
-        <div className="main-carousel">
+        <div className='main-carousel'>
           <MainCarousel
             pictures={[
               "/ydd-photos/follow.jpg",
@@ -78,75 +78,75 @@ export default function Home() {
 
         <Platforms />
 
-        <div className="main" role="main">
-          <div id="content" className="content full">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-5 col-sm-5" id="sidebar-col">
+        <div className='main' role='main'>
+          <div id='content' className='content full'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-md-5 col-sm-5' id='sidebar-col'>
                   <div
-                    id="event_counter-1"
-                    className="widget sidebar-widget widget_event_counter"
+                    id='event_counter-1'
+                    className='widget sidebar-widget widget_event_counter'
                   >
-                    <section className="upcoming-event format-standard event-list-item event-dynamic">
-                      <a className="media-box">
+                    <section className='upcoming-event format-standard event-list-item event-dynamic'>
+                      <a className='media-box'>
                         <img
                           src={eventsList[0].banner}
-                          className="attachment-600x400 size-600x400 wp-post-image"
-                          alt=""
+                          className='attachment-600x400 size-600x400 wp-post-image'
+                          alt=''
                         />
                       </a>
-                      <div className="upcoming-event-content">
+                      <div className='upcoming-event-content'>
                         <span
-                          className="label label-primary upcoming-event-label"
+                          className='label label-primary upcoming-event-label'
                           style={{ backgroundColor: "#3aafdb" }}
                         >
                           Next coming event
                         </span>
                         <h3>
-                          <a className="event-title">{eventsList[0].name}</a>
+                          <a className='event-title'>{eventsList[0].name}</a>
                         </h3>
-                        <span className="meta-data">
+                        <span className='meta-data'>
                           On{" "}
-                          <span className="event-date">
+                          <span className='event-date'>
                             {dayjs(eventsList[0].date).format("DD MMM, YYYY")}
                           </span>{" "}
                           by{" "}
-                          <span className="event-time">
+                          <span className='event-time'>
                             {eventsList[0].time}
                           </span>{" "}
                           at
                         </span>
-                        <span className="meta-data event-location">
+                        <span className='meta-data event-location'>
                           {" "}
-                          <span className="event-location-address">
+                          <span className='event-location-address'>
                             {eventsList[0].address}
                           </span>
                         </span>
 
                         <div
-                          id="event-counter-event_counter-1"
-                          className="counter clearfix"
+                          id='event-counter-event_counter-1'
+                          className='counter clearfix'
                           style={{ marginTop: 20 }}
                         >
-                          <div className="timer-col">
+                          <div className='timer-col'>
                             {" "}
-                            <span id="days">{countdown.day}</span>{" "}
-                            <span className="timer-type">Days</span>{" "}
+                            <span id='days'>{countdown.day}</span>{" "}
+                            <span className='timer-type'>Days</span>{" "}
                           </div>
-                          <div className="timer-col">
+                          <div className='timer-col'>
                             {" "}
-                            <span id="hours">{countdown.hour}</span>{" "}
-                            <span className="timer-type">Hours</span>{" "}
+                            <span id='hours'>{countdown.hour}</span>{" "}
+                            <span className='timer-type'>Hours</span>{" "}
                           </div>
-                          <div className="timer-col">
+                          <div className='timer-col'>
                             {" "}
-                            <span id="minutes">{countdown.minute}</span>{" "}
-                            <span className="timer-type">Minutes</span>{" "}
+                            <span id='minutes'>{countdown.minute}</span>{" "}
+                            <span className='timer-type'>Minutes</span>{" "}
                           </div>
-                          <div className="timer-col">
+                          <div className='timer-col'>
                             {" "}
-                            <span id="seconds">{countdown.second}</span>{" "}
-                            <span className="timer-type">Seconds</span>{" "}
+                            <span id='seconds'>{countdown.second}</span>{" "}
+                            <span className='timer-type'>Seconds</span>{" "}
                           </div>
                         </div>
                       </div>
@@ -196,20 +196,20 @@ export default function Home() {
                     </section>
                   </div>
                 </div>
-                <div className="col-md-7 col-sm-7" id="content-col">
-                  <div className="element-block events-listing">
-                    <div className="events-listing-header">
-                      <Link href="/allevents">
+                <div className='col-md-7 col-sm-7' id='content-col'>
+                  <div className='element-block events-listing'>
+                    <div className='events-listing-header'>
+                      <Link href='/allevents'>
                         <h3
-                          className="element-title"
+                          className='element-title'
                           style={{ cursor: "pointer" }}
                         >
                           Upcoming Events
                         </h3>
                       </Link>
-                      <hr className="sm"></hr>
+                      <hr className='sm'></hr>
                     </div>
-                    {eventsList.slice(0, 3).map((evnt) => {
+                    {eventsList.slice(1, 4).map((evnt) => {
                       return (
                         <div style={{ marginBottom: 40 }}>
                           <Event noreg={true} event={evnt} />
@@ -222,46 +222,46 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="main" role="main">
-          <div id="content" className="content full">
-            <div className="container">
-              <hr className="fw"></hr>
-              <div className="row">
-                <div className="col-md-8">
+        <div className='main' role='main'>
+          <div id='content' className='content full'>
+            <div className='container'>
+              <hr className='fw'></hr>
+              <div className='row'>
+                <div className='col-md-8'>
                   <h3>Youth Resources</h3>
-                  <hr className="sm"></hr>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="very-latest-post format-standard">
-                        <div className="title-row">
-                          <a className="comments-go" title="10 comments">
-                            <i className="icon-dialogue-text"></i>
+                  <hr className='sm'></hr>
+                  <div className='row'>
+                    <div className='col-md-6'>
+                      <div className='very-latest-post format-standard'>
+                        <div className='title-row'>
+                          <a className='comments-go' title='10 comments'>
+                            <i className='icon-dialogue-text'></i>
                           </a>
-                          <a className="comments-go">
-                            <i className="icon-dialogue-text"></i>
+                          <a className='comments-go'>
+                            <i className='icon-dialogue-text'></i>
                           </a>{" "}
                           <h4>FROM OUR BLOG</h4>
                         </div>
 
-                        <ul className="blog-classic-listing">
-                          <li className="format-standard">
+                        <ul className='blog-classic-listing'>
+                          <li className='format-standard'>
                             <Blog blog={blogsList[0]} withImage={true} />
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div className="col-md-6">
-                      <ul className="blog-classic-listing">
-                        <li className="format-standard">
-                          <div className="row">
-                            <div className="col-md-12">
+                    <div className='col-md-6'>
+                      <ul className='blog-classic-listing'>
+                        <li className='format-standard'>
+                          <div className='row'>
+                            <div className='col-md-12'>
                               <Blog blog={blogsList[1]} withImage={false} />
                             </div>
                           </div>
                         </li>
-                        <li className="format-standard">
-                          <div className="row">
-                            <div className="col-md-12">
+                        <li className='format-standard'>
+                          <div className='row'>
+                            <div className='col-md-12'>
                               <Blog blog={blogsList[2]} withImage={false} />
                             </div>
                           </div>
@@ -270,21 +270,21 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4">
+                <div className='col-md-4'>
                   <h3>Youth Reports</h3>
-                  <hr className="sm"></hr>
-                  <div className="very-latest-post format-standard">
-                    <div className="title-row">
-                      <a className="comments-go" title="10 comments">
-                        <i className="icon-dialogue-text"></i>
+                  <hr className='sm'></hr>
+                  <div className='very-latest-post format-standard'>
+                    <div className='title-row'>
+                      <a className='comments-go' title='10 comments'>
+                        <i className='icon-dialogue-text'></i>
                       </a>
-                      <a className="comments-go">
-                        <i className="icon-dialogue-text"></i>
+                      <a className='comments-go'>
+                        <i className='icon-dialogue-text'></i>
                       </a>{" "}
                       <h4>REPORTS FROM YDD</h4>
                     </div>
-                    <ul className="blog-classic-listing">
-                      <li className="format-standard">
+                    <ul className='blog-classic-listing'>
+                      <li className='format-standard'>
                         <Blog blog={reportsList[0]} withImage={true} />
                       </li>
                     </ul>
@@ -295,85 +295,85 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="gallery-updates cols5 clearfix">
+        <div className='gallery-updates cols5 clearfix'>
           <ul>
-            <li className="format-link">
-              <Link href="/gallery">
+            <li className='format-link'>
+              <Link href='/gallery'>
                 <a>
-                  <div className="grid-item-inner">
-                    <a target="_blank" className="media-box">
+                  <div className='grid-item-inner'>
+                    <a target='_blank' className='media-box'>
                       <img
-                        src="/ydd-photos/video.jpg"
-                        className="attachment-400x400 size-400x400 wp-post-image"
-                        alt=""
+                        src='/ydd-photos/video.jpg'
+                        className='attachment-400x400 size-400x400 wp-post-image'
+                        alt=''
                       />
                     </a>
                   </div>
                 </a>
               </Link>
             </li>
-            <li className="format-link">
-              <div className="grid-item-inner">
+            <li className='format-link'>
+              <div className='grid-item-inner'>
                 <a
-                  href="https://soundcloud.com/apostolic-faith-weca/sets/ydd-teens-audios"
-                  target="_blank"
-                  className="media-box"
+                  href='https://soundcloud.com/apostolic-faith-weca/sets/ydd-teens-audios'
+                  target='_blank'
+                  className='media-box'
                 >
                   <img
-                    src="/ydd-photos/sound.jpg"
-                    className="attachment-400x400 size-400x400 wp-post-image"
-                    alt=""
+                    src='/ydd-photos/sound.jpg'
+                    className='attachment-400x400 size-400x400 wp-post-image'
+                    alt=''
                   />
                 </a>
               </div>
             </li>
-            <li className="format-link">
-              <Link href="/picgallery">
-                <div className="grid-item-inner">
-                  <a target="_blank" className="media-box">
+            <li className='format-link'>
+              <Link href='/picgallery'>
+                <div className='grid-item-inner'>
+                  <a target='_blank' className='media-box'>
                     <img
-                      src="/ydd-photos/sermon.jpg"
-                      className="attachment-400x400 size-400x400 wp-post-image"
-                      alt=""
+                      src='/ydd-photos/sermon.jpg'
+                      className='attachment-400x400 size-400x400 wp-post-image'
+                      alt=''
                     />
                   </a>
                 </div>
               </Link>
             </li>
-            <li className="format-link">
-              <div className="grid-item-inner">
+            <li className='format-link'>
+              <div className='grid-item-inner'>
                 <a
-                  href="http://www.apostolicfaithweca.org/livecast/newlivecast.html"
-                  target="_blank"
-                  className="media-box"
+                  href='http://www.apostolicfaithweca.org/livecast/newlivecast.html'
+                  target='_blank'
+                  className='media-box'
                 >
                   <img
-                    src="/ydd-photos/webcast.jpg"
-                    className="attachment-400x400 size-400x400 wp-post-image"
-                    alt=""
+                    src='/ydd-photos/webcast.jpg'
+                    className='attachment-400x400 size-400x400 wp-post-image'
+                    alt=''
                   />
                 </a>
               </div>
             </li>
-            <li className="format-link">
-              <div className="grid-item-inner">
+            <li className='format-link'>
+              <div className='grid-item-inner'>
                 <a
-                  href="https://vimeo.com/user118214378"
-                  target="_blank"
-                  className="media-box"
+                  href='https://vimeo.com/user118214378'
+                  target='_blank'
+                  className='media-box'
                 >
                   <img
-                    src="/ydd-photos/inspired.jpg"
-                    className="attachment-400x400 size-400x400 wp-post-image"
-                    alt=""
+                    src='/ydd-photos/inspired.jpg'
+                    className='attachment-400x400 size-400x400 wp-post-image'
+                    alt=''
                   />
                 </a>
               </div>
             </li>
           </ul>
-          <div className="gallery-updates-overlay">
-            <div className="container">
-              <i className="icon-multiple-image"></i>
+          <div className='gallery-updates-overlay'>
+            <div className='container'>
+              <i className='icon-multiple-image'></i>
               <h2>Updates from our gallery</h2>
             </div>
           </div>

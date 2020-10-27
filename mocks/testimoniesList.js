@@ -4,8 +4,9 @@ export const testimoniesList = [
     date: "January 24, 2018",
     writer: "Tobi Popogbe",
     banner: "Testimonies.png",
-    userPhoto: "",
-    category: "General",
+    userPhoto: "brotobi.png",
+    category: "Singles Forum",
+    subCategory: "My Praythrough Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I thank God for the power in His word and for the work of the Holy Spirit in making men believe His word. I am ever grateful to God for looking down in mercy to save my soul while in secondary school. I had two distinct experiences on how God speaks while I was a teenager –one in the hospital while being treated for a broken leg after a car accident, and the other on my way home from an errand, when God spoke using an outdoor film show on the restitution of Zacchaeus. These experiences were my earliest memories of the fact that God speaks and these built in me an endless personal relationship with Him.
 
@@ -27,7 +28,9 @@ export const testimoniesList = [
     date: " March 24, 2020",
     writer: "Peter Oyeniyi",
     banner: "Testimonies.png",
+    userPhoto: "bropeter.png",
     category: "General",
+    subCategory: "My Salvation Story",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I thank God for the opportunity to be born and raised in a Christian home where our parents taught us the way of the Lord. However, in my late-teens, I felt my upbringing was strict and not interesting so, I sought to go the way of the world.
 
@@ -48,7 +51,9 @@ export const testimoniesList = [
     date: "January 24, 2018",
     writer: "Kunle Odunsi",
     banner: "Testimonies.png",
+    userPhoto: "broodunsi.png",
     category: "General",
+    subCategory: "My Salvation Story",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I was born into a Christian home but I was not a Christian. I was struggling with an evil anger without help, but when I surrendered my life to God, He transformed my life. While growing up, we were always admonished to commit our future marital lives into God's hands so that He will perfect our ways. I did this and God answered my prayer 15 years before He showed me the actual person. God made a covenant with me and gave me promises and some distinct attributes and specifications concerning the wife He will bless me with.
 
@@ -61,7 +66,9 @@ export const testimoniesList = [
     date: "January 24, 2018",
     writer: "Gbenga Olukitibi",
     banner: "Testimonies.png",
+    userPhoto: "brogbenga.png",
     category: "General",
+    subCategory: "My Salvation Story",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I want to use this opportunity to testify to the power of Jesus Christ to save a man from his life of sin. Though I was born into this glorious gospel, I couldn’t access the true riches of God because I lived in sin. No doubt, growing up, I enjoyed divine protection, healing, and provision as part of the grace God showed my parents but I didn’t seek to have a personal relationship with God.
 
@@ -85,7 +92,9 @@ export const testimoniesList = [
     date: " March 24, 2020",
     writer: "JUSTINA WILLIAMS PETER",
     banner: "Testimonies.png",
+    userPhoto: "",
     category: "YPF",
+    subCategory: "My Enterpreneural Story",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `
     I thank God for everything, especially for saving my soul and for keeping me in the gospel.
@@ -103,7 +112,9 @@ export const testimoniesList = [
     date: " March 24, 2020",
     writer: "Samuel Bamgbola",
     banner: "Testimonies.png",
+    userPhoto: "",
     category: "Teens",
+    subCategory: "My School Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `While growing up, I had always believed in salvation and its benefits. I grew up with this knowledge but did not really have the ‘experiential’ salvation feeling.
 
@@ -121,9 +132,11 @@ export const testimoniesList = [
   {
     title: "The change in my life",
     date: " March 24, 2020",
-    writer: "Peter Oyeniyi",
+    writer: " Gbenga Olukitibi",
     banner: "Testimonies.png",
-    category: "Teens",
+    userPhoto: "brogbenga.png",
+    category: "General",
+    subCategory: "My Salvation Story",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `At 17, I was on my way to the university and it was there that the devil really got hold of me; I mixed with the wrong crowd and it was a downward slope from there. I partied, smoked, took alcohol and sampled drugs. At some point I stopped coming home regularly for holidays.`,
   },
@@ -132,7 +145,9 @@ export const testimoniesList = [
     date: " September 24, 2020",
     writer: "Ologbonde Boluwatife",
     banner: "Testimonies.png",
+    userPhoto: "boluwatife.jpg",
     category: "Teens",
+    subCategory: "My School Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I am Ologbonde Boluwatife, a one-time winner of the Bible Giant quiz from Òwò zone, Ondo state.
     It's quite a privilege for me to be given this opportunity to share my testimony to other teens like me. I wouldn't want to mince words; I was born in this glorious gospel and I understood the tenets of the gospel by virtue of Sunday school lessons and other Bible teachings but that didn't make me godly but I was goodly as I knew the things to do and not to do, but it all changed when I prayed genuinely for the salvation of my soul; I prayed and Jesus saved my soul, it was a night that's still evergreen in my memory, I felt light and different and I couldn't do things I'd ordinarily do.
@@ -145,7 +160,9 @@ export const testimoniesList = [
     date: " September 24, 2020",
     writer: "Boluwade",
     banner: "Testimonies.png",
+    userPhoto: "boluwade.jpg",
     category: "Teens",
+    subCategory: "My School Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `As a young child, frustrated teenager in quote, Jesus saved my soul from the pangs of sin, gave me the grace to live a life above sin from day to day and made me His own. Ever since then, He has been my Saviour and Friend. Jesus helped me through my secondary school education whereby I graduated with the best WAEC result in my school. 
     Preparing for 2017 and 2018 bible giant contests was not that easy, but God gave me the  wisdom, knowledge and understanding in the course of preparation and crowned it with victory.
@@ -157,7 +174,9 @@ export const testimoniesList = [
     date: " September 24, 2020",
     writer: "Awolola Opeoluwa",
     banner: "Testimonies.png",
+    userPhoto: "brotobi.png",
     category: "Teens",
+    subCategory: "My School Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I was brought up in this glorious where i heard  the WORD, I accepted the WORD but as a human I lost it. Later, during a children's programme we staged in the church, the WORD spoke to me and conviction gripped me. The WORD was so powerful that it swept me off my feet. I prayed hard and by God's grace, I was filled with His light.
     During this pandemic, I  heard about a competition titled 'The pilgrims progress'. At first, I was skeptical about it but later I decided to participate in it. When Maaye and I were chosen to represent our region, challenges came. 
@@ -170,7 +189,9 @@ export const testimoniesList = [
     date: " September 24, 2020",
     writer: "Maaye Paul Hunja",
     banner: "Testimonies.png",
+    userPhoto: "brotobi.png",
     category: "Teens",
+    subCategory: "My School Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I thank God for godly parents, in the year 2018, at age 11, I came to the campmeeting convention, there and then I prayed through to salvation sanctification and baptism of the holy Spirit.
     When I heard about the teenage competition on who wants to be a Bible giant, I prayed and enrolled, my family prayed along with me.
@@ -182,7 +203,9 @@ export const testimoniesList = [
     date: " Febryary 24, 2020",
     writer: " Godiya Oluwarotimi",
     banner: "Testimonies.png",
+    userPhoto: "",
     category: "AFCMF",
+    subCategory: "My Service Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I thank God for the privilege of sharing my testimony on this platform. I was born in the gospel, my siblings and I were taught the ways of the Lord by our parents and at a tender age, the Lord graciously gave me the graces of Salvation, Sanctification and Baptism of the Holy Spirit. God took care of me and helped me through school from Primary to Tertiary. It is good to have the Christian graces early in life because it helped me not to be overcome or influenced by peer pressure, especially in the higher institution.  
     I thank God because he answers prayers. After graduation,  I told God to do my posting. When the posting came out, I saw Akwa Ibom, “haa”, from one extreme of the country to another. I was shocked but couldn't do anything because I had asked for God's will, so I accepted it like that. Obedience pays. It was announced then, that all intending Corps Members should send their details to YDD at WECA, that I did and was happy I did.
@@ -202,7 +225,9 @@ export const testimoniesList = [
     date: " March 24, 2020",
     writer: "Mbetobong John",
     banner: "Testimonies.png",
+    userPhoto: "Mbetobong.jpg",
     category: "AFCMF",
+    subCategory: "My Service Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `I thank God for the privilege of being born into the gospel. It's one of the many blessings I have as a young person. When I was still a teenager, I accepted Jesus as my Lord and Savior and since then, Jesus has been my friend.  
     In 2019 I was posted to Kwara state for the compulsory Nationalonal Youth Service Corps (NYSC). Although, that wasn't my state of choice, but I wasn't moved to apply for redeployment. Over eleven months, God kept me. 
@@ -219,7 +244,9 @@ export const testimoniesList = [
     date: " June 21, 2020",
     writer: "Adegboyega Tolulope",
     banner: "Testimonies.png",
+    userPhoto: "",
     category: "AFCF",
+    subCategory: "My Campus Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `Glory be to God, I want to thank God, for his power to protect, may his name be glorified. I am a student of The Lagos State University and I want to thank God because he saved me from being pierced by stray bullets. It happened one day after lectures, on my way to the hostel. I moved freely from the gate closer to my hostel from school, but by the time I got to the market place close to my hostel, I started hearing people behind me take to their heels, they were running and soon I heard gunshots and then I determined to run forward, but the spirit God came to me, that why don't I just run to a nearby shop and hide. Immediately, I obeyed and soon some people joined me, we were there for close to twenty minutes, then a brother who was there with us advised that, those going towards the shooting point should stay back, while those going away should move on. At first, I was reluctant to do so, but later I proceeded in faith and God gave me the victory. I thank God because he has taken charge of things there now, that no one would ever believe that such thing did happen there, I give God the glory. Please pray with me that God who has kept me thus far, should see me through my stay in the school, I praise the Lord.
     
@@ -231,7 +258,9 @@ Lagos State University`,
     date: " June 21, 2020",
     writer: "Owolabi Oluwashina ",
     banner: "Testimonies.png",
+    userPhoto: "",
     category: "AFCF",
+    subCategory: "My Campus Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `Glory be to God for the salvation of my soul, sanctification and the baptism of Holy spirit. 
     God provided me admission into university with no bribe nor manipulation of results and He cares for me in term of provisions and protection ability to read and assimilate, He always helping me in all my examinations without being involved in exam malpractice
@@ -253,7 +282,9 @@ Lagos State University`,
     date: " September 24, 2020",
     writer: "Peter Oyeniyi",
     banner: "Testimonies.png",
+    userPhoto: "brotobi.png",
     category: "Teens",
+    subCategory: "My School Experience",
     tags: ["AFCF", "AFCMF", "General", "Marriage and Family", "Singles Forum", "Teenagers", "YPF"],
     content: `At 17, I was on my way to the university and it was there that the devil really got hold of me; I mixed with the wrong crowd and it was a downward slope from there. I partied, smoked, took alcohol and sampled drugs. At some point I stopped coming home regularly for holidays.`,
   },
