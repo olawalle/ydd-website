@@ -2,6 +2,15 @@ import dayjs from "dayjs";
 
 export const eventsList = [
   {
+    name: "International Youth Campmeeting",
+    date: "December 26, 2020",
+    time: "",
+    address: "Regional",
+    group: "general",
+    banner:
+      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
+  },
+  {
     name: "AFCF/AFCMF Regional Retreat",
     date: "Oct 30, 2020",
     time: "5pm",
@@ -15,15 +24,6 @@ export const eventsList = [
     date: "Oct 30, 2020",
     time: "2pm - 6pm",
     address: "Campground Anthony village Lagos",
-    group: "general",
-    banner:
-      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
-  },
-  {
-    name: "International Youth Campmeeting",
-    date: "December 26, 2020",
-    time: "",
-    address: "Regional",
     group: "general",
     banner:
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
@@ -48,8 +48,8 @@ export const eventsList = [
   },
   {
     name: "International Youth Campmeeting",
-    date: "November 4, 2020",
-    time: "2pm - 6pm",
+    date: "December 26, 2020",
+    time: "",
     address: "Campground Anthony village Lagos",
     group: "general",
     banner:
