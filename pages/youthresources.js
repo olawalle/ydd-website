@@ -23,14 +23,13 @@ export default function Youthresources() {
             <figure style={{ height: 280 }}>
               <Link href='/reports'>
                 <a>
-                  <img src='/ourvision.png' alt='' />
+                  <img src='/ydd-photos/reports.jpg' alt='' />
                 </a>
               </Link>
             </figure>{" "}
             <div className='featured-block-equal-cont'>
               <p>
-                To raise and retain an army of outstanding young people going to
-                Heaven and persuading others to come along.
+                
               </p>
             </div>
           </div>
@@ -43,14 +42,13 @@ export default function Youthresources() {
             <figure style={{ height: 280 }}>
               <Link href='/soulfood'>
                 <a>
-                  <img src='/ourvision.png' alt='' />
+                  <img src='/ydd-photos/soulfood.jpg' alt='' />
                 </a>
               </Link>
             </figure>{" "}
             <div className='featured-block-equal-cont'>
               <p>
-                To create platforms using relevant channels through which young
-                people can discover themselves, connect with God
+                
               </p>
             </div>
           </div>
@@ -63,14 +61,13 @@ export default function Youthresources() {
             <figure style={{ height: 280 }}>
               <Link href='/testimonies'>
                 <a>
-                  <img src='/ydd-photos/Testimonies.png' alt='' />
+                  <img src='/ydd-photos/testimony.jpg' alt='' />
                 </a>
               </Link>
             </figure>{" "}
             <div className='featured-block-equal-cont'>
               <p>
-                We value and strive to maintain the presence of God in our lives
-                more than anything in the world.
+                
               </p>
             </div>
           </div>
