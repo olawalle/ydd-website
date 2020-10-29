@@ -12,6 +12,7 @@ import Event from "../components/Event";
 import { eventsList } from "../mocks/eventsList";
 import { blogsList } from "../mocks/blogsList";
 import { reportsList } from "../mocks/reportsList";
+import { testimoniesList } from "../mocks/testimoniesList";
 import { useEffect } from "react";
 import * as dayjs from "dayjs";
 import { useState } from "react";
@@ -26,10 +27,6 @@ export default function Home() {
     day: 0,
   });
   useEffect(() => {
-    // axios.get(
-    //   "http://api.soundcloud.com/users/apostolic-faith-weca/playlists?client_id=0gk6cWFxRJcIGpDjYPiqm0zXGM6O6cLx"
-    // );
-
     const interval = setInterval(() => {
       let today = dayjs(eventsList[0].date);
       let endDate = dayjs();
@@ -103,7 +100,9 @@ export default function Home() {
                           Next coming event
                         </span>
                         <h3>
-                          <a className='event-title'>{eventsList[0].name}</a>
+                          <Link href='/singleevent'>
+                            <a className='event-title'>{eventsList[0].name}</a>
+                          </Link>
                         </h3>
                         <span className='meta-data'>
                           On{" "}
@@ -249,24 +248,34 @@ export default function Home() {
 
                         <ul className='blog-classic-listing'>
                           <li className='format-standard'>
-                            <Blog blog={blogsList[0]} withImage={true} />
+                            <Blog
+                              category='soulfood'
+                              blog={blogsList[0]}
+                              withImage={true}
+                            />
                           </li>
                         </ul>
                       </div>
                     </div>
                     <div className='col-md-6'>
+                      <div className='title-row'>
+                        <a className='comments-go' title='10 comments'>
+                          <i className='icon-dialogue-text'></i>
+                        </a>
+                        <a className='comments-go'>
+                          <i className='icon-dialogue-text'></i>
+                        </a>{" "}
+                        <h4>Testimonies</h4>
+                      </div>
                       <ul className='blog-classic-listing'>
                         <li className='format-standard'>
                           <div className='row'>
                             <div className='col-md-12'>
-                              <Blog blog={blogsList[1]} withImage={false} />
-                            </div>
-                          </div>
-                        </li>
-                        <li className='format-standard'>
-                          <div className='row'>
-                            <div className='col-md-12'>
-                              <Blog blog={blogsList[2]} withImage={false} />
+                              <Blog
+                                category='testimonies'
+                                blog={testimoniesList[1]}
+                                withImage
+                              />
                             </div>
                           </div>
                         </li>
@@ -293,7 +302,11 @@ export default function Home() {
                     </div>
                     <ul className='blog-classic-listing'>
                       <li className='format-standard'>
-                        <Blog blog={reportsList[0]} withImage={true} />
+                        <Blog
+                          category='reports'
+                          blog={reportsList[0]}
+                          withImage={true}
+                        />
                       </li>
                     </ul>
                   </div>

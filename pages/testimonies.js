@@ -9,19 +9,30 @@ import { eventsList } from "../mocks/eventsList";
 import { testimoniesList } from "../mocks/testimoniesList";
 import dayjs from "dayjs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function reports() {
   const [reports, setreports] = useState([]);
+
+  const router = useRouter();
+  const subCategory = router.query.subCategory;
+
+  const [testimoniesList_, settestimoniesList_] = useState([]);
+
   useEffect(() => {
+    let filteredList = subCategory
+      ? testimoniesList.filter((t) => t.subCategory === subCategory.trim())
+      : testimoniesList;
+    settestimoniesList_(filteredList);
     let itms = testimoniesList.reduce((agg, itm) => {
-      agg[itm.category]
-        ? (agg[itm.category] = agg[itm.category] + 1)
-        : (agg[itm.category] = 1);
+      agg[itm.subCategory]
+        ? (agg[itm.subCategory] = agg[itm.subCategory] + 1)
+        : (agg[itm.subCategory] = 1);
       return agg;
     }, {});
     let reports = Object.keys(itms).map((key) => `${key} (${itms[key]})`);
     setreports(reports);
-  }, []);
+  }, [subCategory]);
 
   return (
     <div className='reports'>
@@ -36,7 +47,7 @@ export default function reports() {
       <div className='container reports-contents'>
         <div className='row'>
           <div className='col-sm-12 col-md-8'>
-            {testimoniesList.map((blog, i) => (
+            {testimoniesList_.map((blog, i) => (
               <div className='blog'>
                 <img src={`/ydd-photos/${blog.banner}`} alt='' />
                 <p className='time'>
@@ -92,7 +103,7 @@ export default function reports() {
                   <Link
                     href={{
                       pathname: "/testimonies",
-                      query: { category: itm.split(" ")[0] },
+                      query: { subCategory: itm.split("(")[0] },
                     }}
                   >
                     <a>{itm}</a>

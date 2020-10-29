@@ -14,6 +14,7 @@ import { testimoniesList } from "../mocks/testimoniesList";
 import { soulfoodList_ } from "../mocks/soulfoodList";
 import Event from "../components/Event";
 import { useRouter } from "next/router";
+import { route } from "next/dist/next-server/server/router";
 
 export default function singleReport() {
   const router = useRouter();
@@ -24,7 +25,6 @@ export default function singleReport() {
 
   useEffect(() => {
     // let id = window.location.href.split("=")[1];
-    console.log({ title, type_ });
     let payload =
       type_ === "report"
         ? reportsList
@@ -34,8 +34,6 @@ export default function singleReport() {
     let currentReport_ = payload.find((r) => r.title === title);
     let currentReport = currentReport_ ? currentReport_ : payload[0];
     currentReport ? setReport(currentReport) : setReport({});
-    console.log({ currentReport_, payload, type_ });
-    console.log(router);
 
     let itms = payload.reduce((agg, itm) => {
       agg[itm.category]

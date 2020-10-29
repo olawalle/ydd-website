@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 export const eventsList = [
   {
     name: "International Youth Campmeeting",
-    date: "December 26, 2020",
+    date: "Dec 26, 2020",
     time: "",
     address: "Regional",
     group: "general",
@@ -12,7 +12,7 @@ export const eventsList = [
   },
   {
     name: "Thanksgiving Youth Service",
-    date: "Oct 30, 2020January 3, 2021",
+    date: "January 3, 2021",
     time: "5pm",
     address: "All Regions",
     group: "general",

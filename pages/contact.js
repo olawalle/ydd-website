@@ -292,24 +292,24 @@ export default function contact() {
   return (
     <>
       <Nav />
-      <div className="contact">
-        <div className="banner">
+      <div className='contact'>
+        <div className='banner'>
           <ReactMapGL
-            mapStyle="mapbox://styles/mapbox/streets-v9"
-            mapboxApiAccessToken="pk.eyJ1Ijoib2xhd2FsbGUiLCJhIjoiY2tma3ZzNXMxMHV0NjJ1cWh5bjBhODBiciJ9.NySLSE1kNzZ9SKJ7n0wgmQ"
+            mapStyle='mapbox://styles/mapbox/streets-v9'
+            mapboxApiAccessToken='pk.eyJ1Ijoib2xhd2FsbGUiLCJhIjoiY2tma3ZzNXMxMHV0NjJ1cWh5bjBhODBiciJ9.NySLSE1kNzZ9SKJ7n0wgmQ'
             onViewportChange={(viewport) => setViewPort(viewport)}
             {...viewPort}
           />
         </div>
         <div
-          className="container contact-content"
+          className='container contact-content'
           style={{ marginBottom: 100 }}
         >
-          <p className="header">AFCF in Nigeria</p>
-          <div className="row">
-            <div className="col-sm-12 col-md-6">
+          <p className='header'>AFCF in Nigeria</p>
+          <div className='row'>
+            <div className='col-sm-12 col-md-6'>
               <Collapse
-                expandIconPosition="right"
+                expandIconPosition='right'
                 style={{ backgroundColor: "#3bafdae3", border: 0 }}
                 defaultActiveKey={[]}
               >
@@ -322,7 +322,7 @@ export default function contact() {
                       key={state["State/District"]}
                     >
                       {state.users.map((user) => (
-                        <div className="user">
+                        <div className='user'>
                           <p
                             style={{
                               fontSize: 18,
@@ -343,9 +343,9 @@ export default function contact() {
                   ))}
               </Collapse>
             </div>
-            <div className="col-sm-12 col-md-6">
+            <div className='col-sm-12 col-md-6'>
               <Collapse
-                expandIconPosition="right"
+                expandIconPosition='right'
                 style={{ backgroundColor: "#3bafdae3", border: 0 }}
                 defaultActiveKey={[]}
               >
@@ -358,7 +358,7 @@ export default function contact() {
                       key={state["State/District"]}
                     >
                       {state.users.map((user) => (
-                        <div className="user">
+                        <div className='user'>
                           <p
                             style={{
                               fontSize: 18,
