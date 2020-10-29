@@ -57,10 +57,10 @@ export default function Home() {
         <div className='main-carousel'>
           <MainCarousel
             pictures={[
-              "/ydd-photos/follow.jpg",
               "/ydd-photos/slide8.jpg",
-              "/ydd-photos/slide3.jpg",
               "/ydd-photos/slide8.png",
+              "/ydd-photos/slide3.jpg",
+              "/ydd-photos/follow.jpg",
             ]}
           />
         </div>
@@ -275,12 +275,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className='col-md-4'>
-                  <h3>
-                    <Link href='/reports'>
-                      <a>Youth Reports</a>
-                    </Link>
-                  </h3>
-                  <hr className='sm'></hr>
+                  
                   <div className='very-latest-post format-standard'>
                     <div className='title-row'>
                       <a className='comments-go' title='10 comments'>
