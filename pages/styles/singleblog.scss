@@ -7,6 +7,7 @@
     background-position: center;
     position: relative;
     margin-bottom: 60px;
+    position: relative;
     p {
       font-weight: 200;
       line-height: 48px;
@@ -29,6 +30,19 @@
         margin-bottom: 30px;
         display: block;
         font-family: "Clicker Script", cursive;
+      }
+    }
+    .crumbs {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.253);
+      padding: 12px 30px;
+      color: #fff;
+      span {
+        color: #fff;
+        padding: 0 5px;
+        font-weight: 300;
       }
     }
   }

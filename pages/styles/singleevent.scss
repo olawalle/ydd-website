@@ -91,7 +91,7 @@
       .count {
         font-weight: 600;
         font-size: 48px;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
       }
       .tag {
         font-size: 16px;
@@ -121,11 +121,11 @@
     .tabs {
       border-radius: 12px;
       overflow: hidden;
-      width: 600px;
+      // width: 600px;
       margin-bottom: 20px;
       margin: 20px auto;
       .tab {
-        width: 200px;
+        width: 250px;
         color: #9293bc;
         background-color: #1f2371;
         text-align: center;
@@ -171,6 +171,7 @@
       }
       .event {
         font-size: 20px;
+        width: 35%;
       }
       .times {
         font-weight: 200;

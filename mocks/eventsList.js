@@ -3,16 +3,16 @@ import dayjs from "dayjs";
 export const eventsList = [
   {
     name: "International Youth Campmeeting",
-    date: "December 26, 2020",
+    date: "12/26/2020",
     time: "",
-    address: "Regional",
-    group: "General",
+    address: "WECA HQ, & Other locations",
+    group: "general",
     banner:
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
-    name: "Thanksgiving Youth Service - Oh taste and see",
-    date: "January 3, 2021",
+    name: "Thanksgiving Youth Service - Oh Taste and see",
+    date: "01/03/2021",
     time: "5pm",
     address: "All Branches Nationwide",
     group: "General",
@@ -21,7 +21,7 @@ export const eventsList = [
   },
   {
     name: "Anthony District Youth Workers Retreat",
-    date: "January 30, 2021",
+    date: "01/30/2021",
     time: "2pm - 6pm",
     address: "WeCA HQ, Anthony village Lagos",
     group: "General",
@@ -30,7 +30,7 @@ export const eventsList = [
   },
   {
     name: "AFCMF Regional Retreat",
-    date: "February 5, 2021",
+    date: "02/05/2021",
     time: "2pm - 6pm",
     address: "Selected Locations In Nigeria",
     group: "General",
@@ -39,7 +39,7 @@ export const eventsList = [
   },
   {
     name: "Boundless Love",
-    date: "February 14, 2021",
+    date: "02/14/2021",
     time: "2pm - 6pm",
     address: "All Regions",
     group: "General",
@@ -48,7 +48,7 @@ export const eventsList = [
   },
   {
     name: "Singles Timeout with Jesus",
-    date: "February 17, 2021",
+    date: "02/17/2021",
     time: "",
     address: "Campground Anthony village Lagos",
     group: "Singles",
@@ -56,8 +56,8 @@ export const eventsList = [
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
-    name: "Singles Forum",
-    date: "November 6, 2020",
+    name: "National Youth Leaders Capacity Building",
+    date: "03/06/2020",
     time: "2pm - 6pm",
     address: "Nationwide",
     group: "Singles",
@@ -65,10 +65,10 @@ export const eventsList = [
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
   },
   {
-    name: "National Youth Leaders Capacity Building",
-    date: " March 19, 2021",
+    name: "Singles Forum",
+    date: " 03/19/2021",
     time: "2pm - 6pm",
-    address: "National",
+    address: "Nationwide",
     group: "General",
     banner:
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",

@@ -14,6 +14,8 @@ import { testimoniesList } from "../mocks/testimoniesList";
 import { soulfoodList_ } from "../mocks/soulfoodList";
 import Event from "../components/Event";
 import { useRouter } from "next/router";
+import { route } from "next/dist/next-server/server/router";
+import Link from "next/link";
 
 export default function singleReport() {
   const router = useRouter();
@@ -24,7 +26,6 @@ export default function singleReport() {
 
   useEffect(() => {
     // let id = window.location.href.split("=")[1];
-    console.log({ title, type_ });
     let payload =
       type_ === "report"
         ? reportsList
@@ -34,8 +35,6 @@ export default function singleReport() {
     let currentReport_ = payload.find((r) => r.title === title);
     let currentReport = currentReport_ ? currentReport_ : payload[0];
     currentReport ? setReport(currentReport) : setReport({});
-    console.log({ currentReport_, payload, type_ });
-    console.log(router);
 
     let itms = payload.reduce((agg, itm) => {
       agg[itm.category]
@@ -58,7 +57,48 @@ export default function singleReport() {
           style={{
             backgroundImage: `url("/ydd-photos/${currentReport.banner}")`,
           }}
-        ></div>
+        >
+          <div className='crumbs'>
+            <div
+              className='container'
+              style={{ paddingTop: 0, paddingBottom: 0 }}
+            >
+              <Link href='/'>
+                <a>
+                  <span>YDD</span>
+                </a>
+              </Link>
+              {" > "}
+              <Link href='/youthresources'>
+                <a>
+                  <span>Youth Resources</span>
+                </a>
+              </Link>
+              {" > "}
+              <Link
+                href={{
+                  pathname:
+                    type_ === "report"
+                      ? "/reports"
+                      : type_ === "testimonies"
+                      ? "/testimonies"
+                      : "/soulfood",
+                }}
+              >
+                <a>
+                  <span>
+                    {type_ === "report"
+                      ? "Reports"
+                      : type_ === "testimonies"
+                      ? "Testimonies"
+                      : "Soul food"}
+                  </span>
+                </a>
+              </Link>
+              {" > "} <span>{currentReport.title}</span>
+            </div>
+          </div>
+        </div>
         <div className='container'>
           <div className='row'>
             <div className='col-sm-12 col-md-8'>
