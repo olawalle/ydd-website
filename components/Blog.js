@@ -20,7 +20,6 @@ export default function Blog({ blog, withImage, category }) {
       </a>
       <div className='meta-data'>
         by <a>{blog.writer}</a> on {dayjs(blog.date).format("DD MM, YYYY")} in{" "}
-        in
         <Link
           href={{
             pathname: blog.subCategory ? "/testimonies" : "/youthresources",
@@ -45,7 +44,7 @@ export default function Blog({ blog, withImage, category }) {
       <p>
         <Link
           href={{
-            pathname: category ? "/singlereport" : "/singleblog",
+            pathname: category !== "soulfood" ? "/singlereport" : "/singleblog",
             query: { title: blog.title, type: category },
           }}
         >

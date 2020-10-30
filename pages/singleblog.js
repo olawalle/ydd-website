@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 import { blogsList } from "../mocks/blogsList";
 import Footer from "../components/Footer";
 import "./styles/singleblog.scss";
+import Link from "next/link";
 
 export default function singleblog() {
   const router = useRouter();
@@ -19,7 +20,33 @@ export default function singleblog() {
   return (
     <div className='single-blog'>
       <Nav />
-      <div className='banner'></div>
+      <div className='banner'>
+        <div className='crumbs'>
+          <div
+            className='container'
+            style={{ paddingTop: 0, paddingBottom: 0 }}
+          >
+            <Link href='/'>
+              <a>
+                <span>YDD</span>
+              </a>
+            </Link>
+            {" > "}
+            <Link href='/youthresources'>
+              <a>
+                <span>Youth Resources</span>
+              </a>
+            </Link>
+            {" > "}
+            <Link href='/soulfood'>
+              <a>
+                <span>Soul food</span>
+              </a>
+            </Link>
+            {" > "} <span>{blogItem.title}</span>
+          </div>
+        </div>
+      </div>
       <div className='container content'>
         <h1 className='page-heading'>
           <hr />

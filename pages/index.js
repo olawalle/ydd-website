@@ -26,14 +26,17 @@ export default function Home() {
     hour: 0,
     day: 0,
   });
+  const featuredEvent = eventsList[0];
   useEffect(() => {
+    console.log(featuredEvent);
     const interval = setInterval(() => {
-      let today = dayjs(eventsList[0].date);
+      let today = dayjs(featuredEvent.date);
       let endDate = dayjs();
-      let second = today.diff(endDate, "second") % 60;
+
+      let second = today.diff(endDate, "seconds") % 60;
       let minute = today.diff(endDate, "minute") % 60;
       let hour = today.diff(endDate, "hour") % 24;
-      let day = today.diff(endDate, "day") % 24;
+      let day = today.diff(endDate, "day");
       setcountdown({
         second: second ? second : 60,
         minute: minute ? minute : 60,
@@ -85,13 +88,15 @@ export default function Home() {
                     className='widget sidebar-widget widget_event_counter'
                   >
                     <section className='upcoming-event format-standard event-list-item event-dynamic'>
-                      <a className='media-box'>
-                        <img
-                          src={eventsList[0].banner}
-                          className='attachment-600x400 size-600x400 wp-post-image'
-                          alt=''
-                        />
-                      </a>
+                      <Link href='/singleevent'>
+                        <a className='media-box'>
+                          <img
+                            src={featuredEvent.banner}
+                            className='attachment-600x400 size-600x400 wp-post-image'
+                            alt=''
+                          />
+                        </a>
+                      </Link>
                       <div className='upcoming-event-content'>
                         <span
                           className='label label-primary upcoming-event-label'
@@ -101,24 +106,24 @@ export default function Home() {
                         </span>
                         <h3>
                           <Link href='/singleevent'>
-                            <a className='event-title'>{eventsList[0].name}</a>
+                            <a className='event-title'>{featuredEvent.name}</a>
                           </Link>
                         </h3>
                         <span className='meta-data'>
                           On{" "}
                           <span className='event-date'>
-                            {dayjs(eventsList[0].date).format("DD MMM, YYYY")}
+                            {dayjs(featuredEvent.date).format("DD MMM, YYYY")}
                           </span>{" "}
                           by{" "}
                           <span className='event-time'>
-                            {eventsList[0].time}
+                            {featuredEvent.time}
                           </span>{" "}
                           at
                         </span>
                         <span className='meta-data event-location'>
                           {" "}
                           <span className='event-location-address'>
-                            {eventsList[0].address}
+                            {featuredEvent.address}
                           </span>
                         </span>
 
@@ -149,49 +154,22 @@ export default function Home() {
                           </div>
                         </div>
                       </div>
-                      {/* <div className="upcoming-event-footer">
-                        <a
-                          id="imicregister-2763|1587308401"
-                          href="#"
-                          className="pull-right btn btn-primary btn-sm event-tickets event-register-button"
-                        >
-                          Register
-                        </a>
-                        <ul className="action-buttons">
-                          <li title="Share event">
-                            <a
-                              href="#"
-                              data-trigger="focus"
-                              data-placement="top"
-                              data-content=""
-                              data-toggle="popover"
-                              data-original-title="Share Event"
-                              className="event-share-link"
-                            >
-                              <i className="icon-share"></i>
-                            </a>
-                          </li>
-                          <li title="Get directions" className="hidden-xs">
-                            <a
-                              href="#"
-                              className="cover-overlay-trigger event-direction-link"
-                            >
-                              <i className="icon-compass"></i>
-                            </a>
-                          </li>
-                          <li title="Contact event manager">
-                            <a
-                              id="imiccontact-2763|1587308401"
-                              href="#"
-                              data-toggle="modal"
-                              data-target="#Econtact"
-                              className="event-contact-link"
-                            >
-                              <i className="icon-mail"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div> */}
+                      <div className='upcoming-event-footer'>
+                        <span>
+                          For more details on the IYC click here to{" "}
+                          <Link href='/singleevent'>
+                            <a>see more</a>
+                          </Link>
+                        </span>
+                        <Link href='/singleevent'>
+                          <a
+                            id='imicregister-2763|1587308401'
+                            className='pull-right btn btn-primary btn-sm event-tickets event-register-button'
+                          >
+                            Register
+                          </a>
+                        </Link>
+                      </div>
                     </section>
                   </div>
                 </div>
@@ -226,12 +204,14 @@ export default function Home() {
             <div className='container'>
               <hr className='fw'></hr>
               <div className='row'>
-                <div className='col-md-8'>
+                <div className='col-md-12'>
                   <h3>
                     <Link href='/youthresources'>
                       <a>Youth Resources</a>
                     </Link>
                   </h3>
+                </div>
+                <div className='col-md-8'>
                   <hr className='sm'></hr>
                   <div className='row'>
                     <div className='col-md-6'>
@@ -243,7 +223,7 @@ export default function Home() {
                           <a className='comments-go'>
                             <i className='icon-dialogue-text'></i>
                           </a>{" "}
-                          <h4>FROM OUR BLOG</h4>
+                          <h4>OUR BLOG</h4>
                         </div>
 
                         <ul className='blog-classic-listing'>
@@ -284,7 +264,6 @@ export default function Home() {
                   </div>
                 </div>
                 <div className='col-md-4'>
-                  
                   <div className='very-latest-post format-standard'>
                     <div className='title-row'>
                       <a className='comments-go' title='10 comments'>
@@ -293,12 +272,12 @@ export default function Home() {
                       <a className='comments-go'>
                         <i className='icon-dialogue-text'></i>
                       </a>{" "}
-                      <h4>REPORTS FROM YDD</h4>
+                      <h4>REPORTS</h4>
                     </div>
                     <ul className='blog-classic-listing'>
                       <li className='format-standard'>
                         <Blog
-                          category='reports'
+                          category='report'
                           blog={reportsList[0]}
                           withImage={true}
                         />

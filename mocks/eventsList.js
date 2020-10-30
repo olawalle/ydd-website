@@ -3,9 +3,9 @@ import dayjs from "dayjs";
 export const eventsList = [
   {
     name: "International Youth Campmeeting",
-    date: "Dec 26, 2020",
+    date: "12/26/2020",
     time: "",
-    address: "Regional",
+    address: "WECA HQ, & Other locations",
     group: "general",
     banner:
       "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",

@@ -173,7 +173,7 @@ export default function SingleEvent() {
             </div>
             <div className='col-md-6 col-sm-12'>
               <iframe
-                src='https://www.youtube.com/embed/40DMcPygQcI'
+                src='https://youtu.be/Plce3aWYspo'
                 frameBorder='0'
               ></iframe>
             </div>
