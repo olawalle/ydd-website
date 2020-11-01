@@ -31,10 +31,7 @@ export default function SingleEvent() {
 
   useEffect(() => {
     setTimeout(() => {
-      //   console.log(window.parent);
-      //   window.top.postMessage("getAppData", "*");
-      //   setshow(true);
-      //   document.getElementById("frame").contentWindow.postMessage("hello", "*");
+      //   createFrame();
     }, 3000);
   }, []);
 
@@ -131,14 +128,6 @@ export default function SingleEvent() {
 
   return (
     <div className='single-event' id='log'>
-      {/* <iframe
-        src='http://127.0.0.1:5501/index.html'
-        frameborder='0'
-        style={{ height: "100vh" }}
-        id='frame'
-      >
-        <p>welcome</p>
-      </iframe> */}
       <Nav />
 
       <div className='banner'></div>
