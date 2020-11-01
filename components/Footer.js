@@ -1,21 +1,23 @@
+import { Modal } from "antd";
 import React, { useState } from "react";
 
 export default function Footer() {
   const [request, setRequest] = useState("");
   const [email, setEmail] = useState("");
+  const [showModal, setShowModal] = useState(false);
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <div className="site-footer-top">
-          <div className="row">
-            <div className="col-md-4 col-sm-4 widget footer-widget widget_text">
+    <footer className='site-footer'>
+      <div className='container'>
+        <div className='site-footer-top'>
+          <div className='row'>
+            <div className='col-md-4 col-sm-4 widget footer-widget widget_text'>
               <img
-                src="/ydd-photos/ydd_logo.png"
-                className="attachment-400x400 size-400x400 wp-post-image"
-                alt=""
+                src='/ydd-photos/ydd_logo.png'
+                className='attachment-400x400 size-400x400 wp-post-image'
+                alt=''
               />
-              <h4 className="widgettitle">AFM WECA YDD </h4>{" "}
-              <div className="textwidget">
+              <h4 className='widgettitle'>AFM WECA YDD </h4>{" "}
+              <div className='textwidget'>
                 <p>
                   We are the Youth Development Directorate of the Apostolic
                   Faith work in West and Central Africa.
@@ -27,38 +29,38 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <div className="col-md-4 col-sm-4 widget footer-widget widget_twitter_feeds">
-              <h4 className="widgettitle">QUICK LINKS TO RESOURCES</h4>
+            <div className='col-md-4 col-sm-4 widget footer-widget widget_twitter_feeds'>
+              <h4 className='widgettitle'>QUICK LINKS TO RESOURCES</h4>
               <ul>
                 <li>
-                  <a href="http://apostolicfaithweca.org/sunday-school-lessons">
+                  <a href='http://apostolicfaithweca.org/sunday-school-lessons'>
                     Sunday School:{" "}
                   </a>
                   View lessons from our beloved Sunday School books
                 </li>
                 <li>
-                  <a href="http://apostolicfaith.org/daily-devotional">
+                  <a href='http://apostolicfaith.org/daily-devotional'>
                     Devotionals:{" "}
                   </a>
                   Enjoy Daily morsels for your Spiritual growth
                 </li>
                 <li>
-                  <a href="http://apostolicfaith.org/library/doctrinal">
+                  <a href='http://apostolicfaith.org/library/doctrinal'>
                     Doctrinal Resources:{" "}
                   </a>
                   View lessons from our beloved Sunday School books
                 </li>
                 <li>
-                  <a href="http://apostolicfaith.org/library/online-magazine/volumes?volumeid=17472906">
+                  <a href='http://apostolicfaith.org/library/online-magazine/volumes?volumeid=17472906'>
                     AFM Magazines:{" "}
                   </a>
                   Edify your spirit with soul lifting articles
                 </li>
               </ul>
             </div>
-            <div className="col-md-4 col-sm-4 widget footer-widget widget_newsletter">
-              <h4 className="widgettitle">PRAYER REQUESTS</h4>
-              <form>
+            <div className='col-md-4 col-sm-4 widget footer-widget widget_newsletter'>
+              <h4 className='widgettitle'>PRAYER REQUESTS</h4>
+              {/* <form>
                 <textarea
                   rows="3"
                   cols="100"
@@ -88,59 +90,71 @@ export default function Footer() {
                 >
                   Submit
                 </a>
-              </form>
+              </form> */}
+
+              <a
+                className='btn btn-primary btn-block btn-lg'
+                onClick={() => setShowModal(true)}
+                style={{
+                  backgroundColor: "#3bafdae3",
+                  border: 0,
+                  color: "#fff",
+                }}
+              >
+                Write prayer request
+              </a>
             </div>
           </div>
-          <div className="quick-info">
-            <div className="row">
-              <div className="col-md-9">
-                <div className="col-md-4 ">
-                  <h4 className="">
-                    <i className="fa fa-clock-o"></i> Service Times
+          <div className='quick-info'>
+            <div className='row'>
+              <div className='col-md-9'>
+                <div className='col-md-4 '>
+                  <h4 className=''>
+                    <i className='fa fa-clock-o'></i> Service Times
                   </h4>
-                  <p className=""> Sundays @ 02:30 PM </p>
+                  <p className=''> Sundays @ 02:30 PM </p>
                   <p>(Forthnightly)</p>
                 </div>
-                <div className="col-md-4 ">
-                  <h4 className="">
-                    <i className="fa fa-map-marker"></i> Our Location
+                <div className='col-md-4 '>
+                  <h4 className=''>
+                    <i className='fa fa-map-marker'></i> Our Location
                   </h4>
-                  <p className="">All Apostolic Faith </p>
+                  <p className=''>All Apostolic Faith </p>
                   <p>WECA Churches</p>
                 </div>
-                <div className="col-md-4 ">
-                  <h4 className="">
-                    <i className="fa fa-envelope"></i> Contact Info
+                <div className='col-md-4 '>
+                  <h4 className=''>
+                    <i className='fa fa-envelope'></i> Contact Info
                   </h4>
-                  <p className="">youthinfo@apostolicfaithweca.org</p>
+                  <p className=''>youthinfo@apostolicfaithweca.org</p>
                 </div>{" "}
               </div>
-              <div className="col-md-3">
+              <div className='col-md-3'>
                 <h4>
-                  <i className="fa fa-clock-o"></i> CONNECT WITH US
+                  <i className='fa fa-clock-o'></i> CONNECT WITH US
                 </h4>
-                <ul className="social-icons-colored inversed">
-                  <li className="facebook">
+                <ul className='social-icons-colored inversed'>
+                  <li className='facebook'>
                     <a
-                      href="http://www.facebook.com/afmwecayouth"
-                      target="_blank"
+                      href='http://www.facebook.com/afmwecayouth'
+                      target='_blank'
                     >
-                      <i className="fa fa-facebook"></i>
+                      <i className='fa fa-facebook'></i>
                     </a>
                   </li>
-                  <li className="twitter">
-                    <a href="http://twitter.com/afmwecayouth" target="_blank">
-                      <i className="fa fa-twitter"></i>
+                  <li className='twitter'>
+                    <a href='http://twitter.com/afmwecayouth' target='_blank'>
+                      <i className='fa fa-twitter'></i>
                     </a>
                   </li>
-                  <li className="google-plus">
-                    <a href="http://instagram.com/afmwecayouth" target="_blank">
-                      <i className="fa fa-instagram"></i>
+                  <li className='google-plus'>
+                    <a href='http://instagram.com/afmwecayouth' target='_blank'>
+                      <i className='fa fa-instagram'></i>
                     </a>
                   </li>
-                  <li className="vimeo-square">
-                    <a href="https://vimeo.com/user118214378" target="_blank">
-                      <i className="fa fa-vimeo-square"></i>
+                  <li className='vimeo-square'>
+                    <a href='https://vimeo.com/user118214378' target='_blank'>
+                      <i className='fa fa-vimeo-square'></i>
                     </a>
                   </li>{" "}
                 </ul>
@@ -148,9 +162,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="site-footer-bottom">
-          <div className="row">
-            <div className="col-md-6 col-sm-6 copyrights-coll">
+        <div className='site-footer-bottom'>
+          <div className='row'>
+            <div className='col-md-6 col-sm-6 copyrights-coll'>
               © 2020 AFMWECA YDD. All Rights Reserved{" "}
             </div>
             {/* <div className="col-md-6 col-sm-6 copyrights-colr">
@@ -182,6 +196,27 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      <Modal
+        visible={showModal}
+        footer={null}
+        closable={true}
+        onCancel={() => setShowModal(false)}
+      >
+        <iframe
+          width='640px'
+          height='580px'
+          src='https://forms.office.com/Pages/ResponsePage.aspx?id=nQsQZCgfIEqqorC_VvOJ1FlXqqPcu-hIqopG-wWhx2FUQlpUSTQ1TTU0NVU5SllXWjNZMkM3SDVMRy4u&embed=true'
+          style={{
+            border: "none",
+            maxWidth: "100%",
+            maxHeight: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          {" "}
+        </iframe>
+      </Modal>
     </footer>
   );
 }
