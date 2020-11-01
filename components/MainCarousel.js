@@ -6,7 +6,7 @@ import "../pages/styles/carousel.scss";
 const Slide = ({ pic, i }) => {
   return (
     <>
-      <div className="slide">
+      <div className='slide'>
         <style jsx>
           {`
             .slide {
@@ -15,6 +15,12 @@ const Slide = ({ pic, i }) => {
               background-image: url("${pic}");
               background-size: cover;
               background-position: center;
+            }
+
+            @media (max-width: 767px) {
+              .slide {
+                background-size: 125% 100%;
+              }
             }
           `}
         </style>
@@ -25,10 +31,10 @@ const Slide = ({ pic, i }) => {
 
 export default function MainCarousel({ pictures }) {
   return (
-    <Carousel autoplay>
+    <Carousel autoplay={true}>
       {pictures &&
         pictures.map((pic, i) => (
-          <div className="carousel" key={`item${i}`}>
+          <div className='carousel' key={`item${i}`}>
             <Slide pic={pic} key={i} i={i} />
           </div>
         ))}

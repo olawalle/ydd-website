@@ -7,17 +7,22 @@ body,
   border: 0 !important;
 }
 .mobile {
-  display: none !important;
+  display: none;
 }
 .web {
-  display: inline-block !important;
+  display: inline-block;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 @media (max-width: 767px) {
   .mobile {
-    display: none !important;
+    display: none;
   }
   .web {
-    display: none !important;
+    display: none;
   }
 }

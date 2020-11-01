@@ -76,12 +76,12 @@
     cursor: pointer;
   }
   .mobile {
-    display: none !important;
+    display: none;
   }
 
   @media (max-width: 767px) {
     .mobile {
-      display: block !important;
+      display: block;
     }
     .for-navi {
       padding: 0 !important;

@@ -28,7 +28,6 @@ export default function Home() {
   });
   const featuredEvent = eventsList[0];
   useEffect(() => {
-    console.log(featuredEvent);
     const interval = setInterval(() => {
       let today = dayjs(featuredEvent.date);
       let endDate = dayjs();
@@ -57,7 +56,7 @@ export default function Home() {
         <div className='main-carousel'>
           <MainCarousel
             pictures={[
-              "/ydd-photos/slide8.jpg",
+              "/ydd-photos/slide82.png",
               "/ydd-photos/slide8.png",
               "/ydd-photos/slide3.jpg",
               "/ydd-photos/follow.jpg",
@@ -89,7 +88,13 @@ export default function Home() {
                   >
                     <section className='upcoming-event format-standard event-list-item event-dynamic'>
                       <Link href='/singleevent'>
-                        <a className='media-box'>
+                        <a
+                          className='media-box'
+                          style={{
+                            maxHeight: 300,
+                            overflow: "hidden",
+                          }}
+                        >
                           <img
                             src={featuredEvent.banner}
                             className='attachment-600x400 size-600x400 wp-post-image'
@@ -155,7 +160,9 @@ export default function Home() {
                         </div>
                       </div>
                       <div className='upcoming-event-footer'>
-                        <span>
+                        <span
+                          style={{ maxWidth: "60%", display: "inline-block" }}
+                        >
                           For more details on the IYC click here to{" "}
                           <Link href='/singleevent'>
                             <a>see more</a>
@@ -186,7 +193,7 @@ export default function Home() {
                       </Link>
                       <hr className='sm'></hr>
                     </div>
-                    {eventsList.slice(1, 4).map((evnt) => {
+                    {eventsList.slice(1, 5).map((evnt) => {
                       return (
                         <div style={{ marginBottom: 40 }}>
                           <Event noreg={true} event={evnt} />

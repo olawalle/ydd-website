@@ -7,8 +7,7 @@ export const eventsList = [
     time: "",
     address: "WECA HQ, & Other locations",
     group: "general",
-    banner:
-      "https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg",
+    banner: "/ydd-photos/iyc.jpeg",
   },
   {
     name: "Thanksgiving Youth Service - Oh Taste and see",

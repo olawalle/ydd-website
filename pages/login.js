@@ -56,19 +56,19 @@ export default function login() {
   }, []);
 
   return (
-    <div className="auth-wrap">
-      <div className="login">
-        <Link href="/">
-          <img src={ydd_logo} alt="" className="logo" />
+    <div className='auth-wrap'>
+      <div className='login'>
+        <Link href='/'>
+          <img src={ydd_logo} alt='' className='logo' />
         </Link>
         <h1>Login</h1>
 
-        <p className="label">Email address</p>
+        <p className='label'>Email address</p>
         <input
-          type="text"
-          name="u"
-          placeholder="Username"
-          required="required"
+          type='text'
+          name='u'
+          placeholder='Username'
+          required='required'
           defaultValue={loginData.username}
           onChange={(e) =>
             setloginData({
@@ -78,12 +78,12 @@ export default function login() {
           }
         />
 
-        <p className="label">Password</p>
+        <p className='label'>Password</p>
         <input
-          type="password"
-          name="p"
-          placeholder="Password"
-          required="required"
+          type='password'
+          name='p'
+          placeholder='Password'
+          required='required'
           defaultValue={loginData.password}
           onChange={(e) =>
             setloginData({
@@ -93,13 +93,13 @@ export default function login() {
           }
         />
         <button
-          className="btn btn-primary btn-block btn-large"
+          className='btn btn-primary btn-block btn-large'
           onClick={userLogin}
           disabled={loading}
         >
           Log in
         </button>
-        <Link href="/signup">
+        <Link href='/signup'>
           <a>
             <p style={{ marginTop: 10, cursor: "pointer" }}>
               Do not have an account? Sign up

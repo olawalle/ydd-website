@@ -37,22 +37,22 @@ const Nav = () => {
 
   return (
     <header className={`nav ${darkNav ? "transparent" : ""}`}>
-      <div className="container">
-        <div className="for-navi">
-          <div className="" style={{ display: "inline-block" }}>
+      <div className='container'>
+        <div className='for-navi'>
+          <div className='' style={{ display: "inline-block" }}>
             <h1>
-              <Link href="/">
-                <a title="Logo">
-                  <div className="text-logo">
-                    <span className="logo-icon">
+              <Link href='/'>
+                <a title='Logo'>
+                  <div className='text-logo'>
+                    <span className='logo-icon'>
                       {/* <i className="fa fa-heart"></i> */}
                       <img
-                        src="/ydd-photos/ydd_logo.png"
-                        alt=""
+                        src='/ydd-photos/ydd_logo.png'
+                        alt=''
                         style={{ width: "45px" }}
                       />
                     </span>
-                    <span className="logo-text web">
+                    <span className='logo-text web'>
                       AFMWECA<span> YDD</span>
                     </span>
                   </div>
@@ -64,11 +64,24 @@ const Nav = () => {
             </h1>
           </div>
 
-          <div className={`mobile`}>
+          <div
+            className={`mobile`}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             {" "}
-            <Link href="/profile">
-              <div className="initials">{getDetailsIndex()}</div>
+            <Link href='/profile'>
+              <div className='initials mobile'>{getDetailsIndex()}</div>
             </Link>
+            <MenuOutlined
+              onClick={() => setMobileNav(!mobileNav)}
+              style={{ color: "#000", marginLeft: 15 }}
+              className='mobile'
+            />
           </div>
 
           <div
@@ -76,12 +89,12 @@ const Nav = () => {
             style={{ float: "right", display: "inline-block" }}
           >
             <span>
-              <Link href="/">
+              <Link href='/'>
                 <a>Home</a>
               </Link>
             </span>
             <span>
-              <Link href="/about">
+              <Link href='/about'>
                 <a>About Us</a>
               </Link>
             </span>
@@ -90,27 +103,27 @@ const Nav = () => {
                 overlay={
                   <Menu>
                     <Menu.Item>
-                      <Link href="/gallery">
+                      <Link href='/gallery'>
                         <a>Videos</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/picgallery">
+                      <Link href='/picgallery'>
                         <a>Photos</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="https://soundcloud.com/apostolic-faith-weca/sets/">
+                      <a href='https://soundcloud.com/apostolic-faith-weca/sets/'>
                         Soundcloud audios
                       </a>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="http://www.apostolicfaithweca.org/livecast/newlivecast.html">
+                      <a href='http://www.apostolicfaithweca.org/livecast/newlivecast.html'>
                         Webcast
                       </a>
                     </Menu.Item>
                     <Menu.Item>
-                      <a href="https://vimeo.com/user118214378">
+                      <a href='https://vimeo.com/user118214378'>
                         Inspiring Videos
                       </a>
                     </Menu.Item>
@@ -118,7 +131,7 @@ const Nav = () => {
                 }
               >
                 <a
-                  className="ant-dropdown-link"
+                  className='ant-dropdown-link'
                   onClick={(e) => e.preventDefault()}
                 >
                   Gallery
@@ -131,32 +144,32 @@ const Nav = () => {
                 overlay={
                   <Menu>
                     <Menu.Item>
-                      <Link href="/teenage">
+                      <Link href='/teenage'>
                         <a>Teenage ministry</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/afcf">
+                      <Link href='/afcf'>
                         <a>AFCF</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/afcmf">
+                      <Link href='/afcmf'>
                         <a>AFCMF</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/ypf">
+                      <Link href='/ypf'>
                         <a>YPF</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/couples">
+                      <Link href='/couples'>
                         <a>Couples & Family</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/singles">
+                      <Link href='/singles'>
                         <a>Singles forumn</a>
                       </Link>
                     </Menu.Item>
@@ -164,7 +177,7 @@ const Nav = () => {
                 }
               >
                 <a
-                  className="ant-dropdown-link"
+                  className='ant-dropdown-link'
                   onClick={(e) => e.preventDefault()}
                 >
                   Platforms
@@ -177,17 +190,17 @@ const Nav = () => {
                 overlay={
                   <Menu>
                     <Menu.Item>
-                      <Link href="/reports">
+                      <Link href='/reports'>
                         <a>Reports</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/testimonies">
+                      <Link href='/testimonies'>
                         <a>Testimonies</a>
                       </Link>
                     </Menu.Item>
                     <Menu.Item>
-                      <Link href="/soulfood">
+                      <Link href='/soulfood'>
                         <a>Soul Food</a>
                       </Link>
                     </Menu.Item>
@@ -195,7 +208,7 @@ const Nav = () => {
                 }
               >
                 <a
-                  className="ant-dropdown-link"
+                  className='ant-dropdown-link'
                   onClick={(e) => e.preventDefault()}
                 >
                   Youth Resources
@@ -204,12 +217,12 @@ const Nav = () => {
             </span>
             <span>
               {!userData.username ? (
-                <Link href="/login">
+                <Link href='/login'>
                   <a>Login</a>
                 </Link>
               ) : (
-                <Link href="/profile">
-                  <div className="initials">{getDetailsIndex()}</div>
+                <Link href='/profile'>
+                  <div className='initials web'>{getDetailsIndex()}</div>
                 </Link>
               )}
             </span>
@@ -226,12 +239,6 @@ const Nav = () => {
               </Link>
             </span> */}
           </div>
-
-          <MenuOutlined
-            onClick={() => setMobileNav(!mobileNav)}
-            style={{ color: "#000" }}
-            className="mobile"
-          />
         </div>
       </div>
     </header>

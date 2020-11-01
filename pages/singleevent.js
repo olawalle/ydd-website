@@ -6,8 +6,21 @@ import { eventsList } from "../mocks/eventsList";
 import "./styles/singleevent.scss";
 import * as dayjs from "dayjs";
 
+import { createPortal } from "react-dom";
+import Link from "next/link";
+
+const IFrame = ({ children, ...props }) => {
+  const [contentRef, setContentRef] = useState(null);
+  const mountNode = contentRef?.contentWindow?.document?.body;
+
+  return (
+    <iframe {...props}>{mountNode && createPortal(children, mountNode)}</iframe>
+  );
+};
+
 export default function SingleEvent() {
   const [tab, setTab] = useState(0);
+  const [show, setshow] = useState(false);
 
   const [countdown, setcountdown] = useState({
     second: 0,
@@ -17,13 +30,25 @@ export default function SingleEvent() {
   });
 
   useEffect(() => {
+    setTimeout(() => {
+      //   console.log(window.parent);
+      //   window.top.postMessage("getAppData", "*");
+      //   setshow(true);
+      //   document.getElementById("frame").contentWindow.postMessage("hello", "*");
+    }, 3000);
+  }, []);
+
+  useEffect(() => {
+    // console.log({ ...document.getElementById("log") });
     const interval = setInterval(() => {
       let today = dayjs(eventsList[0].date);
       let endDate = dayjs();
-      let second = today.diff(endDate, "second") % 60;
+
+      let second = today.diff(endDate, "seconds") % 60;
       let minute = today.diff(endDate, "minute") % 60;
       let hour = today.diff(endDate, "hour") % 24;
-      let day = today.diff(endDate, "day") % 24;
+      let day = today.diff(endDate, "day");
+
       setcountdown({
         second: second ? second : 60,
         minute: minute ? minute : 60,
@@ -35,7 +60,7 @@ export default function SingleEvent() {
     return () => {
       clearInterval(interval);
     };
-  });
+  }, []);
 
   const schedule = [
     {
@@ -105,8 +130,17 @@ export default function SingleEvent() {
   ];
 
   return (
-    <div className='single-event'>
+    <div className='single-event' id='log'>
+      {/* <iframe
+        src='http://127.0.0.1:5501/index.html'
+        frameborder='0'
+        style={{ height: "100vh" }}
+        id='frame'
+      >
+        <p>welcome</p>
+      </iframe> */}
       <Nav />
+
       <div className='banner'></div>
       <div className='countdown'>
         <div className='container'>
@@ -116,25 +150,25 @@ export default function SingleEvent() {
               <p className='large'>COUNT EVERY SECOND UNTIL THE EVENT</p>
             </div>
             <div className='col-sm-12 col-md-8'>
-              <div className='col-md-3'>
+              <div className='col-xs-3'>
                 <div className='bordered'>
                   <div className='count'>{countdown.day}</div>
                   <div className='tag'>DAYS</div>
                 </div>
               </div>
-              <div className='col-md-3'>
+              <div className='col-xs-3'>
                 <div className='bordered'>
                   <div className='count'>{countdown.hour}</div>
                   <div className='tag'>HOURS</div>
                 </div>
               </div>
-              <div className='col-md-3'>
+              <div className='col-xs-3'>
                 <div className='bordered'>
                   <div className='count'>{countdown.minute}</div>
                   <div className='tag'>MINUTES</div>
                 </div>
               </div>
-              <div className='col-md-3'>
+              <div className='col-xs-3'>
                 <div className='bordered'>
                   <div className='count'>{countdown.second}</div>
                   <div className='tag'>SECONDS</div>
@@ -148,7 +182,7 @@ export default function SingleEvent() {
         <div className='container'>
           <div className='row'>
             <div className='col-md-6 col-sm-12'>
-              <p>Youth camp meeting</p>
+              <p>International youth Camp Meeting</p>
               Our pilgrimage to Heaven requires bravery, courage and strong
               determination if we must start and cross all the hurdle along this
               pathway. In 1 Tim 6:12, Paul admonished Timothy to fight the good
@@ -160,7 +194,7 @@ export default function SingleEvent() {
               proves to us that the heavenly journey is a fight which takes only
               a VALIANT Christian to get to its end and say like Paul, “I have
               finished my course.”.
-              <span style={{ display: "block" }}>
+              <span style={{ display: "block", marginTop: 10 }}>
                 Additionally, in our secular lives, to succeed also requires the
                 same focused, fearless, determined, and valiant spirit. Numbers
                 14:24 tells us of Caleb's dauntless spirit, the reason He wholly
@@ -171,10 +205,12 @@ export default function SingleEvent() {
                 the army of outstanding young people that is going to heaven.
               </span>
             </div>
-            <div className='col-md-6 col-sm-12'>
+            <div className='col-md-6 col-sm-12 frame'>
               <iframe
-                src='https://youtu.be/Plce3aWYspo'
+                src='https://www.youtube.com/embed/Plce3aWYspo'
                 frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
               ></iframe>
             </div>
           </div>
@@ -205,9 +241,9 @@ export default function SingleEvent() {
                 {itm.time}
                 <p className='location'>WECA Headquarters</p>
               </div>
-              <button className='join'>
+              {/* <button className='join'>
                 Join <i className='fa fa-arrow-right'></i>
-              </button>
+              </button> */}
             </div>
           ))}
         </div>

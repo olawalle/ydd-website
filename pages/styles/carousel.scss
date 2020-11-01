@@ -6,6 +6,13 @@
     height: 300px;
   }
 
+  .slide {
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: center;
+  }
+
   .ant-carousel .slick-dots-bottom {
     position: relative;
     top: -290px !important;
@@ -47,10 +54,10 @@
 
 @media (max-width: 767px) {
   .main-carousel {
-    height: 400px !important;
+    height: 300px !important;
     .carousel,
     .ant-carousel .slick-slide {
-      height: 400px !important;
+      height: 300px !important;
     }
   }
 

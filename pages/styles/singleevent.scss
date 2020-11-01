@@ -7,7 +7,7 @@
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("https://oluwafemi-idear.github.io/yddweb/wp-content/uploads/sites/13/2015/01/ph8-600x368.jpg");
+    background-image: url("/ydd-photos/iyc.jpeg");
     &::after {
       position: absolute;
       content: "";
@@ -27,6 +27,7 @@
     color: #b6b6b6;
     p {
       font-size: 34px;
+      line-height: 130%;
       font-weight: 600;
       color: #fff;
       padding-bottom: 20px;
@@ -44,7 +45,7 @@
     padding-top: 200px;
     text-align: left;
     position: relative;
-    background-image: url(https://ladiescamp.schoolofvirtue.org/assets/img/bg-img/17.jpg);
+    background-image: url("/ydd-photos/singlesforum.jpg");
     &::after {
       position: absolute;
       content: "";
@@ -199,6 +200,51 @@
         }
         &:active {
           outline: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .banner {
+      height: 500px;
+    }
+    .countdown {
+      padding-top: 120px;
+      .col-xs-3 {
+        padding: 0 !important;
+      }
+      .bordered {
+        width: 100%;
+        .count {
+          font-size: 36px;
+        }
+        .tag {
+          font-size: 12px;
+        }
+      }
+    }
+    .info {
+      .frame {
+        padding-top: 50px;
+      }
+    }
+    .schedule {
+      .tabs {
+        .tab {
+          width: 150px;
+          font-size: 12px;
+          padding: 12px;
+        }
+      }
+      .itenery {
+        padding: 20px;
+        .event {
+          font-size: 14px;
+          width: 45%;
+        }
+        .location {
+          font-size: 16px;
         }
       }
     }
