@@ -1,0 +1,29 @@
+.iyc-regiater {
+  padding: 20px 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/ydd-photos/iyc.jpeg");
+  .area {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+  .itms {
+    padding-bottom: 40px;
+    float: right;
+    margin-right: 30px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px;
+    width: 100%;
+    .area {
+      padding: 30px;
+      .itms {
+        padding-bottom: 10px;
+        float: unset;
+        margin-right: 0px;
+      }
+    }
+  }
+}
