@@ -168,7 +168,7 @@ export default function Home() {
                             <a>see more</a>
                           </Link>
                         </span>
-                        <Link href='/singleevent'>
+                        <Link href='/iyc-register'>
                           <a
                             id='imicregister-2763|1587308401'
                             className='pull-right btn btn-primary btn-sm event-tickets event-register-button'
