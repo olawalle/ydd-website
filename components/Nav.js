@@ -7,9 +7,11 @@ import Link from "next/link";
 import "../pages/styles/nav.scss";
 import { useEffect } from "react";
 import { useState } from "react";
-import { MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined, LogoutOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 const Nav = () => {
+  const router = useRouter();
   const [darkNav, setDarkNav] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
   const [userData, setuserData] = useState({});
@@ -74,9 +76,11 @@ const Nav = () => {
             }}
           >
             {" "}
-            <Link href='/profile'>
-              <div className='initials mobile'>{getDetailsIndex()}</div>
-            </Link>
+            {userData.username && (
+              <Link href='/profile'>
+                <div className='initials mobile'>{getDetailsIndex()}</div>
+              </Link>
+            )}
             <MenuOutlined
               onClick={() => setMobileNav(!mobileNav)}
               style={{ color: "#000", marginLeft: 15 }}
@@ -215,29 +219,64 @@ const Nav = () => {
                 </a>
               </Dropdown>
             </span>
-            <span>
-              {!userData.username ? (
-                <Link href='/login'>
-                  <a>Login</a>
-                </Link>
-              ) : (
-                <Link href='/profile'>
-                  <div className='initials web'>{getDetailsIndex()}</div>
-                </Link>
-              )}
-            </span>
-            {/* <span>
-              <Link href="/profile">
-                <a>
-                  <div className="avatar">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/91.jpg"
-                      alt=""
-                    />
-                  </div>
-                </a>
-              </Link>
-            </span> */}
+            {!userData.username ? (
+              <>
+                <span>
+                  <Link href='/login'>
+                    <a>Login</a>
+                  </Link>
+                </span>
+                <span>
+                  <Link href='/signup'>
+                    <a>Signup</a>
+                  </Link>
+                </span>
+              </>
+            ) : (
+              <>
+                <div className='mobile logout'>
+                  <LogoutOutlined
+                    style={{ marginRight: 10, color: "#d84e4e", padding: 0 }}
+                  />
+                  Logout
+                </div>
+                <span className='web'>
+                  {/* <a className='ant-dropdown-link'>
+                      <Link href='/profile'>
+                        <div className='initials'>{getDetailsIndex()}</div>
+                      </Link>
+                    </a> */}
+
+                  <Dropdown
+                    style={{ marginLeft: "20px" }}
+                    overlay={
+                      <Menu>
+                        <Menu.Item
+                          onClick={() => {
+                            localStorage.clear();
+                            setuserData({});
+                            router.push("/");
+                          }}
+                        >
+                          <div
+                            style={{ display: "flex", alignItems: "center" }}
+                          >
+                            <LogoutOutlined style={{ marginRight: 10 }} />
+                            Logout
+                          </div>
+                        </Menu.Item>
+                      </Menu>
+                    }
+                  >
+                    <a className='ant-dropdown-link'>
+                      <Link href='/profile'>
+                        <div className='initials web'>{getDetailsIndex()}</div>
+                      </Link>
+                    </a>
+                  </Dropdown>
+                </span>
+              </>
+            )}
           </div>
         </div>
       </div>

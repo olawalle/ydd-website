@@ -13,8 +13,8 @@ export default function login() {
   };
   const [openSnackbar, closeSnackbar] = useSnackbar(options);
   const [loginData, setloginData] = useState({
-    username: "afmydd",
-    password: "pa$$word",
+    username: "",
+    password: "",
   });
   const [authId, setauthId] = useState("");
   const [loading, setloading] = useState(false);
@@ -43,7 +43,7 @@ export default function login() {
       .catch((err) => {
         console.log({ err });
         setloading(false);
-        openSnackbar("Invalid username or password", 6000);
+        openSnackbar("Invalid username or password", 600000);
       });
   };
 

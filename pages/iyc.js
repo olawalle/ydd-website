@@ -8,6 +8,7 @@ import * as dayjs from "dayjs";
 
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { Button } from "antd";
 
 const IFrame = ({ children, ...props }) => {
   const [contentRef, setContentRef] = useState(null);
@@ -130,7 +131,11 @@ export default function SingleEvent() {
     <div className='single-event' id='log'>
       <Nav />
 
-      <div className='banner'></div>
+      <div className='banner'>
+        <Link href='/iyc-register'>
+          <Button type='primary'>Register</Button>
+        </Link>
+      </div>
       <div className='countdown'>
         <div className='container'>
           <div className='row'>

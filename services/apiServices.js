@@ -30,8 +30,24 @@ const fetchChurches = () => {
   });
 };
 
+const fetchChurches_ = () => {
+  return axios({
+    method: "get",
+    url: "http://91.235.129.103:7300/api/v1/churches/all",
+  });
+};
+
+const getJobs = () => {
+  return axios({
+    method: "get",
+    url: "http://91.235.129.103:7200/api/v1/config/resources/job",
+  });
+};
+
 export default {
   login,
   signup,
   fetchChurches,
+  fetchChurches_,
+  getJobs,
 };

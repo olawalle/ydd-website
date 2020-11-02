@@ -18,8 +18,11 @@ import * as dayjs from "dayjs";
 import { useState } from "react";
 import axios from "axios";
 import Blog from "../components/Blog";
+import { useRouter } from "next/router";
+import { route } from "next/dist/next-server/server/router";
 
 export default function Home() {
+  const router = useRouter();
   const [countdown, setcountdown] = useState({
     second: 0,
     minute: 0,
@@ -48,6 +51,11 @@ export default function Home() {
       clearInterval(interval);
     };
   }, []);
+
+  const registerUser = () => {
+    let token = window.localStorage.getItem("afm-data-token");
+    token ? router.push("/iyc-register") : router.push("/login");
+  };
 
   return (
     <div className='wrapper index'>
@@ -87,7 +95,7 @@ export default function Home() {
                     className='widget sidebar-widget widget_event_counter'
                   >
                     <section className='upcoming-event format-standard event-list-item event-dynamic'>
-                      <Link href='/singleevent'>
+                      <Link href='/iyc'>
                         <a
                           className='media-box'
                           style={{
@@ -110,7 +118,7 @@ export default function Home() {
                           Next coming event
                         </span>
                         <h3>
-                          <Link href='/singleevent'>
+                          <Link href='/iyc'>
                             <a className='event-title'>{featuredEvent.name}</a>
                           </Link>
                         </h3>
@@ -164,18 +172,19 @@ export default function Home() {
                           style={{ maxWidth: "60%", display: "inline-block" }}
                         >
                           For more details on the IYC click here to{" "}
-                          <Link href='/singleevent'>
+                          <Link href='/iyc'>
                             <a>see more</a>
                           </Link>
                         </span>
-                        <Link href='/iyc-register'>
-                          <a
-                            id='imicregister-2763|1587308401'
-                            className='pull-right btn btn-primary btn-sm event-tickets event-register-button'
-                          >
-                            Register
-                          </a>
-                        </Link>
+                        {/* <Link href='/iyc-register'> */}
+                        <button
+                          onClick={registerUser}
+                          id='imicregister-2763|1587308401'
+                          className='pull-right btn btn-primary btn-sm event-tickets event-register-button'
+                        >
+                          Register
+                        </button>
+                        {/* </Link> */}
                       </div>
                     </section>
                   </div>

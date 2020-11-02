@@ -111,6 +111,65 @@
       }
     }
   }
+  .qtr {
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    .inner {
+      position: absolute;
+      height: 100%;
+      top: 70%;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.93);
+      transition: linear all 0.3s;
+      padding: 10px 20px;
+      h2 {
+        color: #323565;
+        font-size: 16px;
+        text-align: center;
+      }
+      p {
+        font-size: 14px;
+        color: #000;
+      }
+    }
+    &:hover {
+      .inner {
+        top: 20px;
+      }
+    }
+  }
+  .frs {
+    background-color: #323566;
+    padding-top: 15px;
+    h1 {
+      color: #fff;
+      /* font-family: "Montserrat", Arial, Helvetica, sans-serif; */
+      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin: 0;
+      padding-left: 1px;
+    }
+  }
+  .sec {
+    background-image: url("/ydd-photos/img_community-600x400.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .trd {
+    background-image: url("/ydd-photos/afcfmission.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  .frt {
+    background-image: url("/ydd-photos/afcf.png");
+    background-position: center;
+    background-size: cover;
+  }
   @media (max-width: 767px) {
     .banner {
       height: 400px;

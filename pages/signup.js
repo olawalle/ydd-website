@@ -16,20 +16,13 @@ export default function signup() {
     { value: "Married", label: "Married" },
     { value: "Widowed", label: "Widowed" },
   ];
-  const occupations = [
-    { value: "Student", label: "Student" },
-    { value: "Self Employed", label: "Self Employed" },
-    { value: "Employed", label: "Employed" },
-    { value: "Civil Servant", label: "Civil Servant" },
-    { value: "Self Employed", label: "Self Employed" },
-    // occupation status, inddstry
-    // retiree, corp member
-  ];
+
   const sexes = [
     { value: "Male", label: "Male" },
     { value: "Female", label: "Female" },
   ];
   const [branches, setbranches] = useState([]);
+  const [occupations, setOccupations] = useState([]);
 
   const [signupData, setsignupData] = useState({
     username: "",
@@ -48,21 +41,36 @@ export default function signup() {
 
   useEffect(() => {
     apiServices
-      .fetchChurches()
+      .fetchChurches_()
       .then((res) => {
-        console.log(res);
-        let branches = res.data.branch
-          .map((b) => [...b.branch])
-          .flat()
-          .map((br) => {
+        let branches = res.data.data.branches
+          .map((z) => Object.values(z)[0])
+          .reduce((a, b) => a.concat(b), [])
+          .map((b) => {
             return {
-              label: br,
-              value: br,
+              ...b,
+              label: b.name,
+              value: b.churchId,
             };
           });
-
-        console.log(branches);
         setbranches(branches);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    apiServices
+      .getJobs()
+      .then((res) => {
+        setOccupations(
+          res.data.data.jobCategory.map((j) => {
+            return {
+              ...j,
+              label: j.job,
+              value: j.jobId,
+            };
+          })
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -122,73 +130,73 @@ export default function signup() {
   };
 
   return (
-    <div className="auth-wrap">
-      <div className="login signup">
-        <Link href="/">
-          <img src={ydd_logo} alt="" className="logo" />
+    <div className='auth-wrap'>
+      <div className='login signup'>
+        <Link href='/'>
+          <img src={ydd_logo} alt='' className='logo' />
         </Link>
         <h1>Signup</h1>
-        <div className="left">
+        <div className='left'>
           <span>First Name</span>
           <input
-            type="text"
-            name="u"
-            placeholder="First name"
-            required="required"
+            type='text'
+            name='u'
+            placeholder='First name'
+            required='required'
             onChange={(e) => updatSignupForm("firstName", e.target.value)}
           />
         </div>
-        <div className="right">
+        <div className='right'>
           <span>Last Name</span>
           <input
-            type="text"
-            name="u"
-            placeholder="Last name"
-            required="required"
+            type='text'
+            name='u'
+            placeholder='Last name'
+            required='required'
             onChange={(e) => updatSignupForm("lastName", e.target.value)}
           />
         </div>
-        <div className="left">
+        <div className='left'>
           <span>Username</span>
           <input
-            type="text"
-            name="u"
-            placeholder="Username"
-            required="required"
+            type='text'
+            name='u'
+            placeholder='Username'
+            required='required'
             onChange={(e) => updatSignupForm("username", e.target.value)}
           />
         </div>
-        <div className="right">
+        <div className='right'>
           <span>Phone number</span>
           <input
-            type="text"
-            name="u"
-            placeholder="Phone Number"
-            required="required"
+            type='text'
+            name='u'
+            placeholder='Phone Number'
+            required='required'
             onChange={(e) => updatSignupForm("phoneNumber", e.target.value)}
           />
         </div>
-        <div className="left">
+        <div className='left'>
           <span>Email address</span>
           <input
-            type="text"
-            name="u"
-            placeholder="Email address"
-            required="required"
+            type='text'
+            name='u'
+            placeholder='Email address'
+            required='required'
             onChange={(e) => updatSignupForm("email", e.target.value)}
           />
         </div>
-        <div className="right">
+        <div className='right'>
           <span>Date of Birth</span>
           <input
-            type="date"
-            name="p"
-            placeholder="Date of birth"
-            required="required"
+            type='date'
+            name='p'
+            placeholder='Date of birth'
+            required='required'
             onChange={(e) => updatSignupForm("dateOfBirth", e.target.value)}
           />
         </div>
-        <div className="left">
+        <div className='left'>
           <span>Gender</span>
           <Select
             defaultValue={signupData.gender}
@@ -196,7 +204,7 @@ export default function signup() {
             options={sexes}
           />
         </div>
-        <div className="right">
+        <div className='right'>
           <span>Marital status</span>
           <Select
             defaultValue={signupData.maritalStatus}
@@ -206,7 +214,7 @@ export default function signup() {
             options={maritalStats}
           />
         </div>
-        <div className="left" style={{ width: "100%", marginTop: 10 }}>
+        <div className='left' style={{ width: "100%", marginTop: 10 }}>
           <span>Branch</span>
           <Select
             onChange={(e) =>
@@ -215,7 +223,7 @@ export default function signup() {
             options={branches}
           />
         </div>
-        <div className="left" style={{ margin: "20px 0" }}>
+        <div className='left' style={{ margin: "20px 0" }}>
           <span>Occupation</span>
           <Select
             defaultValue={signupData.occupationId}
@@ -225,25 +233,25 @@ export default function signup() {
             options={occupations}
           />
         </div>
-        <div className="right" style={{ margin: "20px 0" }}>
+        <div className='right' style={{ margin: "20px 0" }}>
           <span>Password</span>
           <input
-            type="password"
-            name="p"
-            placeholder="Password"
-            required="required"
+            type='password'
+            name='p'
+            placeholder='Password'
+            required='required'
             onChange={(e) => updatSignupForm("password", e.target.value)}
           />
         </div>
 
         <button
-          className="btn btn-primary btn-block btn-large"
+          className='btn btn-primary btn-block btn-large'
           onClick={handleSignup}
         >
           Sign up
         </button>
 
-        <Link href="/login">
+        <Link href='/login'>
           <p style={{ marginTop: 10, cursor: "pointer" }}>
             Already have an account? Login
           </p>

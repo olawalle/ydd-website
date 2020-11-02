@@ -75,13 +75,25 @@
     font-style: 20px;
     cursor: pointer;
   }
+  .web {
+    display: inline-block;
+  }
   .mobile {
     display: none;
   }
 
   @media (max-width: 767px) {
+    .web {
+      display: none !important;
+      padding: 0 !important;
+    }
     .mobile {
       display: block;
+      &.logout {
+        display: flex;
+        align-items: center;
+        color: #d84e4e;
+      }
     }
     .for-navi {
       padding: 0 !important;

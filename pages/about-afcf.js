@@ -9,48 +9,26 @@ import MainCarousel from "../components/MainCarousel";
 export default function about_afcf() {
   const [visible, setvisible] = useState(false);
   return (
-    <div className="afcf about-afcf">
+    <div className='afcf about-afcf'>
       <Nav />
-      <div className="banner about-afcf-banner">
+      <div className='banner about-afcf-banner'>
         <p>APOSTOLIC FAITH CAMPUS FELLOWSHIP (AFCF)</p>
-        <Button shape="round" size="large" style={{ marginRight: "12px" }}>
+        <Button shape='round' size='large' style={{ marginRight: "12px" }}>
           Register
         </Button>{" "}
         <br />
         <Button
           style={{ marginTop: 12 }}
-          type="primary"
-          shape="round"
-          size="large"
+          type='primary'
+          shape='round'
+          size='large'
         >
           Contact us
         </Button>
       </div>
-      <div className="container">
-        <div className="afcf-content">
-          <div className="top-btns">
-            <Button
-              type="primary"
-              shape="round"
-              size="large"
-              className="f-left"
-            >
-              Contact us
-            </Button>
-            <Button type="primary" shape="round" size="large">
-              Contact us
-            </Button>
-            <Button
-              type="primary"
-              shape="round"
-              size="large"
-              className="f-right"
-            >
-              Contact us
-            </Button>
-          </div>
-
-          <h1 className="page-heading" style={{ textAlign: "center" }}>
+      <div className='container'>
+        <div className='afcf-content'>
+          <h1 className='page-heading' style={{ textAlign: "center" }}>
             <hr
               style={{
                 width: "50%",
@@ -68,74 +46,102 @@ export default function about_afcf() {
             />
           </h1>
 
-          <div className="row">
+          <div className='row' style={{ paddingTop: 50 }}>
+            <div className='col-sm-12 col-md-3 qtr frs'>
+              <h1>APOSTOLIC FAITH CAMPUS FELLOWSHIP</h1>
+            </div>
+            <div className='col-sm-12 col-md-3 qtr sec'>
+              <div className='inner'>
+                <h2>Our Vision</h2>
+                <p>
+                  To raise and retain an army of outstanding young people going
+                  to Heaven and persuading others to come along.
+                </p>
+              </div>
+            </div>
+            <div className='col-sm-12 col-md-3 qtr trd'>
+              <div className='inner'>
+                <h2>Our Mission</h2>
+                <p>
+                  AFCF mission borders on the strong pillars through which it
+                  reaches out to students and they are
+                </p>
+              </div>
+            </div>
+            <div className='col-sm-12 col-md-3 qtr frt'></div>
+          </div>
+
+          <div className='row' style={{ marginTop: 30 }}>
             <div
-              className="col-sm-12"
+              className='col-sm-12'
               style={{ fontSize: 16, fontWeight: "300", lineHeight: "26px" }}
             >
-              <p className="header-desc">
+              <p className='header-desc'>
                 AFCF was formerly known as Association of Visiting Secretaries
                 (AVS), modified to Campus AVS. She shares the burning vision of
                 the YDD "to raise and retain an army of outstanding young people
-                going to heaven and persuading others to come along”. Members
-                are encouraged to seek God and in turn, bring others to Christ
-                by the lives they live. Therefore, young soldiers can be raised
-                and efforts geared towards nurturing them through the undiluted
-                word of God and doctrinal practices as ordained by God through
-                His Church.
+                going to heaven and persuading others to come along”.
               </p>
-              <p className="header-desc">
+              <p className='header-desc'>
+                Members are encouraged to seek God and in turn, bring others to
+                Christ by the lives they live. Therefore, young soldiers can be
+                raised and efforts geared towards nurturing them through the
+                undiluted word of God and doctrinal practices as ordained by God
+                through His Church.
+              </p>
+              <p className='header-desc'>
                 The main aim of every member is to get to Heaven at last and not
                 alone - but with as many students within our reach through
                 various means of evangelism, because we have been empowered to
                 be witnesses on our campuses.
               </p>
-              <p className="header-desc">
+
+              <p className='header-desc'>
                 AFCF as a body organises programmes that cut across various
                 spheres of a student's life; particularly the academic,
                 physical, spiritual and social spheres. Her programmes are
                 organised appealingly to every individual in the school
                 community.
               </p>
-
-              <p className="header-desc">
+              <p className='header-desc'>
                 AFCF is a means of nurturing and monitoring young members to
                 remain in the faith even outside their locality. Forever, our
-                light shines! AFCF ... <b>be a shining light</b>
+                light shines! AFCF ...be a shining light{" "}
+                <b style={{ fontWeight: "600" }}>be a shining light</b>
               </p>
             </div>
           </div>
 
-          <div className="row" style={{ marginTop: "70px" }}>
-            <div className="col-md-4">
-              <div className="very-latest-post format-standard">
-                <div className="title-row">
+          <div className='row' style={{ marginTop: "70px" }}>
+            <div className='col-md-4'>
+              <div className='very-latest-post format-standard'>
+                <div className='title-row'>
                   <a
-                    href="blog-post.html#comments"
-                    className="comments-go"
-                    title="10 comments"
+                    href='blog-post.html#comments'
+                    className='comments-go'
+                    title='10 comments'
                   >
-                    <i className="icon-dialogue-text"></i>
+                    <i className='icon-dialogue-text'></i>
                   </a>
-                  <a href="#" className="comments-go">
-                    <i className="icon-dialogue-text"></i>
+                  <a href='#' className='comments-go'>
+                    <i className='icon-dialogue-text'></i>
                   </a>{" "}
                   <h4>FEATURED</h4>
                 </div>
                 <img
-                  src="/ydd-photos/afcfreport.jpg"
-                  className="attachment-800x500 size-800x500 wp-post-image"
-                  alt=""
+                  src='/ydd-photos/afcfreport.jpg'
+                  className='attachment-800x500 size-800x500 wp-post-image'
+                  alt=''
                 />{" "}
-                <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
+                <h3 className='post-title'>
+                  <a href='2018/01/24/standard-post-format/index.html'>
                     Agent Of Change
                   </a>
                 </h3>
-                <div className="meta-data">
-                  by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
+                <div className='meta-data'>
+                  by <a href='author/imicreation/index.html'>Rey Richardson</a>{" "}
                   on January 24, 2018 in{" "}
-                  <a href="category/featured/index.html">
+                  <a href='category/featured/index.html'>
                     in Youth Resources, Soul Foods
                   </a>
                 </div>
@@ -144,37 +150,37 @@ export default function about_afcf() {
                   but to make the sinner want to be just like the Christian.
                 </p>{" "}
                 <p>
-                  <a href="#" className="basic-link">
-                    Continue reading <i className="fa fa-angle-right"></i>
+                  <a href='#' className='basic-link'>
+                    Continue reading <i className='fa fa-angle-right'></i>
                   </a>
                 </p>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="very-latest-post format-standard">
-                <div className="title-row">
-                  <a href="#" className="comments-go" title="10 comments">
-                    <i className="icon-dialogue-text"></i>
+            <div className='col-md-4'>
+              <div className='very-latest-post format-standard'>
+                <div className='title-row'>
+                  <a href='#' className='comments-go' title='10 comments'>
+                    <i className='icon-dialogue-text'></i>
                   </a>
-                  <a href="#" className="comments-go">
-                    <i className="icon-dialogue-text"></i>
+                  <a href='#' className='comments-go'>
+                    <i className='icon-dialogue-text'></i>
                   </a>{" "}
                   <h4>SOUL FOOD</h4>
                 </div>
                 <img
-                  src="/ydd-photos/soulfood.png"
-                  className="attachment-800x500 size-800x500 wp-post-image"
-                  alt=""
+                  src='/ydd-photos/soulfood.png'
+                  className='attachment-800x500 size-800x500 wp-post-image'
+                  alt=''
                 />{" "}
-                <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
+                <h3 className='post-title'>
+                  <a href='2018/01/24/standard-post-format/index.html'>
                     Agent Of Change
                   </a>
                 </h3>
-                <div className="meta-data">
-                  by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
+                <div className='meta-data'>
+                  by <a href='author/imicreation/index.html'>Rey Richardson</a>{" "}
                   on January 24, 2018 in{" "}
-                  <a href="category/featured/index.html">
+                  <a href='category/featured/index.html'>
                     in Youth Resources, Soul Foods
                   </a>
                 </div>
@@ -184,35 +190,35 @@ export default function about_afcf() {
                 </p>{" "}
                 <p>
                   <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
+                    href='2018/01/24/standard-post-format/index.html'
+                    className='basic-link'
                   >
-                    Continue reading <i className="fa fa-angle-right"></i>
+                    Continue reading <i className='fa fa-angle-right'></i>
                   </a>
                 </p>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="very-latest-post format-standard">
-                <div className="title-row">
+            <div className='col-md-4'>
+              <div className='very-latest-post format-standard'>
+                <div className='title-row'>
                   <a
-                    href="blog-post.html#comments"
-                    className="comments-go"
-                    title="10 comments"
+                    href='blog-post.html#comments'
+                    className='comments-go'
+                    title='10 comments'
                   >
-                    <i className="icon-dialogue-text"></i>
+                    <i className='icon-dialogue-text'></i>
                   </a>
                   <h4>TESTIMONIES</h4>
                 </div>
-                <h3 className="post-title">
-                  <a href="2018/01/24/standard-post-format/index.html">
+                <h3 className='post-title'>
+                  <a href='2018/01/24/standard-post-format/index.html'>
                     Agent Of Change
                   </a>
                 </h3>
-                <div className="meta-data">
-                  by <a href="author/imicreation/index.html">Rey Richardson</a>{" "}
+                <div className='meta-data'>
+                  by <a href='author/imicreation/index.html'>Rey Richardson</a>{" "}
                   on January 24, 2018 in{" "}
-                  <a href="category/featured/index.html">
+                  <a href='category/featured/index.html'>
                     in Youth Resources, Soul Foods
                   </a>
                 </div>
@@ -222,10 +228,10 @@ export default function about_afcf() {
                 </p>{" "}
                 <p>
                   <a
-                    href="2018/01/24/standard-post-format/index.html"
-                    className="basic-link"
+                    href='2018/01/24/standard-post-format/index.html'
+                    className='basic-link'
                   >
-                    Continue reading <i className="fa fa-angle-right"></i>
+                    Continue reading <i className='fa fa-angle-right'></i>
                   </a>
                 </p>
               </div>
@@ -235,7 +241,7 @@ export default function about_afcf() {
       </div>
       <Footer />
       <Modal
-        title="Our Mission"
+        title='Our Mission'
         footer={false}
         visible={visible}
         onCancel={() => setvisible(false)}
