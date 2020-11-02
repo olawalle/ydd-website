@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {
   Form,
-  Dropdown,
   Checkbox,
   Button,
   Icon,
   Label,
   Menu,
-  Input,
   Radio,
+  Modal
 } from "semantic-ui-react";
 import axios from "axios";
 import "./styles/register.scss";
+import Nav from '../components/Nav';
 
 const classDivisionOptions = [
   {
@@ -34,15 +34,20 @@ const classDivisionOptions = [
 const Register = () => {
   let [hubOptions, setHubOptions] = useState(null);
   let [occupationOptions, setOccupationOptions] = useState(null);
+  let [totalRegistered, setTotalRegistered] = useState(null);
   let [hub, setHub] = useState("");
   let [accommodation, setAccommodation] = useState(false);
   let [educationCareer, setEducationCareer] = useState("");
   let [classDivision, setClassDivision] = useState("");
   let [faculty, setFaculty] = useState("");
   let [job, setJob] = useState("");
+  let [sending, setSending] = useState(false);
+  let [error, setError] = useState('');
+  let [registeredUser, setRegisteredUser] = useState(null);
+  let [open, setOpen] = useState(false);
   const [userData, setUserData] = useState({});
-  const [token, setToken] = useState("");
-
+  //const [token, setToken] = useState("");
+  //let registeredUser = null;
   useEffect(() => {
     axios({
       method: "get",
@@ -52,8 +57,7 @@ const Register = () => {
         setHubOptions(res.data.data.hubs);
       })
       .catch((err) => {
-        console.log({ err });
-        // throw new Error(err);
+        throw new Error(err);
       });
   }, []);
 
@@ -69,16 +73,33 @@ const Register = () => {
         setOccupationOptions(res.data.data);
       })
       .catch((err) => {
-        console.log({ err });
-        // throw new Error(err);
+          throw new Error(err);
       });
   }, []);
 
   useEffect(() => {
-    let user = window.localStorage.getItem("afm-data");
-    let token = window.localStorage.getItem("afm-data-token");
-    setToken(token);
-    setUserData(user ? JSON.parse(user) : {});
+    axios({
+      method: "get",
+      url: "http://localhost:7700/api/v1/iyc/register"
+    })
+    .then(res => {
+      setTotalRegistered(res.data.data);
+    })
+    .catch(err => {
+      throw new Error(err);
+    })
+  }, []);
+
+  useEffect(() => {
+    let user = localStorage.getItem("afm-data") ? JSON.parse(localStorage.getItem("afm-data")) : {};
+    //let token = localStorage.getItem("afm-data-token");
+    //setToken(token);
+    setUserData({
+      username: user.username,
+      gender: user.gender,
+      email: user.email,
+      firstName: user.firstName
+    });
   }, []);
 
   const handleFieldChange = (e, val) => {
@@ -86,6 +107,7 @@ const Register = () => {
   };
 
   const handleCheckAccommodation = (e, val) => {
+    console.log(val);
     setAccommodation(val.checked);
   };
 
@@ -106,31 +128,108 @@ const Register = () => {
   };
 
   const handleSubmit = () => {
-    let data = {
-      hub: hub,
-      accommodation: accommodation,
-      educationCareer: educationCareer,
-      classDivision: classDivision,
-      faculty: faculty,
-      job: job,
-    };
-    console.log(data);
+    if (educationCareer && ((classDivision && faculty) || job)) {
+      let data = {
+        username: userData.username,
+        gender: userData.gender,
+        email: userData.email,
+        firstName: userData.firstName,
+        hub: hub,
+        accommodation: accommodation,
+        educationCareer: educationCareer,
+        classDivision: classDivision,
+        faculty: faculty,
+        job: job
+      };
+      setSending(true);
+      axios({
+        method: 'post',
+        url: 'http://localhost:7700/api/v1/iyc/register',
+        data: data
+      })
+      .then(res => {
+        if (res.data.success) {
+          setRegisteredUser(res.data.data);
+          setSending(false);
+          setOpen(true);
+          setHub('');
+          setAccommodation(false);
+          setEducationCareer('');
+          setClassDivision('');
+          setFaculty('');
+          setJob('');    
+        } else {
+          setSending(false);
+          setOpen(true);
+          setError('You can only register once');
+        }
+      })
+      .catch(err => {
+        setSending(false);
+        setOpen(true);
+        setError('Something went wrong');
+        throw new Error(err);
+      });
+    } else {
+      setOpen(true);
+      setError('Your form is incomplete. Complete the form');
+    }
   };
 
   return (
-    <div className='iyc-regiater'>
+    <>
+    <Nav />
+    <div className='iyc-register'>
       <div className='area'>
         <h3 style={{ paddingBottom: "20px", textAlign: "center" }}>
           Register for 2020 International Youth Camp
           <br />
           <span style={{ fontSize: "0.6em" }}>
-            (Check "I need Accommodation" if you want to be on premise)
+            (Check "I Need Accommodation" if you want to be on premise)
           </span>
         </h3>
 
         <br />
         <br />
-
+        
+        {registeredUser && 
+          <Modal
+            size='mini'
+            open={open}
+            onClose={() => setOpen(false)}
+          >
+          <Modal.Header>Congratulations!!!</Modal.Header>
+          <Modal.Content>
+            <p>You have just registered successfully for the 2020 International Youth Camp.</p>
+            <p>Your Registration ID is <b>{registeredUser.regId}</b>.</p>
+            <p>Please note that you specified your Worship Hub as <b>{registeredUser.hub}</b> and your educational/career details as: <b>{ registeredUser.educationCareer } / { registeredUser.faculty ? registeredUser.faculty : registeredUser.job ? registeredUser.job : '' }</b>.</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button positive onClick={() => setOpen(false)}>
+              Ok
+            </Button>
+          </Modal.Actions>
+        </Modal>
+        }
+        
+        {error && 
+          <Modal
+            size='mini'
+            open={open}
+            onClose={() => setOpen(false)}
+          >
+            <Modal.Header>Error!!!</Modal.Header>
+            <Modal.Content>
+            <p>{error}</p>
+            </Modal.Content>
+            <Modal.Actions>
+              <Button positive onClick={() => setOpen(false)}>
+                Ok
+              </Button>
+            </Modal.Actions>
+          </Modal>
+        }
+        
         <Form onSubmit={handleSubmit}>
           <div className='itms'>
             <Menu compact>
@@ -138,7 +237,7 @@ const Register = () => {
                 <Icon name='mail' /> Hub Capacity
                 <Label color='red' floating>
                   {hubOptions && hub
-                    ? hubOptions.find((data) => data.district === hub).capacity
+                    ? hubOptions.find((data) => data.district === hub).capacity - (totalRegistered.filter(data => data.hub === hub)).length
                     : 0}
                 </Label>
               </Menu.Item>
@@ -146,8 +245,7 @@ const Register = () => {
                 <Icon name='users' /> Accommodation
                 <Label color='teal' floating>
                   {hubOptions && hub
-                    ? hubOptions.find((data) => data.district === hub)
-                        .accommodation.male
+                    ? hubOptions.find((data) => data.district === hub).accommodation[userData.gender.toLowerCase()] - (totalRegistered.filter(data => data.hub === hub).filter(data => data.gender.toLowerCase() === userData.gender.toLowerCase()).filter(data => data.accommodation)).length
                     : 0}
                 </Label>
               </Menu.Item>
@@ -157,6 +255,7 @@ const Register = () => {
           <div style={{ paddingTop: "30px" }}>
             <Form.Select
               fluid
+              required
               label='Hub'
               options={
                 hubOptions &&
@@ -386,13 +485,19 @@ const Register = () => {
           </div>
 
           <div style={{ paddingTop: "30px" }}>
-            <Button primary fluid>
+            {!sending ? <Button primary fluid>
               Submit
             </Button>
+            :
+            <Button loading primary fluid>
+              loading
+            </Button>
+            }
           </div>
         </Form>
       </div>
     </div>
+    </>
   );
 };
 
