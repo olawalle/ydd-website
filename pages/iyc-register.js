@@ -80,7 +80,7 @@ const Register = () => {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:7700/api/v1/iyc/register"
+      url: "http://91.235.129.103:7700/api/v1/iyc/register"
     })
     .then(res => {
       setTotalRegistered(res.data.data);
@@ -144,7 +144,7 @@ const Register = () => {
       setSending(true);
       axios({
         method: 'post',
-        url: 'http://localhost:7700/api/v1/iyc/register',
+        url: 'http://91.235.129.103:7700/api/v1/iyc/register',
         data: data
       })
       .then(res => {
