@@ -18,6 +18,11 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.Snackbar_snackbar-wrapper-bottom-right__8wQeQ,
+.Snackbar_snackbar-wrapper-top-right__2CAmf {
+  z-index: 10;
+}
+
 @media (max-width: 767px) {
   .mobile {
     display: none;

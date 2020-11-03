@@ -5,12 +5,14 @@ import apiServices from "../services/apiServices";
 import Select from "react-select";
 import { useSnackbar } from "react-simple-snackbar";
 import Link from "next/link";
+import { Button } from "antd";
 
 export default function signup() {
   const options = {
     position: "top-right",
   };
   const [openSnackbar, closeSnackbar] = useSnackbar(options);
+  const [regDone, setregDone] = useState(false);
   const maritalStats = [
     { value: "Single", label: "Single" },
     { value: "Married", label: "Married" },
@@ -23,6 +25,7 @@ export default function signup() {
   ];
   const [branches, setbranches] = useState([]);
   const [occupations, setOccupations] = useState([]);
+  const [loading, setloading] = useState(false);
 
   const [signupData, setsignupData] = useState({
     username: "",
@@ -109,154 +112,190 @@ export default function signup() {
       levelId: "District",
       frontend_url: `http://${window.location.host}/login`,
     };
-
-    console.log(data);
+    setloading(true);
     apiServices
       .signup(data)
       .then((res) => {
-        console.log(res);
-        openSnackbar("Account created successfully", 6000);
+        setloading(false);
+        setregDone(true);
       })
       .catch((err) => {
-        console.log({ err });
+        setloading(false);
         openSnackbar("An error occured. Please try again", 6000);
       });
   };
 
   const updatSignupForm = (key, val) => {
-    console.log({ key, val, signupData });
     let data = { ...signupData, [key]: val };
     setsignupData(data);
   };
 
   return (
     <div className='auth-wrap'>
-      <div className='login signup'>
-        <Link href='/'>
-          <img src={ydd_logo} alt='' className='logo' />
-        </Link>
-        <h1>Signup</h1>
-        <div className='left'>
-          <span>First Name</span>
-          <input
-            type='text'
-            name='u'
-            placeholder='First name'
-            required='required'
-            onChange={(e) => updatSignupForm("firstName", e.target.value)}
-          />
-        </div>
-        <div className='right'>
-          <span>Last Name</span>
-          <input
-            type='text'
-            name='u'
-            placeholder='Last name'
-            required='required'
-            onChange={(e) => updatSignupForm("lastName", e.target.value)}
-          />
-        </div>
-        <div className='left'>
-          <span>Username</span>
-          <input
-            type='text'
-            name='u'
-            placeholder='Username'
-            required='required'
-            onChange={(e) => updatSignupForm("username", e.target.value)}
-          />
-        </div>
-        <div className='right'>
-          <span>Phone number</span>
-          <input
-            type='text'
-            name='u'
-            placeholder='Phone Number'
-            required='required'
-            onChange={(e) => updatSignupForm("phoneNumber", e.target.value)}
-          />
-        </div>
-        <div className='left'>
-          <span>Email address</span>
-          <input
-            type='text'
-            name='u'
-            placeholder='Email address'
-            required='required'
-            onChange={(e) => updatSignupForm("email", e.target.value)}
-          />
-        </div>
-        <div className='right'>
-          <span>Date of Birth</span>
-          <input
-            type='date'
-            name='p'
-            placeholder='Date of birth'
-            required='required'
-            onChange={(e) => updatSignupForm("dateOfBirth", e.target.value)}
-          />
-        </div>
-        <div className='left'>
-          <span>Gender</span>
-          <Select
-            defaultValue={signupData.gender}
-            onChange={(e) => setsignupData({ ...signupData, gender: e.value })}
-            options={sexes}
-          />
-        </div>
-        <div className='right'>
-          <span>Marital status</span>
-          <Select
-            defaultValue={signupData.maritalStatus}
-            onChange={(e) =>
-              setsignupData({ ...signupData, maritalStatus: e.value })
-            }
-            options={maritalStats}
-          />
-        </div>
-        <div className='left' style={{ width: "100%", marginTop: 10 }}>
-          <span>Branch</span>
-          <Select
-            onChange={(e) =>
-              setsignupData({ ...signupData, churchId: e.value })
-            }
-            options={branches}
-          />
-        </div>
-        <div className='left' style={{ margin: "20px 0" }}>
-          <span>Occupation</span>
-          <Select
-            defaultValue={signupData.occupationId}
-            onChange={(e) =>
-              setsignupData({ ...signupData, occupationId: e.value })
-            }
-            options={occupations}
-          />
-        </div>
-        <div className='right' style={{ margin: "20px 0" }}>
-          <span>Password</span>
-          <input
-            type='password'
-            name='p'
-            placeholder='Password'
-            required='required'
-            onChange={(e) => updatSignupForm("password", e.target.value)}
-          />
-        </div>
+      {!regDone ? (
+        <div className='login signup'>
+          <Link href='/'>
+            <img
+              src={ydd_logo}
+              alt=''
+              className='logo'
+              style={{ cursor: "pointer" }}
+            />
+          </Link>
+          <h1>Signup</h1>
+          <div className='left'>
+            <span>First Name</span>
+            <input
+              type='text'
+              name='u'
+              placeholder='First name'
+              required='required'
+              onChange={(e) => updatSignupForm("firstName", e.target.value)}
+            />
+          </div>
+          <div className='right'>
+            <span>Last Name</span>
+            <input
+              type='text'
+              name='u'
+              placeholder='Last name'
+              required='required'
+              onChange={(e) => updatSignupForm("lastName", e.target.value)}
+            />
+          </div>
+          <div className='left'>
+            <span>Username</span>
+            <input
+              type='text'
+              name='u'
+              placeholder='Username'
+              required='required'
+              onChange={(e) => updatSignupForm("username", e.target.value)}
+            />
+          </div>
+          <div className='right'>
+            <span>Phone number</span>
+            <input
+              type='text'
+              name='u'
+              placeholder='Phone Number'
+              required='required'
+              onChange={(e) => updatSignupForm("phoneNumber", e.target.value)}
+            />
+          </div>
+          <div className='left'>
+            <span>Email address</span>
+            <input
+              type='text'
+              name='u'
+              placeholder='Email address'
+              required='required'
+              onChange={(e) => updatSignupForm("email", e.target.value)}
+            />
+          </div>
+          <div className='right'>
+            <span>Date of Birth</span>
+            <input
+              type='date'
+              name='p'
+              placeholder='Date of birth'
+              required='required'
+              onChange={(e) => updatSignupForm("dateOfBirth", e.target.value)}
+            />
+          </div>
+          <div className='left'>
+            <span>Gender</span>
+            <Select
+              defaultValue={signupData.gender}
+              onChange={(e) =>
+                setsignupData({ ...signupData, gender: e.value })
+              }
+              options={sexes}
+            />
+          </div>
+          <div className='right'>
+            <span>Marital status</span>
+            <Select
+              defaultValue={signupData.maritalStatus}
+              onChange={(e) =>
+                setsignupData({ ...signupData, maritalStatus: e.value })
+              }
+              options={maritalStats}
+            />
+          </div>
+          <div className='left' style={{ width: "100%", marginTop: 10 }}>
+            <span>Branch</span>
+            <Select
+              onChange={(e) =>
+                setsignupData({ ...signupData, churchId: e.value })
+              }
+              options={branches}
+            />
+          </div>
+          <div className='left' style={{ margin: "20px 0" }}>
+            <span>Occupation</span>
+            <Select
+              defaultValue={signupData.occupationId}
+              onChange={(e) =>
+                setsignupData({ ...signupData, occupationId: e.value })
+              }
+              options={occupations}
+            />
+          </div>
+          <div className='right' style={{ margin: "20px 0" }}>
+            <span>Password</span>
+            <input
+              type='password'
+              name='p'
+              placeholder='Password'
+              required='required'
+              onChange={(e) => updatSignupForm("password", e.target.value)}
+            />
+          </div>
 
-        <button
-          className='btn btn-primary btn-block btn-large'
-          onClick={handleSignup}
-        >
-          Sign up
-        </button>
+          <Button
+            className='btn btn-primary btn-block btn-large'
+            onClick={handleSignup}
+            loading={loading}
+          >
+            Sign up
+          </Button>
 
-        <Link href='/login'>
-          <p style={{ marginTop: 10, cursor: "pointer" }}>
-            Already have an account? Login
+          <Link href='/login'>
+            <p style={{ marginTop: 10, cursor: "pointer" }}>
+              Already have an account? Login
+            </p>
+          </Link>
+        </div>
+      ) : (
+        <div className='login'>
+          <Link href='/'>
+            <img
+              src={ydd_logo}
+              alt=''
+              className='logo'
+              style={{ cursor: "pointer", marginTop: 50 }}
+            />
+          </Link>
+          <p
+            style={{
+              fontSize: 20,
+              marginTop: 30,
+              width: "80%",
+              marginLeft: "10%",
+              lineHeight: "30px",
+            }}
+          >
+            Your account has been created successfully. Please check your email
+            address to complete the signup process.
           </p>
-        </Link>
-      </div>
+          <Link href='/'>
+            <a>
+              <Button>Go Home</Button>
+            </a>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

@@ -234,7 +234,7 @@ const Nav = () => {
               </>
             ) : (
               <>
-                <div className='mobile logout'>
+                <div className='mobile logout' style={{ padding: "5px 20px" }}>
                   <LogoutOutlined
                     style={{ marginRight: 10, color: "#d84e4e", padding: 0 }}
                   />

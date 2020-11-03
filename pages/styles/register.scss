@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-image: url("/ydd-photos/iyc.jpeg");
   position: relative;
+  min-height: 100vh;
   :after {
     position: absolute;
     top: 0;

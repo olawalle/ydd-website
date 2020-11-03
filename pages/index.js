@@ -54,7 +54,7 @@ export default function Home() {
 
   const registerUser = () => {
     let token = window.localStorage.getItem("afm-data-token");
-    token ? router.push("/iyc-register") : router.push("/login");
+    token ? router.push("/iyc-register") : router.push("/login?reg=1");
   };
 
   return (

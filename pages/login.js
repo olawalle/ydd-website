@@ -5,6 +5,7 @@ import apiServices from "../services/apiServices";
 import { useSnackbar } from "react-simple-snackbar";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Button } from "antd";
 
 export default function login() {
   const router = useRouter();
@@ -17,6 +18,7 @@ export default function login() {
     password: "",
   });
   const [authId, setauthId] = useState("");
+  const [toReg, setToReg] = useState(0);
   const [loading, setloading] = useState(false);
 
   const userLogin = (e) => {
@@ -26,6 +28,7 @@ export default function login() {
       username,
       password,
     };
+    authId ? (data.authId = authId) : null;
     apiServices
       .login(data)
       .then((res) => {
@@ -38,12 +41,12 @@ export default function login() {
           "afm-data-token",
           JSON.stringify(res.data.data.token)
         );
-        router.push("/");
+        toReg ? router.push("/iyc-register") : router.push("/");
       })
       .catch((err) => {
         console.log({ err });
         setloading(false);
-        openSnackbar("Invalid username or password", 600000);
+        openSnackbar("Invalid username or password", 6000);
       });
   };
 
@@ -53,13 +56,22 @@ export default function login() {
       : "";
     let authId = query || "";
     setauthId(authId);
+
+    let query_ = router.query.reg || "0";
+    console.log(parseFloat(query_), router);
+    setToReg(query_);
   }, []);
 
   return (
     <div className='auth-wrap'>
       <div className='login'>
         <Link href='/'>
-          <img src={ydd_logo} alt='' className='logo' />
+          <img
+            src={ydd_logo}
+            alt=''
+            className='logo'
+            style={{ cursor: "pointer" }}
+          />
         </Link>
         <h1>Login</h1>
 
@@ -92,13 +104,13 @@ export default function login() {
             })
           }
         />
-        <button
+        <Button
           className='btn btn-primary btn-block btn-large'
           onClick={userLogin}
-          disabled={loading}
+          loading={loading}
         >
           Log in
-        </button>
+        </Button>
         <Link href='/signup'>
           <a>
             <p style={{ marginTop: 10, cursor: "pointer" }}>
