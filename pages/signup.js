@@ -112,6 +112,22 @@ export default function signup() {
       levelId: "District",
       frontend_url: `http://${window.location.host}/login`,
     };
+    if (
+      !username ||
+      !firstName ||
+      !lastName ||
+      !password ||
+      !phoneNumber ||
+      !dateOfBirth ||
+      !gender ||
+      !email ||
+      !maritalStatus ||
+      !occupationId ||
+      !churchId
+    ) {
+      openSnackbar("Please fill in all the fields", 6000);
+      return;
+    }
     setloading(true);
     apiServices
       .signup(data)
@@ -237,7 +253,7 @@ export default function signup() {
               options={branches}
             />
           </div>
-          <div className='left' style={{ margin: "20px 0" }}>
+          <div className='left' style={{ margin: "10px 0" }}>
             <span>Occupation</span>
             <Select
               defaultValue={signupData.occupationId}
@@ -247,7 +263,7 @@ export default function signup() {
               options={occupations}
             />
           </div>
-          <div className='right' style={{ margin: "20px 0" }}>
+          <div className='right' style={{ margin: "10px 0" }}>
             <span>Password</span>
             <input
               type='password'

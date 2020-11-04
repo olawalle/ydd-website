@@ -183,7 +183,7 @@ export default function SingleEvent() {
         <div className='container'>
           <div className='row'>
             <div className='col-md-6 col-sm-12'>
-              <p>International youth Camp Meeting</p>
+              <p>International Youth Camp</p>
               Our pilgrimage to Heaven requires bravery, courage and strong
               determination if we must start and cross all the hurdle along this
               pathway. In 1 Tim 6:12, Paul admonished Timothy to fight the good

@@ -6,6 +6,7 @@ import "./styles/bootstrap5152.css";
 import "./styles/styles.scss";
 import "./styles/colors.css";
 import "./styles/fonts.css";
+import "./styles/index.scss";
 import SnackbarProvider from "react-simple-snackbar";
 import Head from "next/head";
 
