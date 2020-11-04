@@ -7,11 +7,11 @@ import {
   Label,
   Menu,
   Radio,
-  Modal
 } from "semantic-ui-react";
 import axios from "axios";
 import "./styles/register.scss";
-import Nav from '../components/Nav';
+import Nav from "../components/Nav";
+import { Modal } from "antd";
 
 const classDivisionOptions = [
   {
@@ -42,9 +42,9 @@ const Register = () => {
   let [faculty, setFaculty] = useState("");
   let [job, setJob] = useState("");
   let [sending, setSending] = useState(false);
-  let [error, setError] = useState('');
   let [registeredUser, setRegisteredUser] = useState(null);
   let [open, setOpen] = useState(false);
+  let [error, setError] = useState("");
   const [userData, setUserData] = useState({});
   //const [token, setToken] = useState("");
   //let registeredUser = null;
@@ -73,32 +73,34 @@ const Register = () => {
         setOccupationOptions(res.data.data);
       })
       .catch((err) => {
-          throw new Error(err);
+        throw new Error(err);
       });
   }, []);
 
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://91.235.129.103:7700/api/v1/iyc/register"
+      url: "http://91.235.129.103:7700/api/v1/iyc/register",
     })
-    .then(res => {
-      setTotalRegistered(res.data.data);
-    })
-    .catch(err => {
-      throw new Error(err);
-    })
+      .then((res) => {
+        setTotalRegistered(res.data.data);
+      })
+      .catch((err) => {
+        throw new Error(err);
+      });
   }, []);
 
   useEffect(() => {
-    let user = localStorage.getItem("afm-data") ? JSON.parse(localStorage.getItem("afm-data")) : {};
+    let user = localStorage.getItem("afm-data")
+      ? JSON.parse(localStorage.getItem("afm-data"))
+      : {};
     //let token = localStorage.getItem("afm-data-token");
     //setToken(token);
     setUserData({
       username: user.username,
       gender: user.gender,
       email: user.email,
-      firstName: user.firstName
+      firstName: user.firstName,
     });
   }, []);
 
@@ -139,364 +141,378 @@ const Register = () => {
         educationCareer: educationCareer,
         classDivision: classDivision,
         faculty: faculty,
-        job: job
+        job: job,
       };
       setSending(true);
       axios({
-        method: 'post',
-        url: 'http://91.235.129.103:7700/api/v1/iyc/register',
-        data: data
+        method: "post",
+        url: "http://91.235.129.103:7700/api/v1/iyc/register",
+        data: data,
       })
-      .then(res => {
-        if (res.data.success) {
-          setRegisteredUser(res.data.data);
+        .then((res) => {
+          if (res.data.success) {
+            setRegisteredUser(res.data.data);
+            setSending(false);
+            setOpen(true);
+            setHub("");
+            setAccommodation(false);
+            setEducationCareer("");
+            setClassDivision("");
+            setFaculty("");
+            setJob("");
+          } else {
+            setSending(false);
+            setOpen(true);
+            setError("You can only register once");
+          }
+        })
+        .catch((err) => {
           setSending(false);
           setOpen(true);
-          setHub('');
-          setAccommodation(false);
-          setEducationCareer('');
-          setClassDivision('');
-          setFaculty('');
-          setJob('');    
-        } else {
-          setSending(false);
-          setOpen(true);
-          setError('You can only register once');
-        }
-      })
-      .catch(err => {
-        setSending(false);
-        setOpen(true);
-        setError('Something went wrong');
-        throw new Error(err);
-      });
+          setError("Something went wrong");
+          throw new Error(err);
+        });
     } else {
       setOpen(true);
-      setError('Your form is incomplete. Complete the form');
+      setError("Your form is incomplete. Complete the form");
     }
   };
 
   return (
     <>
-    <Nav />
-    <div className='iyc-register'>
-      <div className='area'>
-        <h3 style={{ paddingBottom: "20px", textAlign: "center" }}>
-          Register for 2020 International Youth Camp
+      <Nav />
+      <div className='iyc-register'>
+        <div className='area'>
+          <h3 style={{ paddingBottom: "20px", textAlign: "center" }}>
+            Register for 2020 International Youth Camp
+            <br />
+            <span style={{ fontSize: "0.6em" }}>
+              (Check "I Need Accommodation" if you want to be on premise)
+            </span>
+          </h3>
+
           <br />
-          <span style={{ fontSize: "0.6em" }}>
-            (Check "I Need Accommodation" if you want to be on premise)
-          </span>
-        </h3>
+          <br />
 
-        <br />
-        <br />
-        
-        {registeredUser && 
           <Modal
-            size='mini'
-            open={open}
-            onClose={() => setOpen(false)}
+            centered
+            visible={open}
+            closable={true}
+            onCancel={() => setOpen(false)}
+            title={error ? "Error!!!" : "Congratulations!!!"}
+            footer={null}
           >
-          <Modal.Header>Congratulations!!!</Modal.Header>
-          <Modal.Content>
-            <p>You have just registered successfully for the 2020 International Youth Camp.</p>
-            <p>Your Registration ID is <b>{registeredUser.regId}</b>.</p>
-            <p>Please note that you specified your Worship Hub as <b>{registeredUser.hub}</b> and your educational/career details as: <b>{ registeredUser.educationCareer } / { registeredUser.faculty ? registeredUser.faculty : registeredUser.job ? registeredUser.job : '' }</b>.</p>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button positive onClick={() => setOpen(false)}>
-              Ok
-            </Button>
-          </Modal.Actions>
-        </Modal>
-        }
-        
-        {error && 
-          <Modal
-            size='mini'
-            open={open}
-            onClose={() => setOpen(false)}
-          >
-            <Modal.Header>Error!!!</Modal.Header>
-            <Modal.Content>
-            <p>{error}</p>
-            </Modal.Content>
-            <Modal.Actions>
-              <Button positive onClick={() => setOpen(false)}>
-                Ok
-              </Button>
-            </Modal.Actions>
+            {error && <p>{error}</p>}
+            {registeredUser && (
+              <>
+                <p>
+                  You have just registered successfully for the 2020
+                  International Youth Camp.
+                </p>
+                <p>
+                  Your Registration ID is <b>{registeredUser.regId}</b>.
+                </p>
+                <p>
+                  Please note that you specified your Worship Hub as{" "}
+                  <b>{registeredUser.hub}</b> and your educational/career
+                  details as:{" "}
+                  <b>
+                    {registeredUser.educationCareer} /{" "}
+                    {registeredUser.faculty
+                      ? registeredUser.faculty
+                      : registeredUser.job
+                      ? registeredUser.job
+                      : ""}
+                  </b>
+                  .
+                </p>
+              </>
+            )}
           </Modal>
-        }
-        
-        <Form onSubmit={handleSubmit}>
-          <div className='itms'>
-            <Menu compact>
-              <Menu.Item as='a'>
-                <Icon name='mail' /> Hub Capacity
-                <Label color='red' floating>
-                  {hubOptions && hub
-                    ? hubOptions.find((data) => data.district === hub).capacity - (totalRegistered.filter(data => data.hub === hub)).length
-                    : 0}
-                </Label>
-              </Menu.Item>
-              <Menu.Item as='a'>
-                <Icon name='users' /> Accommodation
-                <Label color='teal' floating>
-                  {hubOptions && hub
-                    ? hubOptions.find((data) => data.district === hub).accommodation[userData.gender.toLowerCase()] - (totalRegistered.filter(data => data.hub === hub).filter(data => data.gender.toLowerCase() === userData.gender.toLowerCase()).filter(data => data.accommodation)).length
-                    : 0}
-                </Label>
-              </Menu.Item>
-            </Menu>
-          </div>
 
-          <div style={{ paddingTop: "30px" }}>
-            <Form.Select
-              fluid
-              required
-              label='Hub'
-              options={
-                hubOptions &&
-                hubOptions.map((data) => ({
-                  key: data.district,
-                  text: data.district,
-                  value: data.district,
-                }))
-              }
-              placeholder='Select Hub'
-              onChange={handleFieldChange}
-            />
-          </div>
-
-          <Checkbox
-            style={{ padding: "20px 20px", marginLeft: "-20px" }}
-            label='I Need Accommodation'
-            checked={accommodation}
-            onChange={handleCheckAccommodation}
-          />
-
-          <div style={{ paddingBottom: "10px" }}>
-            <h5>Choose Your Education/Career</h5>
-          </div>
-          <div>
-            <div style={{ padding: "5px 0" }}>
-              <Radio
-                name='eduCar'
-                label='Secondary Student'
-                value='Secondary Student'
-                checked={educationCareer === "Secondary Student"}
-                onChange={handleCheck}
-              />
-              {educationCareer === "Secondary Student" && (
-                <Form.Group widths='equal' style={{ paddingTop: "20px" }}>
-                  <Form.Select
-                    fluid
-                    label='Class Division'
-                    options={classDivisionOptions}
-                    placeholder='Select Class Division'
-                    onChange={handleClassDivisionChange}
-                  />
-                  <Form.Select
-                    fluid
-                    label='Faculty'
-                    options={
-                      classDivision
-                        ? occupationOptions[
-                            `${classDivision.toLowerCase()}Options`
-                          ].map((data) => ({
-                            key: data,
-                            text: data,
-                            value: data,
-                          }))
-                        : [{ key: "1", text: "You need to select a class" }]
-                    }
-                    placeholder='Select Faculty'
-                    onChange={handleFacultyChange}
-                  />
-                </Form.Group>
-              )}
+          <Form onSubmit={handleSubmit}>
+            <div className='itms'>
+              <Menu compact>
+                <Menu.Item as='a'>
+                  <Icon name='mail' /> Hub Capacity
+                  <Label color='red' floating>
+                    {hubOptions && hub
+                      ? hubOptions.find((data) => data.district === hub)
+                          .capacity -
+                        totalRegistered.filter((data) => data.hub === hub)
+                          .length
+                      : 0}
+                  </Label>
+                </Menu.Item>
+                <Menu.Item as='a'>
+                  <Icon name='users' /> Accommodation
+                  <Label color='teal' floating>
+                    {hubOptions && hub
+                      ? hubOptions.find((data) => data.district === hub)
+                          .accommodation[userData.gender.toLowerCase()] -
+                        totalRegistered
+                          .filter((data) => data.hub === hub)
+                          .filter(
+                            (data) =>
+                              data.gender.toLowerCase() ===
+                              userData.gender.toLowerCase()
+                          )
+                          .filter((data) => data.accommodation).length
+                      : 0}
+                  </Label>
+                </Menu.Item>
+              </Menu>
             </div>
-            <hr />
-            <div style={{ padding: "5px 0" }}>
-              <Radio
-                name='eduCar'
-                label='SS3 And Post-Secondary School Students'
-                value='SS3 And Post-Secondary School Students'
-                checked={
-                  educationCareer === "SS3 And Post-Secondary School Students"
+
+            <div style={{ paddingTop: "30px" }}>
+              <Form.Select
+                fluid
+                required
+                label='Hub'
+                options={
+                  hubOptions &&
+                  hubOptions.map((data) => ({
+                    key: data.district,
+                    text: data.district,
+                    value: data.district,
+                  }))
                 }
-                onChange={handleCheck}
+                placeholder='Select Hub'
+                onChange={handleFieldChange}
               />
-              {educationCareer === "SS3 And Post-Secondary School Students" && (
-                <Form.Group widths='equal' style={{ paddingTop: "20px" }}>
-                  <Form.Select
-                    fluid
-                    label='Class Division'
-                    options={classDivisionOptions}
-                    placeholder='Select Class Division'
-                    onChange={handleClassDivisionChange}
-                  />
-                  <Form.Select
-                    fluid
-                    label='Faculty'
-                    options={
-                      classDivision
-                        ? occupationOptions[
-                            `${classDivision.toLowerCase()}Options`
-                          ].map((data) => ({
+            </div>
+
+            <Checkbox
+              style={{ padding: "20px 20px", marginLeft: "-20px" }}
+              label='I Need Accommodation'
+              checked={accommodation}
+              onChange={handleCheckAccommodation}
+            />
+
+            <div style={{ paddingBottom: "10px" }}>
+              <h5>Choose Your Education/Career</h5>
+            </div>
+            <div>
+              <div style={{ padding: "5px 0" }}>
+                <Radio
+                  name='eduCar'
+                  label='Secondary Student'
+                  value='Secondary Student'
+                  checked={educationCareer === "Secondary Student"}
+                  onChange={handleCheck}
+                />
+                {educationCareer === "Secondary Student" && (
+                  <Form.Group widths='equal' style={{ paddingTop: "20px" }}>
+                    <Form.Select
+                      fluid
+                      label='Class Division'
+                      options={classDivisionOptions}
+                      placeholder='Select Class Division'
+                      onChange={handleClassDivisionChange}
+                    />
+                    <Form.Select
+                      fluid
+                      label='Faculty'
+                      options={
+                        classDivision
+                          ? occupationOptions[
+                              `${classDivision.toLowerCase()}Options`
+                            ].map((data) => ({
+                              key: data,
+                              text: data,
+                              value: data,
+                            }))
+                          : [{ key: "1", text: "You need to select a class" }]
+                      }
+                      placeholder='Select Faculty'
+                      onChange={handleFacultyChange}
+                    />
+                  </Form.Group>
+                )}
+              </div>
+              <hr />
+              <div style={{ padding: "5px 0" }}>
+                <Radio
+                  name='eduCar'
+                  label='SS3 And Post-Secondary School Students'
+                  value='SS3 And Post-Secondary School Students'
+                  checked={
+                    educationCareer === "SS3 And Post-Secondary School Students"
+                  }
+                  onChange={handleCheck}
+                />
+                {educationCareer ===
+                  "SS3 And Post-Secondary School Students" && (
+                  <Form.Group widths='equal' style={{ paddingTop: "20px" }}>
+                    <Form.Select
+                      fluid
+                      label='Class Division'
+                      options={classDivisionOptions}
+                      placeholder='Select Class Division'
+                      onChange={handleClassDivisionChange}
+                    />
+                    <Form.Select
+                      fluid
+                      label='Faculty'
+                      options={
+                        classDivision
+                          ? occupationOptions[
+                              `${classDivision.toLowerCase()}Options`
+                            ].map((data) => ({
+                              key: data,
+                              text: data,
+                              value: data,
+                            }))
+                          : [{ key: "1", text: "You need to select a class" }]
+                      }
+                      placeholder='Select Faculty'
+                      onChange={handleFacultyChange}
+                    />
+                  </Form.Group>
+                )}
+              </div>
+              <hr />
+              <div style={{ padding: "5px 0" }}>
+                <Radio
+                  name='eduCar'
+                  label='Undergraduate'
+                  value='Undergraduate'
+                  checked={educationCareer === "Undergraduate"}
+                  onChange={handleCheck}
+                />
+                {educationCareer === "Undergraduate" && (
+                  <div style={{ paddingTop: "20px" }}>
+                    <Form.Select
+                      fluid
+                      label='Job Type'
+                      placeholder='Select a job type'
+                      options={classDivisionOptions}
+                      options={
+                        occupationOptions &&
+                        occupationOptions["jobCategory"].map((data) => ({
+                          key: data,
+                          text: data,
+                          value: data,
+                        }))
+                      }
+                      onChange={handleJobChange}
+                    />
+                  </div>
+                )}
+              </div>
+              <hr />
+              <div style={{ padding: "5px 0" }}>
+                <Radio
+                  name='eduCar'
+                  label='Fresh Graduate/Post-Graduate'
+                  value='Fresh Graduate/Post-Graduate'
+                  checked={educationCareer === "Fresh Graduate/Post-Graduate"}
+                  onChange={handleCheck}
+                />
+                {educationCareer === "Fresh Graduate/Post-Graduate" && (
+                  <div style={{ paddingTop: "20px" }}>
+                    <Form.Select
+                      fluid
+                      label='Job Type'
+                      placeholder='Select a job type'
+                      options={classDivisionOptions}
+                      options={
+                        occupationOptions &&
+                        occupationOptions["jobCategory"].map((data) => ({
+                          key: data,
+                          text: data,
+                          value: data,
+                        }))
+                      }
+                      onChange={handleJobChange}
+                    />
+                  </div>
+                )}
+              </div>
+              <hr />
+              <div style={{ padding: "5px 0" }}>
+                <Radio
+                  name='eduCar'
+                  label='Career Man/Woman'
+                  value='Career Man/Woman'
+                  checked={educationCareer === "Career Man/Woman"}
+                  onChange={handleCheck}
+                />
+                {educationCareer === "Career Man/Woman" && (
+                  <div style={{ paddingTop: "20px" }}>
+                    <Form.Select
+                      fluid
+                      label='Job Type'
+                      placeholder='Select a job type'
+                      options={classDivisionOptions}
+                      options={
+                        occupationOptions &&
+                        occupationOptions["jobCategory"].map((data) => ({
+                          key: data,
+                          text: data,
+                          value: data,
+                        }))
+                      }
+                      onChange={handleJobChange}
+                    />
+                  </div>
+                )}
+              </div>
+              <hr />
+              <div style={{ padding: "5px 0" }}>
+                <Radio
+                  name='eduCar'
+                  label='Entrepreneur'
+                  value='Entrepreneur'
+                  checked={educationCareer === "Entrepreneur"}
+                  onChange={handleCheck}
+                />
+                {educationCareer === "Entrepreneur" && (
+                  <div style={{ paddingTop: "20px" }}>
+                    <Form.Select
+                      fluid
+                      label='Entrepreneur'
+                      placeholder='Select your type of Entrepreneur'
+                      options={classDivisionOptions}
+                      options={
+                        occupationOptions &&
+                        occupationOptions["entrepreneurCategory"].map(
+                          (data) => ({
                             key: data,
                             text: data,
                             value: data,
-                          }))
-                        : [{ key: "1", text: "You need to select a class" }]
-                    }
-                    placeholder='Select Faculty'
-                    onChange={handleFacultyChange}
-                  />
-                </Form.Group>
-              )}
-            </div>
-            <hr />
-            <div style={{ padding: "5px 0" }}>
+                          })
+                        )
+                      }
+                      onChange={handleJobChange}
+                    />
+                  </div>
+                )}
+              </div>
+              <hr />
               <Radio
                 name='eduCar'
-                label='Undergraduate'
-                value='Undergraduate'
-                checked={educationCareer === "Undergraduate"}
+                label='Senior Colleague'
+                value='Senior Colleague'
+                checked={educationCareer === "Senior Colleague"}
                 onChange={handleCheck}
               />
-              {educationCareer === "Undergraduate" && (
-                <div style={{ paddingTop: "20px" }}>
-                  <Form.Select
-                    fluid
-                    label='Job Type'
-                    placeholder='Select a job type'
-                    options={classDivisionOptions}
-                    options={
-                      occupationOptions &&
-                      occupationOptions["jobCategory"].map((data) => ({
-                        key: data,
-                        text: data,
-                        value: data,
-                      }))
-                    }
-                    onChange={handleJobChange}
-                  />
-                </div>
-              )}
             </div>
-            <hr />
-            <div style={{ padding: "5px 0" }}>
-              <Radio
-                name='eduCar'
-                label='Fresh Graduate/Post-Graduate'
-                value='Fresh Graduate/Post-Graduate'
-                checked={educationCareer === "Fresh Graduate/Post-Graduate"}
-                onChange={handleCheck}
-              />
-              {educationCareer === "Fresh Graduate/Post-Graduate" && (
-                <div style={{ paddingTop: "20px" }}>
-                  <Form.Select
-                    fluid
-                    label='Job Type'
-                    placeholder='Select a job type'
-                    options={classDivisionOptions}
-                    options={
-                      occupationOptions &&
-                      occupationOptions["jobCategory"].map((data) => ({
-                        key: data,
-                        text: data,
-                        value: data,
-                      }))
-                    }
-                    onChange={handleJobChange}
-                  />
-                </div>
-              )}
-            </div>
-            <hr />
-            <div style={{ padding: "5px 0" }}>
-              <Radio
-                name='eduCar'
-                label='Career Man/Woman'
-                value='Career Man/Woman'
-                checked={educationCareer === "Career Man/Woman"}
-                onChange={handleCheck}
-              />
-              {educationCareer === "Career Man/Woman" && (
-                <div style={{ paddingTop: "20px" }}>
-                  <Form.Select
-                    fluid
-                    label='Job Type'
-                    placeholder='Select a job type'
-                    options={classDivisionOptions}
-                    options={
-                      occupationOptions &&
-                      occupationOptions["jobCategory"].map((data) => ({
-                        key: data,
-                        text: data,
-                        value: data,
-                      }))
-                    }
-                    onChange={handleJobChange}
-                  />
-                </div>
-              )}
-            </div>
-            <hr />
-            <div style={{ padding: "5px 0" }}>
-              <Radio
-                name='eduCar'
-                label='Entrepreneur'
-                value='Entrepreneur'
-                checked={educationCareer === "Entrepreneur"}
-                onChange={handleCheck}
-              />
-              {educationCareer === "Entrepreneur" && (
-                <div style={{ paddingTop: "20px" }}>
-                  <Form.Select
-                    fluid
-                    label='Entrepreneur'
-                    placeholder='Select your type of Entrepreneur'
-                    options={classDivisionOptions}
-                    options={
-                      occupationOptions &&
-                      occupationOptions["entrepreneurCategory"].map((data) => ({
-                        key: data,
-                        text: data,
-                        value: data,
-                      }))
-                    }
-                    onChange={handleJobChange}
-                  />
-                </div>
-              )}
-            </div>
-            <hr />
-            <Radio
-              name='eduCar'
-              label='Senior Colleague'
-              value='Senior Colleague'
-              checked={educationCareer === "Senior Colleague"}
-              onChange={handleCheck}
-            />
-          </div>
 
-          <div style={{ paddingTop: "30px" }}>
-            {!sending ? <Button primary fluid>
-              Submit
-            </Button>
-            :
-            <Button loading primary fluid>
-              loading
-            </Button>
-            }
-          </div>
-        </Form>
+            <div style={{ paddingTop: "30px" }}>
+              {!sending ? (
+                <Button primary fluid>
+                  Submit
+                </Button>
+              ) : (
+                <Button loading primary fluid>
+                  loading
+                </Button>
+              )}
+            </div>
+          </Form>
+        </div>
       </div>
-    </div>
     </>
   );
 };

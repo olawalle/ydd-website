@@ -117,7 +117,12 @@ export default function signup() {
       .signup(data)
       .then((res) => {
         setloading(false);
-        setregDone(true);
+        console.log(res);
+        if (!res.data.data) {
+          openSnackbar(res.data.message, 6000);
+        } else {
+          setregDone(true);
+        }
       })
       .catch((err) => {
         setloading(false);
@@ -287,7 +292,7 @@ export default function signup() {
             }}
           >
             Your account has been created successfully. Please check your email
-            address to complete the signup process.
+            to complete the signup process.
           </p>
           <Link href='/'>
             <a>

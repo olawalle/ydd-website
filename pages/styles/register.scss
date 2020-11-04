@@ -2,9 +2,10 @@
   padding: 100px 350px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/ydd-photos/iyc.jpeg");
+  background-image: url("/ydd-photos/valiant.jpg");
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
   .area {
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.96);
@@ -17,8 +18,11 @@
   }
 
   @media (max-width: 767px) {
-    padding: 10px;
+    padding: 90px 10px;
     width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("/ydd-photos/iyc.jpeg");
     .area {
       padding: 30px;
       .itms {

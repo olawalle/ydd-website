@@ -28,9 +28,9 @@ export default function login() {
       username,
       password,
     };
-    authId ? (data.authId = authId) : null;
+    // authId ? (data.authId = authId) : null;
     apiServices
-      .login(data)
+      .login(data, authId)
       .then((res) => {
         setloading(false);
         window.localStorage.setItem(
@@ -41,7 +41,8 @@ export default function login() {
           "afm-data-token",
           JSON.stringify(res.data.data.token)
         );
-        toReg ? router.push("/iyc-register") : router.push("/");
+        console.log({ toReg });
+        toReg === 1 ? router.push("/iyc-register") : router.push("/");
       })
       .catch((err) => {
         console.log({ err });
@@ -57,10 +58,10 @@ export default function login() {
     let authId = query || "";
     setauthId(authId);
 
-    let query_ = router.query.reg || "0";
-    console.log(parseFloat(query_), router);
-    setToReg(query_);
-  }, []);
+    let query_ = router.query.reg || 0;
+    console.log({ toReg });
+    setToReg(parseFloat(query_));
+  }, [loginData]);
 
   return (
     <div className='auth-wrap'>

@@ -9,6 +9,7 @@ import * as dayjs from "dayjs";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Button } from "antd";
+import { useRouter } from "next/router";
 
 const IFrame = ({ children, ...props }) => {
   const [contentRef, setContentRef] = useState(null);
@@ -20,6 +21,7 @@ const IFrame = ({ children, ...props }) => {
 };
 
 export default function SingleEvent() {
+  const router = useRouter();
   const [tab, setTab] = useState(0);
   const [show, setshow] = useState(false);
 
@@ -127,14 +129,19 @@ export default function SingleEvent() {
     },
   ];
 
+  const registerUser = () => {
+    let token = window.localStorage.getItem("afm-data-token");
+    token ? router.push("/iyc-register") : router.push("/login?reg=1");
+  };
+
   return (
     <div className='single-event' id='log'>
       <Nav />
 
       <div className='banner'>
-        <Link href='/iyc-register'>
-          <Button type='primary'>Register</Button>
-        </Link>
+        <Button onClick={registerUser} type='primary'>
+          Register
+        </Button>
       </div>
       <div className='countdown'>
         <div className='container'>

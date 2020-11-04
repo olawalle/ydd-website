@@ -7,7 +7,7 @@ export const eventsList = [
     time: "",
     address: "WECA HQ, & Other locations",
     group: "general",
-    banner: "/ydd-photos/iyc.jpeg",
+    banner: "/ydd-photos/valiant.jpg",
   },
   {
     name: "Thanksgiving Youth Service - Oh Taste and see",

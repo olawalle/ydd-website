@@ -1,13 +1,20 @@
 import axios from "axios";
 import * as urls from "./urls";
 
-let login = (data) => {
+let login = (data, authId) => {
+  let headers = {
+    clientId: "A4m0xs4",
+  };
+  if (authId) {
+    header = {
+      ...headers,
+      authId,
+    };
+  }
   return axios({
     method: "post",
     url: urls.loginUrl,
-    headers: {
-      clientId: "A4m0xs4",
-    },
+    headers,
     data,
   });
 };
