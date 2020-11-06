@@ -33,6 +33,11 @@ export default function login() {
       .login(data, authId)
       .then((res) => {
         setloading(false);
+
+        if (!res.data.data) {
+          openSnackbar(res.data.message, 6000);
+          return;
+        }
         window.localStorage.setItem(
           "afm-data",
           JSON.stringify(res.data.data.user)
@@ -41,7 +46,6 @@ export default function login() {
           "afm-data-token",
           JSON.stringify(res.data.data.token)
         );
-        console.log({ toReg });
         toReg === 1 ? router.push("/iyc-register") : router.push("/");
       })
       .catch((err) => {
@@ -59,7 +63,6 @@ export default function login() {
     setauthId(authId);
 
     let query_ = router.query.reg || 0;
-    console.log({ toReg });
     setToReg(parseFloat(query_));
   }, [loginData]);
 
@@ -76,7 +79,7 @@ export default function login() {
         </Link>
         <h1>Login</h1>
 
-        <p className='label'>Email address</p>
+        <p className='label'>Username</p>
         <input
           type='text'
           name='u'
