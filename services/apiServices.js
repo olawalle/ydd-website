@@ -6,7 +6,7 @@ let login = (data, authId) => {
     clientId: "A4m0xs4",
   };
   if (authId) {
-    header = {
+    headers = {
       ...headers,
       authId,
     };

@@ -141,6 +141,7 @@ export default function signup() {
         }
       })
       .catch((err) => {
+        console.log({ err });
         setloading(false);
         openSnackbar("An error occured. Please try again", 6000);
       });
