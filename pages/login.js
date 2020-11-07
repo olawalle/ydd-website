@@ -33,7 +33,6 @@ export default function login() {
       .login(data, authId)
       .then((res) => {
         setloading(false);
-
         if (!res.data.data) {
           openSnackbar(res.data.message, 6000);
           return;
@@ -49,7 +48,6 @@ export default function login() {
         toReg === 1 ? router.push("/iyc-register") : router.push("/");
       })
       .catch((err) => {
-        console.log({ err });
         setloading(false);
         openSnackbar("Invalid username or password", 6000);
       });

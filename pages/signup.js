@@ -18,6 +18,12 @@ export default function signup() {
     { value: "Married", label: "Married" },
     { value: "Widowed", label: "Widowed" },
   ];
+  const [chrchData, setchrchData] = useState({
+    branches: [],
+    zones: [],
+    districts: [],
+    regions: [],
+  });
 
   const sexes = [
     { value: "Male", label: "Male" },
@@ -26,6 +32,11 @@ export default function signup() {
   const [branches, setbranches] = useState([]);
   const [occupations, setOccupations] = useState([]);
   const [loading, setloading] = useState(false);
+  const [selectedFields, setSelectedFields] = useState({
+    region: "",
+    districk: "",
+    zone: "",
+  });
 
   const [signupData, setsignupData] = useState({
     username: "",
@@ -46,6 +57,7 @@ export default function signup() {
     apiServices
       .fetchChurches_()
       .then((res) => {
+        console.log(res);
         let branches = res.data.data.branches
           .map((z) => Object.values(z)[0])
           .reduce((a, b) => a.concat(b), [])
@@ -56,7 +68,46 @@ export default function signup() {
               value: b.churchId,
             };
           });
-        setbranches(branches);
+
+        let zones = res.data.data.zones
+          .map((z) => {
+            return Object.values(z)[0];
+          })
+          .reduce((a, b) => a.concat(b), [])
+          .map((zz) => {
+            return {
+              ...zz,
+              label: zz.name,
+              value: zz.name,
+            };
+          });
+
+        let districts = res.data.data.districts
+          .map((z) => Object.values(z)[0])
+          .reduce((a, b) => a.concat(b), [])
+          .map((b) => {
+            return {
+              ...b,
+              label: b.name,
+              value: b.churcnamehId,
+            };
+          });
+
+        let regions = res.data.data.regions.map((r) => {
+          return {
+            ...r,
+            label: r.name,
+            value: r.name,
+          };
+        });
+        let payload = {
+          branches,
+          zones,
+          districts,
+          regions,
+        };
+        setchrchData(payload);
+        console.log(payload);
       })
       .catch((err) => {
         console.log(err);
@@ -245,13 +296,40 @@ export default function signup() {
               options={maritalStats}
             />
           </div>
-          <div className='left' style={{ width: "100%", marginTop: 10 }}>
+          <div className='left' style={{ marginTop: 10 }}>
+            <span>Region</span>
+            <Select
+              onChange={(e) =>
+                setsignupData({ ...signupData, churchId: e.value })
+              }
+              options={chrchData.regions}
+            />
+          </div>
+          <div className='right' style={{ marginTop: 10 }}>
+            <span>District</span>
+            <Select
+              onChange={(e) =>
+                setsignupData({ ...signupData, churchId: e.value })
+              }
+              options={chrchData.districts}
+            />
+          </div>
+          <div className='left' style={{ marginTop: 10 }}>
+            <span>Zone</span>
+            <Select
+              onChange={(e) =>
+                setsignupData({ ...signupData, churchId: e.value })
+              }
+              options={chrchData.zones}
+            />
+          </div>
+          <div className='right' style={{ marginTop: 10 }}>
             <span>Branch</span>
             <Select
               onChange={(e) =>
                 setsignupData({ ...signupData, churchId: e.value })
               }
-              options={branches}
+              options={chrchData.branches}
             />
           </div>
           <div className='left' style={{ margin: "10px 0" }}>
